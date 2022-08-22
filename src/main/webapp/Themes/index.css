@@ -1,0 +1,155 @@
+@import
+	url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap")
+	;
+
+@import
+	url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+	;
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: hsl(193, 100%, 96%);
+	font-size: 18px;
+	font-family: "Open Sans", sans-serif;
+}
+
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #9BA5C9;
+}
+
+li {
+	float: right;
+	margin-right: 5px;
+}
+
+li #alr_home {
+	margin-right: 790px;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 25px 15px;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+.login_btn {
+	background-color: hsl(322, 100%, 66%);
+	border: none;
+	border-radius: 25px;
+	box-shadow: 0 3px 16px rgba(0, 0, 0, 0.12);
+	padding: 15px 70px;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.home_page {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 60px 0px 20px;
+	margin: 50px 80px;
+}
+
+.home_page_first {
+	width: 45%;
+}
+
+.login {
+	width: 55%;
+}
+
+.home_page_first h1 {
+	font-size: 42px;
+	margin: 25px 0px;
+	padding-right: 40px;
+	font-family: "Open Sans", sans-serif;
+}
+
+.home_page_first p {
+	color: hsl(208, 11%, 55%);
+	margin: 25px 0px;
+	padding-right: 40px;
+}
+
+.signup_btn {
+	width:695px;
+	border: none;
+	border-radius: 25px;
+	box-shadow: 0 3px 16px rgba(0, 0, 0, 0.12);
+	padding: 20px 320px;
+	text-decoration:none;
+	color:black;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.login {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.login input {
+	padding: 20px;
+	border-radius: 20px;
+	width: 700px;
+	font-size: 17px;
+}
+
+.login #acnt {
+	text-align: center;
+	cursor: pointer;
+	text-decoration:none;
+	color: black;
+}
+
+.login input:focus,
+.login input:valid{
+  border-color: #9b59b6;
+}
+
+.login #acnt:hover {
+	
+	color: #3E619B;
+}
+
+.flights {
+	width: 33%;
+	padding: 10px;
+	cursor: pointer;
+	margin-left: 120px;
+}
+.flights:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#flight_img {
+	width: 400px;
+	height: 400px;
+	border-radius:20px;
+}
+
+.flight_det {
+	display: flex;
+	flex-direction: row;
+	margin-left: 60px;
+}
+.flights p{
+	color: hsl(208, 11%, 55%);
+	margin:10px 0px 0px 120px;
+}

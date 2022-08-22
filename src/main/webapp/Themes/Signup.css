@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	
+	background-image: url("../Images/alr.jpg")
+}
+.pdetails{
+	display:flex;
+	flex-direction:column;
+	gap:10px;
+}
+
+.container {
+	margin:15px;
+	max-width: 700px;
+	background-color: hsl(193, 100%, 96%);
+	padding: 25px 30px;
+	height:100%;
+	margin:20px 0px 10px 100px;
+	border-radius: 20px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pdetails h1{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.pdetails input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 15px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
+	
+}
+.pdetails input:focus,
+.pdetails input:valid{
+  border-color: #9b59b6;
+}
+
+label{
+	font-size: 20px;
+	color: black;
+	font-weight: 50;
+}
+.act{
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+	cursor: pointer;
+	margin-left: 230px;
+	position: absolute;
+	top: 720px;
+}
+.act:hover{
+	color: #3E619B;
+}
+
+form .signup_btn {
+	height: 45px;
+	margin: 35px 0
+}
+
+form .signup_btn {
+	border-radius: 10px;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	padding:10px;
+	background-color: hsl(322, 100%, 66%);
+}
+
