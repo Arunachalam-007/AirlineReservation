@@ -2,9 +2,6 @@
 	url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap")
 	;
 
-@import
-	url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 * {
 	margin: 0;
 	padding: 0;
@@ -12,67 +9,35 @@
 }
 
 body {
-	/* background-image: url("../Images/malaysia.jpg"); */
-	background-repeat: no-repeat;
+	/* background-image: url("../Images/alr.jpg"); */
 	background-image: url("../Images/bg-hero-desktop.svg");
 	background-color: hsl(193, 100%, 96%);
 }
 
-/* .container {
+.container {
 	margin: 15px;
 	max-width: 500px;
 	background-color: hsl(193, 100%, 96%);
 	padding: 25px 30px;
 	height: 100%;
-	margin: 90px 0px 10px 100px;
+	margin: 60px 0px 10px 100px;
 	border-radius: 20px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-} */
-
-/* ******************* */
-.container {
-	display: flex;
-	flex-direction: row;
-	margin: 110px 0px 10px 100px;
-	gap: 30px;
-	height: 100%;
 }
 
 .fdetails {
-	width: 45%;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	padding: 15px 40px;
-	border-radius: 20px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-.quote {
-	width: 55%;
-}
-
-.quote p {
-	color: hsl(208, 11%, 55%);
-	font-size: 32px;
-	margin: 100px 60px;
-	padding-right: 40px;
-	font-family: 'Rubik Dirt', cursive; 
-	/* font-family: 'Pacifico', cursive; */
-}
-
-/* ******************* */
-/* .fdetails {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-} */
+}
+
 .fdetails h1 {
 	text-align: center;
 	margin-bottom: 10px;
+
 }
 
-.fdetails input {
+.fdetails input, select {
 	height: 45px;
 	width: 100%;
 	outline: none;
@@ -87,7 +52,7 @@ body {
 	font-size: 17px;
 }
 
-.fdetails input:focus, .fdetails input:valid {
+.fdetails input, select:focus, .fdetails input, select:valid {
 	border-color: #6E5DCF;
 }
 

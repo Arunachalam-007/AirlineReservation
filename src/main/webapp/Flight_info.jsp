@@ -69,7 +69,7 @@
 			</div>
 
 			<div class="item">
-				<img src="./Images/malaysia"  alt="Malaysia Airlines">
+				<img src="./Images/malaysia.jpg"  alt="Malaysia Airlines">
 				<div class="carousel-caption">
 					<h3>International</h3>
 					<p>Malaysia Airlines</p>
