@@ -32,6 +32,18 @@ body {
 	cursor: pointer;
 }
 
+/* .login_btn:hover {
+	background-color: #3e8e41;
+} */
+
+.login_btn:active {
+	background-color: hsl(322, 100%, 66%);
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+/* ******************************************* */
+
+/* ******************************************* */
 .home_page {
 	align-items: center;
 	display: flex;
@@ -47,6 +59,11 @@ body {
 
 .login {
 	width: 55%;
+}
+
+.login span {
+	text-align: center;
+	color: red;
 }
 
 .home_page_first h1 {
@@ -74,6 +91,11 @@ body {
 	cursor: pointer;
 }
 
+.signup_btn:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
 .login {
 	display: flex;
 	flex-direction: column;
@@ -88,17 +110,31 @@ body {
 }
 
 .login #acnt {
-	text-align: center;
+	/* text-align: center; */
 	cursor: pointer;
 	text-decoration: none;
 	color: black;
+	margin-left: 110px;
+}
+
+.login #acnt1 {
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+	margin-right: 100px;
+}
+
+.link_align {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .login input:focus, .login input:valid {
 	border-color: #9b59b6;
 }
 
-.login #acnt:hover {
+.login #acnt:hover, .login #acnt1:hover {
 	color: #3E619B;
 }
 
@@ -109,10 +145,9 @@ body {
 	margin-left: 15px;
 }
 
-.flights:hover {
+/* .flights:hover {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-}
-
+} */
 #flight_img {
 	width: 400px;
 	height: 400px;
@@ -130,3 +165,7 @@ body {
 	margin: 10px 0px 0px 120px;
 }
 
+#flight_img:hover {
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}

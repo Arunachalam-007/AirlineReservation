@@ -28,7 +28,7 @@
 					<td>07:00</td>
 					<td>02 h 35 m</td>
 					<td>09:35</td>
-					<td >&#x20B9; 9,527</td>
+					<td>&#x20B9; 9,527</td>
 					<td><button>VIEW PRICES</button></td>
 				</tr>
 

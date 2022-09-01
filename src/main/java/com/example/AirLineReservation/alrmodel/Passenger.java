@@ -1,5 +1,7 @@
 package com.example.AirLineReservation.alrmodel;
 
+import java.sql.Date;
+
 public class Passenger {
 
 	private String name;
@@ -8,7 +10,7 @@ public class Passenger {
 	private String email;
 	private String uname;
 	private String password;
-	private String dob;
+	private Date dob;
 
 	public String getName() {
 		return name;
@@ -58,11 +60,11 @@ public class Passenger {
 		this.password = password;
 	}
 
-	public String getDob() {
+	public Date getDob() {
 		return dob;
 	}
 
-	public void setDob(String dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
 

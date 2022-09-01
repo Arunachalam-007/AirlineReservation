@@ -5,30 +5,34 @@
 }
 
 body {
-	
 	background-image: url("../Images/alr.jpg")
 }
-.pdetails{
-	display:flex;
-	flex-direction:column;
-	gap:10px;
+
+.pdetails {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .container {
-	margin:15px;
+	margin: 15px;
 	max-width: 700px;
 	background-color: hsl(193, 100%, 96%);
 	padding: 25px 30px;
-	height:100%;
-	margin:20px 0px 10px 100px;
+	height: 100%;
+	margin: 20px 0px 10px 100px;
 	border-radius: 20px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.pdetails h1{
+/* ********************* */
+
+/* ********************* */
+.pdetails h1 {
 	text-align: center;
 	margin-bottom: 10px;
 }
+
 .pdetails input {
 	height: 45px;
 	width: 100%;
@@ -38,19 +42,19 @@ body {
 	padding-left: 15px;
 	border: 1px solid #ccc;
 	border-bottom-width: 2px;
-	
-}
-.pdetails input:focus,
-.pdetails input:valid{
-  border-color: #9b59b6;
 }
 
-label{
-	font-size: 20px;
+.pdetails input:focus, .pdetails input:valid {
+	border-color: #9b59b6;
+}
+
+label {
+	font-size: 18px;
 	color: black;
 	font-weight: 50;
 }
-.act{
+
+.act {
 	text-decoration: none;
 	font-size: 20px;
 	color: black;
@@ -59,23 +63,31 @@ label{
 	position: absolute;
 	top: 880px;
 }
-.act:hover{
+
+.act:hover {
 	color: #3E619B;
 }
 
-form .signup_btn {
+/* form .signup_btn {
 	height: 45px;
 	margin: 35px 0
-}
-
+} */
 form .signup_btn {
+	height: 45px;
+	margin: 35px 0;
 	border-radius: 10px;
 	border: none;
 	color: #fff;
 	font-size: 18px;
 	font-weight: 500;
 	cursor: pointer;
-	padding:10px;
+	padding: 10px;
 	background-color: hsl(322, 100%, 66%);
+	border-radius: 10px;
 }
 
+form .signup_btn:active {
+	background-color: hsl(322, 100%, 66%);
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
