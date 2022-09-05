@@ -9,7 +9,7 @@
 <title>Ticket Booking</title>
 </head>
 <body>
-	<form action="bookingpay" method="post">
+	<form>
 		<jsp:include page="Nav.jsp" />
 		<div class="container">
 			<div class="ticket_info">
@@ -81,7 +81,11 @@
 					</tbody>
 
 				</table>
-				<input type="submit" value="Continue" class="pay_btn">
+				<c:forEach var="bvalues" items="${bookingvalues}">
+				<a href="bookingpay/${bvalues.fid}" class="pay_btn">Continue</a>
+				 <!-- <input type="submit" value="Continue" class="pay_btn"> -->
+				
+				</c:forEach>
 			</div>
 
 		</div>

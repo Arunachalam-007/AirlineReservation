@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +30,7 @@ public class FlightController {
 
 	@Autowired
 	ServiceALR sALR;
-	
+
 	@Autowired
 	FlightDaoImpl fdi;
 
@@ -71,13 +72,13 @@ public class FlightController {
 
 		sALR.flightService(fdto);
 
-		return "Index.jsp";
+		return "Index";
 
 	}
 
 	@PostMapping("/flightsearch")
 	public String flightSearchController(@RequestParam("from_place") String from_place,
-			@RequestParam("to_place") String to_place, @RequestParam("bdate") String bdate,Model mod) {
+			@RequestParam("to_place") String to_place, @RequestParam("bdate") String bdate, Model mod) {
 
 //		fsdto.setSearchFromPlace(from_place);
 //		fsdto.setSearchToPlace(to_place);
@@ -86,28 +87,47 @@ public class FlightController {
 //		sALR.searchFlighService(fsdto);
 //		
 //		List<Flight> f=fdi.flightDisplay(to_place, bdate)
-		
+
 //		FlightSearch fs=new FlightSearch();
 //		List<Flight> f=fdi.flightDisplay(fs);
 //		mod.addAttribute("flightdata",f);
-		
-		
-		List<Flight> l=fdi.flightDisplay(from_place, bdate);
-		mod.addAttribute("infos",l);
 
-		return "FlightDisplay.jsp";
+		List<Flight> l = fdi.flightDisplay(from_place, bdate);
+		mod.addAttribute("infos", l);
+
+		return "FlightDisplay";
 //		return "FlightInfo.jsp";
 
 	}
-	
+
 	@RequestMapping(value = "/ticketbook/{fid}")
 	public String bookingTicket(@PathVariable String fid, Model mod) {
-		
-		List<Flight> f=fdi.ticketBooking(fid);
-		mod.addAttribute("bookingvalues",f);
-		return "TicketBooking.jsp";
+
+		List<Flight> f = fdi.ticketBooking(fid);
+//		String result=fdi.ticketBooking(fid);
+		mod.addAttribute("bookingvalues", f);
+		return "TicketBooking";
 	}
-	
+
+	@PostMapping("/searchflightwithoutlogin")
+	public String searchFlightwoutLogin(@RequestParam("from_place") String from_place,
+			@RequestParam("to_place") String to_place, @RequestParam("bdate") String bdate, Model mod) {
+		List<Flight> l = fdi.flightDisplay1(from_place, bdate);
+		mod.addAttribute("infos", l);
+		return "FlightDisplay";
+	}
+
+	@RequestMapping(value="/ticketbook/bookingpay/{fid}")
+	public String ticketBookingPay(@PathVariable String fid, Model mod) {
+		/*
+		 * mod.addAttribute("fid_value",l); List<Flight>
+		 * l=fdi.flightDisplay1(from_place, bdate);
+		 */
+		List<Flight> f = fdi.ticketBooking(fid);
+		mod.addAttribute("fid_value", f);
+		return "BookInfo";
+	}
+
 //	@PostMapping("/displayflight")
 //	public String displayDetails(Model mod) {
 //		List<Flight> f=fdi.flightDisplay();

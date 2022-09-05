@@ -31,10 +31,10 @@ body {
 /* ************** */
  table {
 	border-collapse: collapse;
-	width: 78%;
+	width: 58%;
 	display: block;
 	height: 400px;
-	margin: 50px 200px;
+	margin: 50px auto;
 	overflow-y: auto;
 	border-spacing: 25px 10px;
 	border-spacing: 0 1em;
@@ -57,7 +57,7 @@ tbody tr:hover {
 }
 
 td {
-	padding: 15px;
+	padding: 8px;
 	/* text-align: left; */
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
@@ -86,14 +86,13 @@ thead tr:nth-child(1) th {
 	z-index: 10;
 }
 
-td a {
-	color:black;
+td button {
+	border: none;
 	padding: 13px;
 	background: transparent;
-	text-decoration: none;
 }
 
-td a:hover {
+td button:hover {
 	background-color: hsl(322, 100%, 66%);
 	border-radius: 20px;
 	cursor: pointer;

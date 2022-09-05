@@ -63,7 +63,7 @@ public class RegisterController {
 //		rd.registerInfo(p);
 
 		sALR.passengerService(pdto);
-		return "Search.jsp";
+		return "Search";
 	}
 
 	/*
@@ -89,10 +89,10 @@ public class RegisterController {
 
 		if (username.equalsIgnoreCase("arunach123") && password.equalsIgnoreCase("Arun@1234")) {
 			session.setAttribute("username", username);
-			return "Search.jsp";
+			return "Search";
 		} else {
 			model.addAttribute("error", "Invalid Account");
-			return "Index.jsp";
+			return "Index";
 		}
 	}
 	

@@ -34,13 +34,13 @@ public class FlightDaoImpl implements FlightDao {
 	}
 
 //	public List<Flight> flightDisplay(FlightSearch fs) {
-	public List<Flight> flightDisplay(String from_flace,String departure) {
-		
-		String query="select * from alrflightadmin where from_place=? and departure=?";
-		Object[] values= {from_flace,departure};
-		
-		List<Flight> data=jdbctemp.query(query, new FlightMapper(),values);
-		
+	public List<Flight> flightDisplay(String from_flace, String departure) {
+
+		String query = "select * from alrflightadmin where from_place=? and departure=?";
+		Object[] values = { from_flace, departure };
+
+		List<Flight> data = jdbctemp.query(query, new FlightMapper(), values);
+
 		return data;
 		/*
 		 * // String query =
@@ -59,13 +59,22 @@ public class FlightDaoImpl implements FlightDao {
 		 * values;
 		 */
 	}
-	
-	public List<Flight> ticketBooking(String id) {
-		String query="select * from alrflightadmin where flightId=?";
-		Object[] values= {id};
-		List<Flight> data=jdbctemp.query(query, new FlightMapper(), values);
+
+	public List<Flight> flightDisplay1(String from_flace, String departure) {
+		String query = "select * from alrflightadmin where from_place=? and departure=?";
+		Object[] values = { from_flace, departure };
+		List<Flight> data = jdbctemp.query(query, new FlightMapper(), values);
 		return data;
-		
+	}
+
+	public List<Flight> ticketBooking(String id) {
+//	public String ticketBooking(String id) {
+		String query = "select * from alrflightadmin where flightId=?";
+		Object[] values = { id };
+		List<Flight> data = jdbctemp.query(query, new FlightMapper(), values);
+//		String value=jdbctemp.queryForObject(query, String.class, id);
+		return data;
+
 	}
 
 }
