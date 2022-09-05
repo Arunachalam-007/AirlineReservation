@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -25,6 +27,10 @@ public class RegisterDaoImpl implements RegisterDao {
 	@Autowired
 	JdbcTemplate jdbctemp;
 
+	// **************
+//	@Autowired
+//	RegisterDaoImpl rd;
+	// **************
 //	private DataSource dataSource;
 //
 //	public void setDataSource(DataSource dataSource) {
@@ -32,34 +38,38 @@ public class RegisterDaoImpl implements RegisterDao {
 //		this.jdbctemp = new JdbcTemplate(dataSource);
 //	}
 
-
 //	public List<Passenger> registerInfo1(String uname) {
-	public void registerInfo1(Passenger p,String uname) {
-		
+	public void registerInfo1(Passenger p, String uname) {
+
+		Logger logger = LoggerFactory.getLogger(RegisterDaoImpl.class);
 //		List<Passenger> passenger = jdbctemp.query(query1, new RegisterMapper());
 //		ListIterator<Passenger> itr = passenger.listIterator();
 //		ListIterator<Passenger> itr = value.listIterator();
 
-		
 //		JFrame frame = new JFrame("Swing Tester");
 //		if (itr.hasNext()) {
 
-		//*****************
+		// *****************
 //		String query1 = "select username from alrpassenger where username=?";
-//		
-//		String value=jdbctemp.queryForObject(query1, String.class, uname);
+//
+//		String value = jdbctemp.queryForObject(query1, String.class, uname);
 
-		//*****************
-//		if(!value.isEmpty()) {
-			
+		// *****************
+//		if (value.isEmpty()) {
+		String query = "insert into alrpassenger(name,address,mobile,email,username,password,dob) values(?,?,?,?,?,?,?)";
+		Object[] values = { p.getName(), p.getAddr(), p.getMobile(), p.getEmail(), p.getUname(), p.getPassword(),
+				p.getDob() };
+		int i = jdbctemp.update(query, values);
+//		logger.info("1 row affected");
+//		logger.trace("trace");
+//		logger.error("logger error");
+		System.out.println(i);
+
 //			JOptionPane.showMessageDialog(frame, "Username already exist");
-//			System.out.println("Username Already Exist");
+
 //		} else {
-			String query = "insert into alrpassenger(name,address,mobile,email,username,password,dob) values(?,?,?,?,?,?,?)";
-			Object[] values = { p.getName(), p.getAddr(), p.getMobile(), p.getEmail(), p.getUname(), p.getPassword(),
-					p.getDob() };
-			int i=jdbctemp.update(query, values);
-			System.out.println(i);
+//			System.out.println("Username Already Exist");
+//
 //		}
 
 		/*
@@ -69,9 +79,7 @@ public class RegisterDaoImpl implements RegisterDao {
 		 */
 //		return passenger;
 
-		
 	}
-	
 
 	/*
 	 * public void registerInfo(Passenger p) {
@@ -82,4 +90,5 @@ public class RegisterDaoImpl implements RegisterDao {
 	 * p.getUname(), p.getPassword(), p.getDob() }; jdbctemp.update(query, values);
 	 * }
 	 */
+
 }

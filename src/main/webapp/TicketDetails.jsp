@@ -14,6 +14,7 @@
 
 			<thead>
 				<tr>
+					<th>Flight ID</th>
 					<th>Flight Name</th>
 					<th>Departure</th>
 					<th>Duration</th>
@@ -24,6 +25,7 @@
 
 			<tbody>
 				<tr>
+					<td>AI2</td>
 					<td>Indigo</td>
 					<td>07:00</td>
 					<td>02 h 35 m</td>
@@ -33,6 +35,7 @@
 				</tr>
 
 				<tr>
+					<td>BA3</td>
 					<td>Vistara</td>
 					<td>03:00</td>
 					<td>04 h 35 m</td>

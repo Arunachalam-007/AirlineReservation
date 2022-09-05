@@ -86,13 +86,14 @@ thead tr:nth-child(1) th {
 	z-index: 10;
 }
 
-td button {
-	border: none;
+td a {
+	color:black;
 	padding: 13px;
 	background: transparent;
+	text-decoration: none;
 }
 
-td button:hover {
+td a:hover {
 	background-color: hsl(322, 100%, 66%);
 	border-radius: 20px;
 	cursor: pointer;

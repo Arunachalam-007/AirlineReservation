@@ -1,0 +1,71 @@
+package com.example.AirLineReservation.alrdaoimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.example.AirLineReservation.alrdao.FlightDao;
+import com.example.AirLineReservation.alrmapper.FlightMapper;
+import com.example.AirLineReservation.alrmapper.RegisterMapper;
+import com.example.AirLineReservation.alrmodel.Flight;
+import com.example.AirLineReservation.alrmodel.FlightSearch;
+
+@Repository
+public class FlightDaoImpl implements FlightDao {
+	@Autowired
+	JdbcTemplate jdbctemp;
+
+	public void addFlight(Flight f) {
+		String query = "insert into alrflightadmin(flightId,flightName,departure,arrival,from_place,to_place,price) values(?,?,?,?,?,?,?)";
+		Object[] values = { f.getFid(), f.getFname(), f.getDeparture(), f.getArrival(), f.getFrom_place(),
+				f.getTo_place(), f.getPrice() };
+		int i = jdbctemp.update(query, values);
+		System.out.println(i);
+	}
+
+	public void searchFlight(FlightSearch fs) {
+
+		String query = "insert into alrsearchflight(from_place,to_place,booking_date) values(?,?,?)";
+		Object[] values = { fs.getFrom_place(), fs.getTo_place(), fs.getBooking_date() };
+		int i = jdbctemp.update(query, values);
+		System.out.println(i);
+	}
+
+//	public List<Flight> flightDisplay(FlightSearch fs) {
+	public List<Flight> flightDisplay(String from_flace,String departure) {
+		
+		String query="select * from alrflightadmin where from_place=? and departure=?";
+		Object[] values= {from_flace,departure};
+		
+		List<Flight> data=jdbctemp.query(query, new FlightMapper(),values);
+		
+		return data;
+		/*
+		 * // String query =
+		 * "select alrflightadmin.flightId,alrflightadmin.flightName,alrflightadmin.departure,alrflightadmin.arrival,alrflightadmin.from_place,alrflightadmin.to_place,alrflightadmin.price from alrsearchflight inner join alrflightadmin on alrflightadmin.from_place=alrsearchflight.from_place and alrflightadmin.departure=alrsearchflight.booking_date"
+		 * ;
+		 * 
+		 * String
+		 * query="select alrflightadmin.flightId,alrflightadmin.flightName,alrflightadmin.departure,alrflightadmin.arrival,alrflightadmin.from_place,alrflightadmin.to_place,alrflightadmin.price from alrsearchflight inner join alrflightadmin on alrflightadmin.from_place=alrsearchflight.from_place where alrflightadmin.departure=?"
+		 * ; // String query =
+		 * "select alrflightadmin.flightId,alrflightadmin.flightName,alrflightadmin.departure,alrflightadmin.arrival,alrflightadmin.from_place,alrflightadmin.to_place,alrflightadmin.price from alrsearchflight inner join alrflightadmin on alrflightadmin.from_place=? and alrflightadmin.departure=?"
+		 * ; // Object[] data= {fs.getBooking_date()}; // List<Flight> values =
+		 * jdbctemp.query(query,new FlightMapper(),data);
+		 * 
+		 * String values = jdbctemp.queryForObject(query,String.class,booking_date); //
+		 * List<Flight> values = jdbctemp.query(query,new FlightMapper()); return
+		 * values;
+		 */
+	}
+	
+	public List<Flight> ticketBooking(String id) {
+		String query="select * from alrflightadmin where flightId=?";
+		Object[] values= {id};
+		List<Flight> data=jdbctemp.query(query, new FlightMapper(), values);
+		return data;
+		
+	}
+
+}

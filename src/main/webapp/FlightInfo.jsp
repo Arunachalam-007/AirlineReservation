@@ -34,7 +34,7 @@
 					<td>9281903701</td>
 					<td>26</td>
 					<td><button>Passengers</button></td>
-					<td><button>Flights</button></td>
+					<td><a href="AdminFlight.jsp">Flights</a></td>
 
 				</tr>
 				<tr>

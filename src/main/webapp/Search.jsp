@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form action="FlightInfo.jsp">
+	<form action="flightsearch" method="post">
 		<!-- <form action="Validator.jsp"> -->
 
 		<jsp:include page="Nav.jsp" />

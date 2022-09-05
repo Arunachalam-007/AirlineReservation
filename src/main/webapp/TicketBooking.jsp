@@ -13,6 +13,9 @@
 		<div class="container">
 			<div class="ticket_info">
 				<h1>Ticket Details</h1>
+				<p>${bookingvalues}</p>
+				<%-- <p>${list}</p> --%>
+			
 			</div>
 			<div class="ticket_amt">
 				<h1>Fare Summary</h1>
@@ -23,12 +26,12 @@
 							<td>Base Fare</td>
 							<td><span>&#x20B9; 8,573</span></td>
 						</tr>
-						
+
 						<tr>
-							<td>Fee & Surcharges</td>
+							<td>Fee and Surcharges</td>
 							<td><span>&#x20B9; 529</span></td>
 						</tr>
-						
+
 						<tr>
 							<td>Total Amount</td>
 							<td><span>&#x20B9; 9,102</span></td>

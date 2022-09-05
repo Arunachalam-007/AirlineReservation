@@ -11,4 +11,5 @@ public interface RegisterDao {
 //	public String registerInfo1(Passenger p,String uname);
 	public void registerInfo1(Passenger p,String uname);
 	
+	
 }
