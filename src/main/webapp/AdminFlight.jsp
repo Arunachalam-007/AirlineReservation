@@ -19,12 +19,14 @@
 						placeholder="Enter Flight Id"> <label for="fname">Flight Name</label>
 					<input type="text" name="fname" placeholder="Enter Flight Name">
 					<label for="departure">Departure</label> <input type="date"
-						name="departure" placeholder="Enter Departure"> <!-- <label
-						for="start_time">Start Time</label> <input type="number" name="start_time"
-						placeholder="Enter Start Time" step="any" min="0" max="100"> <label
-						for="end_time">End Time</label> <input type="number" name="end_time"
-						placeholder="Enter End Time" step="any" min="0" max="100"> --><label for="arrival">Arrival</label>
+						name="departure" placeholder="Enter Departure"> <label for="arrival">Arrival</label>
 					<input type="date" name="arrival" placeholder="Enter Arrival">
+					<label for="start_time">Start Time</label> 
+					<input type="time" name="start_time"
+						placeholder="Enter Start Time">
+					<label for="end_time">End Time</label> 
+					<input type="time" name="end_time"
+						placeholder="Enter End Time">
 					<label
 						for="from">From</label> <input type="text" name="from"
 						placeholder="Enter From Place">

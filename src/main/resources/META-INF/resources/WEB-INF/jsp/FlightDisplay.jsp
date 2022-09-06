@@ -13,6 +13,9 @@
 <body>
 	<form>
 		<jsp:include page="Nav.jsp" />
+		
+		<%-- <input type="hidden" value="${param.cls}" id="cls" name="dd_value"> --%>
+		<c:set var="cls_value" scope="session" value="${param.cls}"/>
 		<table>
 			<tr>
 				<th>Flight ID</th>

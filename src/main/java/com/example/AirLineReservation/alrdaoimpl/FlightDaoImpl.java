@@ -10,6 +10,7 @@ import com.example.AirLineReservation.alrdao.FlightDao;
 import com.example.AirLineReservation.alrmapper.FlightMapper;
 import com.example.AirLineReservation.alrmapper.RegisterMapper;
 import com.example.AirLineReservation.alrmodel.Flight;
+import com.example.AirLineReservation.alrmodel.FlightBooking;
 import com.example.AirLineReservation.alrmodel.FlightSearch;
 
 @Repository
@@ -18,9 +19,9 @@ public class FlightDaoImpl implements FlightDao {
 	JdbcTemplate jdbctemp;
 
 	public void addFlight(Flight f) {
-		String query = "insert into alrflightadmin(flightId,flightName,departure,arrival,from_place,to_place,price) values(?,?,?,?,?,?,?)";
+		String query = "insert into alrflightadmin(flightId,flightName,departure,arrival,from_place,to_place,price,start_time,end_time) values(?,?,?,?,?,?,?,?,?)";
 		Object[] values = { f.getFid(), f.getFname(), f.getDeparture(), f.getArrival(), f.getFrom_place(),
-				f.getTo_place(), f.getPrice() };
+				f.getTo_place(), f.getPrice(),f.getStart_time(),f.getEnd_time() };
 		int i = jdbctemp.update(query, values);
 		System.out.println(i);
 	}
@@ -75,6 +76,13 @@ public class FlightDaoImpl implements FlightDao {
 //		String value=jdbctemp.queryForObject(query, String.class, id);
 		return data;
 
+	}
+	
+	public void bookingFlight(FlightBooking fb) {
+		String query = "insert into flightbooking(flightId,flightName,name,email,dob,nationality,mobile,address,seat_no,booking_id,pnr_number,price,class) values(?,?,?,?,?,?,?,?,flight_seat_val.nextval,flight_booking_val.nextval,flight_pnr_val.nextval,?,?)";
+		Object[] values = { fb.getFid(),fb.getFname(),fb.getName(),fb.getEmil(),fb.getDob(),fb.getNationality(),fb.getMobile(),fb.getAddr(),fb.getBprice(),fb.getClsValue()};
+		int i = jdbctemp.update(query, values);
+		System.out.println(i);
 	}
 
 }

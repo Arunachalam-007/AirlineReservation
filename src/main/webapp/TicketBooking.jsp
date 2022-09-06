@@ -9,7 +9,7 @@
 <title>Ticket Booking</title>
 </head>
 <body>
-	<form action="bookingpay" method="post">
+	<form>
 		<jsp:include page="Nav.jsp" />
 		<div class="container">
 			<div class="ticket_info">
@@ -44,7 +44,19 @@
 						<li>The latest DGCA guidelines state that it is compulsory to
 							wear a mask that covers the nose and mouth properly while at the
 							airport and on the flight. Any lapse might result in de-boarding.</li>
+							
 					</ol>
+
+					<!-- <input type="checkbox" id="terms" required>
+					<label for="terms">I've read and agree to the terms and conditions.</label>
+					<input type="submit" value="Continue" class="terms_btn"> -->
+
+
+					<%-- <c:forEach var="bvalues" items="${bookingvalues}">
+						<button></button>
+						<a href="bookingpay/${bvalues.fid}" class="terms_btn">Continue</a>
+					</c:forEach> --%>
+
 					<!-- <input type="submit" class="contd_btn" value="Continue"> -->
 				</div>
 
@@ -63,17 +75,19 @@
 
 							<tr>
 								<td>Base Fare</td>
-								<td><span>&#x20B9;${bvalues.price}</span></td>
+								<td><span id="value1">&#x20B9;${bvalues.price}</span></td>
 							</tr>
 
 							<tr>
 								<td>Fee and Surcharges</td>
-								<td><span>&#x20B9; 529</span></td>
+								<td><span id="value2">&#x20B9;${bvalues.price /100*5}</span></td>
 							</tr>
+
+
 
 							<tr>
 								<td>Total Amount</td>
-								<td><span>&#x20B9; 9,102</span></td>
+								<td><span id="result">&#x20B9;${bvalues.price + bvalues.price /100*5}</span></td>
 							</tr>
 
 						</c:forEach>
@@ -81,9 +95,12 @@
 					</tbody>
 
 				</table>
-				<input type="submit" value="Continue" class="pay_btn">
-			</div>
+				<c:forEach var="bvalues" items="${bookingvalues}">
+					<a href="bookingpay/${bvalues.fid}" class="pay_btn">Continue</a>
+					<!-- <input type="submit" value="Continue" class="pay_btn"> -->
 
+				</c:forEach>
+			</div>
 		</div>
 
 	</form>

@@ -3,24 +3,25 @@ package com.example.AirLineReservation.alrdto;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class FlightDTO {
 	private String flightId;
 	private String FlightName;
 	private String flightDeparture;
 //	private String flightDuration;
-	private float start_time;
-	private float end_time;
-	public float getStart_time() {
+	private LocalTime start_time;
+	private LocalTime end_time;
+	public LocalTime getStart_time() {
 		return start_time;
 	}
-	public void setStart_time(float start_time) {
+	public void setStart_time(LocalTime start_time) {
 		this.start_time = start_time;
 	}
-	public float getEnd_time() {
+	public LocalTime getEnd_time() {
 		return end_time;
 	}
-	public void setEnd_time(float end_time) {
+	public void setEnd_time(LocalTime end_time) {
 		this.end_time = end_time;
 	}
 	private String flightArrival;

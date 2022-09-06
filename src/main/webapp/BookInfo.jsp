@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="../Themes/BookInfo.css">
 <title>Flights Data</title>
 
 <style>
@@ -16,7 +15,8 @@
 }
 
 body {
-	background-image: url("../Images/alr.jpg");
+	
+	background-color: hsl(193, 100%, 96%);
 }
 
 .bdetails {
@@ -55,7 +55,7 @@ input {
 	border-bottom-width: 2px;
 }
 
-input:focus,input:valid {
+input:focus,input:valid,textarea {
 	border-color: #9b59b6;
 }
 
@@ -88,15 +88,24 @@ form .res_btn:active {
 </style>
 </head>
 <body>
-<h1>Booking Data</h1>
 
-<form>
+
+<form method="post" action="payticketbooking">
+<jsp:include page="Nav.jsp" />
+<h1>Booking Data</h1>
 <div class="container">
 <div class="bdetails">
 <c:forEach var="fid_val" items="${fid_value}">
 
-<input id="flightId" name="empId" type="text" value="${fid_val.fid}" readonly/>
-<input id="flightId" name="empId" type="text" value="${fid_val.fname}" readonly/>
+<input type="hidden" id="cls_val" name="cls_value" value="${cls_value}">
+
+<input type="hidden" id="bprice" name="bprice" value="${fid_val.price + fid_val.price/100*5}">
+
+<label for="name">Flight Id</label> 
+<input id="flightId" name="fId" type="text" value="${fid_val.fid}" readonly/>
+
+<label for="name">Flight Name</label> 
+<input id="flightId" name="fname" type="text" value="${fid_val.fname}" readonly/>
 
 <label for="name">Name</label> 
 <input type="text"name="name" placeholder="Enter Name">
@@ -104,15 +113,53 @@ form .res_btn:active {
 <input type="email"name="email" placeholder="example@gmail.com">
 <label for="dob">DOB</label> 
 <input type="date"name="dob" placeholder="Enter DOB">
+<label for="nationality">Nationality</label> 
+<input type="text" name="nationality" placeholder="Enter Nationality">
 <label for="mobile">Mobile</label> 
 <input type="text"name="mobile" placeholder="Enter Mobile Number">
 <label for="addr">Address</label> 
-<input type="text"name="addr" placeholder="Enter Address">
-<input type="submit" value="Reserve Flight"> 
+<textarea rows="7" cols="160" name="addr" placeholder="Enter Address"></textarea>
+<input type="submit" value="Reserve Flight" class="res_btn"> 
 </c:forEach>
 </div>
 </div>
 </form>
+
+
+<!-- 
+**************** -->
+ 
+<!-- <form method="post" action="/cgi-bin/show_params.cgi">
+
+	<span id="writeroot"></span>
+
+	<input type="button" onclick="moreFields" value="Add Ticket" />
+	<input type="submit" value="Send form" />
+
+</form>
+
+
+
+****************
+<script type="text/javascript">
+var counter = 0;
+
+function moreFields() {
+	counter++;
+	var newFields = document.getElementById('readroot').cloneNode(true);
+	newFields.id = '';
+	newFields.style.display = 'block';
+	var newField = newFields.childNodes;
+	for (var i=0;i<newField.length;i++) {
+		var theName = newField[i].name
+		if (theName)
+			newField[i].name = theName + counter;
+	}
+	var insertHere = document.getElementById('writeroot');
+	insertHere.parentNode.insertBefore(newFields,insertHere);
+}
+
+window.onload = moreFields;</script>  -->
 
 </body>
 </html>

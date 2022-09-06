@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 
 import com.example.AirLineReservation.alrdaoimpl.FlightDaoImpl;
 import com.example.AirLineReservation.alrdaoimpl.RegisterDaoImpl;
+import com.example.AirLineReservation.alrdto.FlightBookingDTO;
 import com.example.AirLineReservation.alrdto.FlightDTO;
 import com.example.AirLineReservation.alrdto.FlightSearchDTO;
 import com.example.AirLineReservation.alrdto.PassengerDTO;
 import com.example.AirLineReservation.alrmodel.Flight;
+import com.example.AirLineReservation.alrmodel.FlightBooking;
 import com.example.AirLineReservation.alrmodel.FlightSearch;
 import com.example.AirLineReservation.alrmodel.Passenger;
 
@@ -78,5 +80,23 @@ public class ServiceALR {
 		
 //		fdi.searchFlight(fs);
 //		fdi.flightDisplay(fs.getFrom_place(), fs.getBooking_date());
+	}
+	
+	public void bookingFlight(FlightBookingDTO fbdto) {
+		FlightBooking fb=new FlightBooking();
+		
+		fb.setClsValue(fbdto.getBookingclsValue());
+		fb.setBprice(fbdto.getBookingPrice());
+		fb.setFid(fbdto.getBookingFid());
+		fb.setFname(fbdto.getBookingFname());
+		fb.setName(fbdto.getBookingName());
+		fb.setEmil(fbdto.getBookingEmil());
+		fb.setNationality(fbdto.getBookingNationality());
+		fb.setMobile(fbdto.getBookingMobile());
+		fb.setDob(fbdto.getBookingDob());
+		fb.setAddr(fbdto.getBookingAddr());
+		
+		fdi.bookingFlight(fb);
+		
 	}
 }

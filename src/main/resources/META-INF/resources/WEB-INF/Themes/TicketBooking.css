@@ -59,6 +59,30 @@ ol {
 	flex-direction: column;
 	margin-left: 30px;
 }
+.info .terms_btn{
+	height: 45px;
+	width: 100px;
+	margin: 230px 0 0 77px;
+	border-radius: 10px;
+	border: 1px solid black;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 10px;
+	background-color: hsl(322, 100%, 66%);
+	border-radius: 10px;
+	position: absolute;
+	top: 320px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.info .terms_btn:hover {
+	border: 1px solid black;
+	background: transparent;
+	color: black;
+}
 
 /* .contd_btn {
 	height: 45px;
@@ -119,6 +143,7 @@ td {
 	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
 }
+
 
 .ticket_amt .pay_btn {
 	height: 45px;

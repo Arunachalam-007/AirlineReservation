@@ -15,10 +15,10 @@
 		<ul>
 
 
-			<li><a href="#">About</a></li>
+		 	<!-- <li><a href="#">About</a></li>  -->
+		<li><a href="AdminFlight.jsp">Adm</a></li>
 			<li><a href="Contact.jsp">Contact</a></li>
 			<li><a href="Index.jsp" class="active">Home</a></li>
-
 			<li><a href="#" class="nav_left">ALR <span>AirLine
 						Reservation </span></a></li>
 
