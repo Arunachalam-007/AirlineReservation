@@ -22,6 +22,8 @@ public class FlightMapper implements RowMapper<Flight> {
 		String from_place = rs.getString("from_place");
 		String to_place = rs.getString("to_place");
 		String price = rs.getString("price");
+		String start_time=rs.getString("start_time");
+		String end_time=rs.getString("end_time");
 
 		
 		f.setFid(fid);
@@ -31,6 +33,9 @@ public class FlightMapper implements RowMapper<Flight> {
 		f.setFrom_place(from_place);
 		f.setTo_place(to_place);
 		f.setPrice(price);
+		f.setStart_time(start_time);
+		f.setEnd_time(end_time);
+		
 		
 		return f;
 	}

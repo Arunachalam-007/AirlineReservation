@@ -13,13 +13,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-
 
 import com.example.AirLineReservation.alrdaoimpl.RegisterDaoImpl;
 import com.example.AirLineReservation.alrdto.PassengerDTO;
+import com.example.AirLineReservation.alrmodel.Admin;
 import com.example.AirLineReservation.alrmodel.Passenger;
 import com.example.AirLineReservation.alrservice.ServiceALR;
 
@@ -32,6 +34,8 @@ public class RegisterController {
 	@Autowired
 	ServiceALR sALR;
 
+	Admin a = new Admin();
+
 	PassengerDTO pdto = new PassengerDTO();
 
 	Passenger p = new Passenger();
@@ -41,7 +45,6 @@ public class RegisterController {
 			@RequestParam("pmobile") String mobile, @RequestParam("pemail") String email,
 			@RequestParam("puname") String uname, @RequestParam("pwd") String pwd, @RequestParam("pdob") String dob) {
 
-		
 //		p.setName(uname);
 		pdto.setPassengerName(uname);
 //		p.setAddr(addr);
@@ -63,7 +66,7 @@ public class RegisterController {
 //		rd.registerInfo(p);
 
 		sALR.passengerService(pdto);
-		return "Search";
+		return "Search.jsp";
 	}
 
 	/*
@@ -87,15 +90,28 @@ public class RegisterController {
 //		List<Passenger> passenger = jdbctemp.query(query1, new RegisterMapper());
 //		ListIterator<Passenger> itr = passenger.listIterator();
 
-		if (username.equalsIgnoreCase("arunach123") && password.equalsIgnoreCase("Arun@1234")) {
+		if (username.equals(a.getAdminUsername()) && password.equals(a.getAdminPassword())) {
 			session.setAttribute("username", username);
-			return "Search";
-		} else {
-			model.addAttribute("error", "Invalid Account");
-			return "Index";
+			return "AdminDashboard.jsp";
+//		if (username.equalsIgnoreCase("arunach123") && password.equalsIgnoreCase("Arun@1234")) {
+//			session.setAttribute("username", username);
+//			return "Search.jsp";
+		} else if (rd.checkLogin(username,password)) {
+			session.setAttribute("username", username);
+			return "Search.jsp";
 		}
+		else {
+			model.addAttribute("error", "Invalid Account");
+			return "redirect:/Index.jsp";		
+		}
+
+		
 	}
 	
-	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session ) {
+	    session.invalidate();
+	    return "redirect:/login";
+	}
 
 }

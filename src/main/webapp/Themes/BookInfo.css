@@ -5,10 +5,11 @@
 }
 
 body {
-	background-image: url("../Images/alr.jpg");
+	
+	background-color: hsl(193, 100%, 96%);
 }
 
-.pdetails {
+.bdetails {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -24,16 +25,12 @@ body {
 	border-radius: 20px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
-
-/* ********************* */
-
-/* ********************* */
-.pdetails h1 {
+ h1 {
 	text-align: center;
 	margin-bottom: 10px;
 }
 
-.pdetails input {
+input {
 	height: 45px;
 	width: 100%;
 	outline: none;
@@ -44,7 +41,7 @@ body {
 	border-bottom-width: 2px;
 }
 
-.pdetails input:focus, .pdetails input:valid {
+input:focus,input:valid,textarea {
 	border-color: #9b59b6;
 }
 
@@ -54,25 +51,8 @@ label {
 	font-weight: 50;
 }
 
-.act {
-	text-decoration: none;
-	font-size: 20px;
-	color: black;
-	cursor: pointer;
-	margin-left: 230px;
-	position: absolute;
-	top: 880px;
-}
 
-.act:hover {
-	color: #3E619B;
-}
-
-/* form .signup_btn {
-	height: 45px;
-	margin: 35px 0
-} */
-form .signup_btn {
+form .res_btn {
 	height: 45px;
 	margin: 35px 0;
 	border-radius: 10px;
@@ -86,7 +66,7 @@ form .signup_btn {
 	border-radius: 10px;
 }
 
-form .signup_btn:active {
+form .res_btn:active {
 	background-color: hsl(322, 100%, 66%);
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);

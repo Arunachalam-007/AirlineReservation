@@ -5,6 +5,27 @@ import java.sql.Date;
 public class FlightBookingDTO {
 	private String bookingPrice;
 	private String bookingclsValue;
+	private String bookingIdentity;
+	private String bookingPNR;
+	private String bookingSeatno;
+	public String getBookingIdentity() {
+		return bookingIdentity;
+	}
+	public void setBookingIdentity(String bookingIdentity) {
+		this.bookingIdentity = bookingIdentity;
+	}
+	public String getBookingPNR() {
+		return bookingPNR;
+	}
+	public void setBookingPNR(String bookingPNR) {
+		this.bookingPNR = bookingPNR;
+	}
+	public String getBookingSeatno() {
+		return bookingSeatno;
+	}
+	public void setBookingSeatno(String bookingSeatno) {
+		this.bookingSeatno = bookingSeatno;
+	}
 	public String getBookingclsValue() {
 		return bookingclsValue;
 	}
@@ -18,7 +39,7 @@ public class FlightBookingDTO {
 		this.bookingPrice = bookingPrice;
 	}
 	private String bookingName;
-	private String bookingEmil;
+	private String bookingEmail;
 	private Date bookingDob;
 	private String bookingNationality;
 	private String bookingMobile;
@@ -40,9 +61,11 @@ public class FlightBookingDTO {
 	@Override
 	public String toString() {
 		return "FlightBookingDTO [bookingPrice=" + bookingPrice + ", bookingclsValue=" + bookingclsValue
-				+ ", bookingName=" + bookingName + ", bookingEmil=" + bookingEmil + ", bookingDob=" + bookingDob
-				+ ", bookingNationality=" + bookingNationality + ", bookingMobile=" + bookingMobile + ", bookingAddr="
-				+ bookingAddr + ", bookingFid=" + bookingFid + ", bookingFname=" + bookingFname + "]";
+				+ ", bookingIdentity=" + bookingIdentity + ", bookingPNR=" + bookingPNR + ", bookingSeatno="
+				+ bookingSeatno + ", bookingName=" + bookingName + ", bookingEmail=" + bookingEmail + ", bookingDob="
+				+ bookingDob + ", bookingNationality=" + bookingNationality + ", bookingMobile=" + bookingMobile
+				+ ", bookingAddr=" + bookingAddr + ", bookingFid=" + bookingFid + ", bookingFname=" + bookingFname
+				+ "]";
 	}
 	public String getBookingName() {
 		return bookingName;
@@ -50,11 +73,11 @@ public class FlightBookingDTO {
 	public void setBookingName(String bookingName) {
 		this.bookingName = bookingName;
 	}
-	public String getBookingEmil() {
-		return bookingEmil;
+	public String getBookingEmail() {
+		return bookingEmail;
 	}
-	public void setBookingEmil(String bookingEmil) {
-		this.bookingEmil = bookingEmil;
+	public void setBookingEmail(String bookingEmail) {
+		this.bookingEmail = bookingEmail;
 	}
 	public Date getBookingDob() {
 		return bookingDob;

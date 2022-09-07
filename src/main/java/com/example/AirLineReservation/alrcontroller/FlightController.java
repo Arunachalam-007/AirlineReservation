@@ -43,6 +43,8 @@ public class FlightController {
 	FlightSearchDTO fsdto = new FlightSearchDTO();
 
 	FlightBookingDTO fbdto = new FlightBookingDTO();
+	
+	FlightBooking fb=new FlightBooking();
 
 	// Admin Adding flights
 	@PostMapping("/adminflight")
@@ -54,18 +56,17 @@ public class FlightController {
 
 		fdto.setFlightId(fid);
 		fdto.setFlightName(fname);
-
 		fdto.setFlightDeparture(departure);
 		fdto.setFlightArrival(arrival);
 
-		LocalTime start_time_value = LocalTime.parse(start_time);
-		fdto.setStart_time(start_time_value);
-//		fdto.setStart_time(start_time);
-//		fdto.setEnd_time(end_time);
+//		LocalTime start_time_value = LocalTime.parse(start_time);
+//		fdto.setStart_time(start_time_value);
+		fdto.setStart_time(start_time);
+		fdto.setEnd_time(end_time);
 
 		/* String endTimeString=end_time.toString(); */
-		LocalTime end_time_value = LocalTime.parse(end_time);
-		fdto.setEnd_time(end_time_value);
+//		LocalTime end_time_value = LocalTime.parse(end_time);
+//		fdto.setEnd_time(end_time_value);
 
 		fdto.setFlightFromPlace(from_place);
 		fdto.setFlightToPlace(to_place);
@@ -74,7 +75,7 @@ public class FlightController {
 
 		sALR.flightService(fdto);
 
-		return "Index";
+		return "Index.jsp";
 
 	}
 
@@ -84,16 +85,23 @@ public class FlightController {
 
 		List<Flight> l = fdi.flightDisplay(from_place, bdate);
 		mod.addAttribute("infos", l);
-		return "FlightDisplay";
+		return "FlightDisplay.jsp";
 
 	}
 
-	@RequestMapping(value = "/ticketbook/{fid}")
-	public String bookingTicket(@PathVariable String fid, Model mod) {
+//	@RequestMapping(value = "/ticketbook/{fid}")
 
+//	public String bookingTicket(@PathVariable String fid, Model mod) {
+	@GetMapping("/ticketbook")
+	public String bookingTicket(@RequestParam("id") String fid,@RequestParam("cls") String cls, Model mod) {
+
+	
 		List<Flight> f = fdi.ticketBooking(fid);
 		mod.addAttribute("bookingvalues", f);
-		return "TicketBooking";
+		
+		int seatAvailResult=fdi.seatAvailCheck(fid,cls);
+		mod.addAttribute("seatAvailResult",seatAvailResult);
+		return "TicketBooking.jsp";
 	}
 
 	@PostMapping("/searchflightwithoutlogin")
@@ -101,11 +109,13 @@ public class FlightController {
 			@RequestParam("to_place") String to_place, @RequestParam("bdate") String bdate, Model mod) {
 		List<Flight> l = fdi.flightDisplay1(from_place, bdate);
 		mod.addAttribute("infos", l);
-		return "FlightDisplay";
+		return "FlightDisplay.jsp";
 	}
 
-	@RequestMapping(value = "/ticketbook/bookingpay/{fid}")
-	public String ticketBookingPay(@PathVariable String fid, Model mod) {
+//	@RequestMapping(value = "/ticketbook/bookingpay/{fid}")
+	@GetMapping("/bookingpay")
+//	public String ticketBookingPay(@PathVariable String fid, Model mod) {
+	public String ticketBookingPay(@RequestParam("id") String fid, Model mod) {
 
 		/*
 		 * mod.addAttribute("fid_value", l); List<Flight> l =
@@ -113,18 +123,19 @@ public class FlightController {
 		 */
 		List<Flight> f = fdi.ticketBooking(fid);
 		mod.addAttribute("fid_value", f);
-		return "BookInfo";
+		return "BookInfo.jsp";
 	}
 
-	@PostMapping("/ticketbook/bookingpay/payticketbooking")
+//	@PostMapping("/ticketbook/bookingpay/payticketbooking")
+	@PostMapping("/payticketbooking")
 	public String bookingInfoPay(@RequestParam("cls_value") String cls, @RequestParam("bprice") String bprice,
 			@RequestParam("fId") String fid, @RequestParam("fname") String fname, @RequestParam("name") String name,
 			@RequestParam("email") String email, @RequestParam("dob") String dob,
 			@RequestParam("nationality") String nationality, @RequestParam("mobile") String mobile,
-			@RequestParam("addr") String addr) {
+			@RequestParam("addr") String addr,Model mod) {
 
-		fbdto.setBookingclsValue(cls);
-
+//		fbdto.setBookingclsValue(cls);
+		fb.setClsValue(cls);
 		try {
 			if (cls.equals("Economy")) {
 				bprice = bprice;
@@ -155,24 +166,49 @@ public class FlightController {
 			e.printStackTrace();
 		}
 
-		fbdto.setBookingPrice(bprice);
-		fbdto.setBookingFid(fid);
-		fbdto.setBookingFname(fname);
-		fbdto.setBookingName(name);
-		fbdto.setBookingEmil(email);
+		fb.setBprice(bprice);
+		fb.setFid(fid);
+		fb.setFname(fname);
+		fb.setName(name);
+		fb.setEmail(email);
+//		fbdto.setBookingPrice(bprice);
+//		fbdto.setBookingFid(fid);
+//		fbdto.setBookingFname(fname);
+//		fbdto.setBookingName(name);
+//		fbdto.setBookingEmail(email);
 
 		LocalDate dob1 = LocalDate.parse(dob);
 		Date date = Date.valueOf(dob1);
-		fbdto.setBookingDob(date);
+//		fbdto.setBookingDob(date);
+		fb.setDob(date);
 
-		fbdto.setBookingNationality(nationality);
-		fbdto.setBookingMobile(mobile);
-		fbdto.setBookingAddr(addr);
+		fb.setNationality(nationality);
+		fb.setMobile(mobile);
+		fb.setAddr(addr);
+//		fbdto.setBookingNationality(nationality);
+//		fbdto.setBookingMobile(mobile);
+//		fbdto.setBookingAddr(addr);
 
-		sALR.bookingFlight(fbdto);
+//		sALR.bookingFlight(fbdto);
+		
+		fdi.bookingFlight(fb, cls);
+		
+		fdi.seatCountDecrease(fid,cls);
+//		int seatAvailVal=fdi.bookingFlight(fb, cls);
+//		mod.addAttribute("seatAvailVal",seatAvailVal);
 
-		return "Index";
+		return "Index.jsp";
+//		return "Search.jsp";
 	}
+
+	@GetMapping("/bookedticketinfoadmin")
+	public String bookedInfoAdmin(Model mod) {
+		List<FlightBooking> fb = fdi.flightInfoAdmin();
+		mod.addAttribute("bookedticketval", fb);
+		return "FlightInfo.jsp";
+	}
+	
+	
 
 //	@PostMapping("/displayflight")
 //	public String displayDetails(Model mod) {

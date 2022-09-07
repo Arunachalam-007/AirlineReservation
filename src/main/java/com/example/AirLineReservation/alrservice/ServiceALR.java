@@ -85,18 +85,19 @@ public class ServiceALR {
 	public void bookingFlight(FlightBookingDTO fbdto) {
 		FlightBooking fb=new FlightBooking();
 		
-		fb.setClsValue(fbdto.getBookingclsValue());
-		fb.setBprice(fbdto.getBookingPrice());
-		fb.setFid(fbdto.getBookingFid());
-		fb.setFname(fbdto.getBookingFname());
-		fb.setName(fbdto.getBookingName());
-		fb.setEmil(fbdto.getBookingEmil());
-		fb.setNationality(fbdto.getBookingNationality());
-		fb.setMobile(fbdto.getBookingMobile());
-		fb.setDob(fbdto.getBookingDob());
-		fb.setAddr(fbdto.getBookingAddr());
+//		fb.setClsValue(fbdto.getBookingclsValue());
+//		fb.setBprice(fbdto.getBookingPrice());
+//		fb.setFid(fbdto.getBookingFid());
+//		fb.setFname(fbdto.getBookingFname());
+//		fb.setName(fbdto.getBookingName());
+//		fb.setEmail(fbdto.getBookingEmail());
+//		fb.setNationality(fbdto.getBookingNationality());
+//		fb.setMobile(fbdto.getBookingMobile());
+//		fb.setDob(fbdto.getBookingDob());
+//		fb.setAddr(fbdto.getBookingAddr());
+//		
+//		int seatAvailVal=fdi.bookingFlight(fb,fb.getClsValue());
 		
-		fdi.bookingFlight(fb);
 		
 	}
 }

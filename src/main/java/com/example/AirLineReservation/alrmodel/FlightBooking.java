@@ -6,7 +6,37 @@ import java.time.LocalTime;
 public class FlightBooking {
 	private String bprice;
 	private String clsValue;
+	private String bookingId;
+	private String pnr;
+	private String seatNumber;
+	private int seatAvail=40;
+	
+	public int getSeatAvail() {
+		return seatAvail;
+	}
+	public void setSeatAvail(int seatAvail) {
+		this.seatAvail = seatAvail;
+	}
+	public String getBookingId() {
+		return bookingId;
+	}
+	public void setBookingId(String bookingId) {
+		this.bookingId = bookingId;
+	}
+	public String getPnr() {
+		return pnr;
+	}
+	public void setPnr(String pnr) {
+		this.pnr = pnr;
+	}
 
+	
+	public String getSeatNumber() {
+		return seatNumber;
+	}
+	public void setSeatNumber(String seatNumber) {
+		this.seatNumber = seatNumber;
+	}
 	/* private LocalTime */
 	public String getBprice() {
 		return bprice;
@@ -35,7 +65,7 @@ public class FlightBooking {
 		this.fname = fname;
 	}
 	private String name;
-	private String emil;
+	private String email;
 	private Date dob;
 	private String nationality;
 	private String mobile;
@@ -48,15 +78,16 @@ public class FlightBooking {
 	}
 	@Override
 	public String toString() {
-		return "FlightBooking [bprice=" + bprice + ", clsValue=" + clsValue + ", fid=" + fid + ", fname=" + fname
-				+ ", name=" + name + ", emil=" + emil + ", dob=" + dob + ", nationality=" + nationality + ", mobile="
+		return "FlightBooking [bprice=" + bprice + ", clsValue=" + clsValue + ", bookingId=" + bookingId + ", pnr="
+				+ pnr + ", seatNumber=" + seatNumber + ", seatAvail=" + seatAvail + ", fid=" + fid + ", fname=" + fname
+				+ ", name=" + name + ", email=" + email + ", dob=" + dob + ", nationality=" + nationality + ", mobile="
 				+ mobile + ", addr=" + addr + "]";
 	}
-	public String getEmil() {
-		return emil;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmil(String emil) {
-		this.emil = emil;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public Date getDob() {
 		return dob;

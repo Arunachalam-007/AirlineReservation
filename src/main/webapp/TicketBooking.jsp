@@ -10,7 +10,7 @@
 </head>
 <body>
 	<form>
-		<jsp:include page="Nav.jsp" />
+		<jsp:include page="PassengerNav.jsp" />
 		<div class="container">
 			<div class="ticket_info">
 				<h1>Ticket Details</h1>
@@ -21,13 +21,16 @@
 							<td id="pfname" style="border-bottom-style: hidden;">${bvalues.fname}</td>
 							<td style="border-bottom-style: hidden;">${bvalues.departure}</td>
 							<td style="border-bottom-style: hidden;">${bvalues.from_place}</td>
+							<td style="border-bottom-style: hidden;">${bvalues.start_time}</td>
+							<td style="border-bottom-style: hidden;">${bvalues.end_time}</td>
+							<td style="border-bottom-style: hidden;">${seatAvailResult} Ticket's Left </td>
 						</tr>
 					</table>
 				</c:forEach>
 
 				<div class="info">
 					<h2>Important Information</h2>
-					<h3>Check travel guidelines issued by Tamilnadu below:</h3>
+					<h3>Check travel guidelines issued by India below:</h3>
 					<ol>
 						<li>COVID test/vaccination rules: All travellers must either
 							carry their COVID vaccination certificate (2 doses taken) or a
@@ -96,7 +99,8 @@
 
 				</table>
 				<c:forEach var="bvalues" items="${bookingvalues}">
-					<a href="bookingpay/${bvalues.fid}" class="pay_btn">Continue</a>
+					<%-- <a href="bookingpay/${bvalues.fid}" class="pay_btn">Continue</a> --%>
+					<a href="/bookingpay?id=${bvalues.fid}" class="pay_btn">Continue</a>
 					<!-- <input type="submit" value="Continue" class="pay_btn"> -->
 
 				</c:forEach>

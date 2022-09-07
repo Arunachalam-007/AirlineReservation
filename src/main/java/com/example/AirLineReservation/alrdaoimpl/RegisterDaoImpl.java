@@ -80,6 +80,31 @@ public class RegisterDaoImpl implements RegisterDao {
 //		return passenger;
 
 	}
+	
+	public boolean checkLogin(String uname,String pword) {
+		String query="select username from alrpassenger where username=? and password=?";
+		Object[] values= {uname,pword};
+		String result;
+		
+		try {	
+			result=jdbctemp.queryForObject(query,String.class,values);
+			System.out.println(result);
+			if(result.equals(uname)) {
+			//if(result>0) {
+				return true;
+			}
+			else {
+				return false;
+			}
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+		
+		
+	}
 
 	/*
 	 * public void registerInfo(Passenger p) {

@@ -5,93 +5,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="./Themes/BookInfo.css">
 <title>Flights Data</title>
-
-<style>
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	
-	background-color: hsl(193, 100%, 96%);
-}
-
-.bdetails {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.container {
-	margin: 15px;
-	max-width: 700px;
-	background-color: hsl(193, 100%, 96%);
-	padding: 25px 30px;
-	height: 100%;
-	margin: 20px 0px 10px 100px;
-	border-radius: 20px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* ********************* */
-
-/* ********************* */
- h1 {
-	text-align: center;
-	margin-bottom: 10px;
-}
-
-input {
-	height: 45px;
-	width: 100%;
-	outline: none;
-	font-size: 16px;
-	border-radius: 5px;
-	padding-left: 15px;
-	border: 1px solid #ccc;
-	border-bottom-width: 2px;
-}
-
-input:focus,input:valid,textarea {
-	border-color: #9b59b6;
-}
-
-label {
-	font-size: 18px;
-	color: black;
-	font-weight: 50;
-}
-
-
-form .res_btn {
-	height: 45px;
-	margin: 35px 0;
-	border-radius: 10px;
-	border: none;
-	color: #fff;
-	font-size: 18px;
-	font-weight: 500;
-	cursor: pointer;
-	padding: 10px;
-	background-color: hsl(322, 100%, 66%);
-	border-radius: 10px;
-}
-
-form .res_btn:active {
-	background-color: hsl(322, 100%, 66%);
-	box-shadow: 0 5px #666;
-	transform: translateY(4px);
-}
-</style>
 </head>
 <body>
 
 
 <form method="post" action="payticketbooking">
-<jsp:include page="Nav.jsp" />
+<jsp:include page="PassengerNav.jsp" />
 <h1>Booking Data</h1>
 <div class="container">
 <div class="bdetails">
@@ -101,8 +22,8 @@ form .res_btn:active {
 
 <input type="hidden" id="bprice" name="bprice" value="${fid_val.price + fid_val.price/100*5}">
 
-<label for="name">Flight Id</label> 
-<input id="flightId" name="fId" type="text" value="${fid_val.fid}" readonly/>
+ 
+<input id="flightId" name="fId" value="${fid_val.fid}" type="hidden" readonly/>
 
 <label for="name">Flight Name</label> 
 <input id="flightId" name="fname" type="text" value="${fid_val.fname}" readonly/>
@@ -124,42 +45,6 @@ form .res_btn:active {
 </div>
 </div>
 </form>
-
-
-<!-- 
-**************** -->
- 
-<!-- <form method="post" action="/cgi-bin/show_params.cgi">
-
-	<span id="writeroot"></span>
-
-	<input type="button" onclick="moreFields" value="Add Ticket" />
-	<input type="submit" value="Send form" />
-
-</form>
-
-
-
-****************
-<script type="text/javascript">
-var counter = 0;
-
-function moreFields() {
-	counter++;
-	var newFields = document.getElementById('readroot').cloneNode(true);
-	newFields.id = '';
-	newFields.style.display = 'block';
-	var newField = newFields.childNodes;
-	for (var i=0;i<newField.length;i++) {
-		var theName = newField[i].name
-		if (theName)
-			newField[i].name = theName + counter;
-	}
-	var insertHere = document.getElementById('writeroot');
-	insertHere.parentNode.insertBefore(newFields,insertHere);
-}
-
-window.onload = moreFields;</script>  -->
 
 </body>
 </html>

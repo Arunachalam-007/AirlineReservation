@@ -12,10 +12,13 @@
 </head>
 <body>
 	<form>
-		<jsp:include page="Nav.jsp" />
-		
+
+		<%-- <jsp:include page="Nav.jsp" /> --%>
+		<jsp:include page="PassengerNav.jsp" />
+
 		<%-- <input type="hidden" value="${param.cls}" id="cls" name="dd_value"> --%>
-		<c:set var="cls_value" scope="session" value="${param.cls}"/>
+		<c:set var="cls_value" scope="session" value="${param.cls}" />
+
 		<table>
 			<tr>
 				<th>Flight ID</th>
@@ -38,7 +41,8 @@
 					<td>${flight.from_place}</td>
 					<td>${flight.to_place}</td>
 					<td>&#x20B9; ${flight.price}</td>
-					<td><a href="ticketbook/${flight.fid}">Book</a></td>
+					<%-- <td><a href="ticketbook/${flight.fid}">Book</a></td> --%>
+					<td><a href="/ticketbook?id=${flight.fid}&cls=${cls_value}">Book</a></td>
 
 				</tr>
 			</c:forEach>

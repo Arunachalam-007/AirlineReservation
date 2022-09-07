@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,9 @@
 		<div class="container">
 			<div class="fdetails">
 
+				<%-- <c:forEach var="seatAvailValue" items="${seatAvailVal}">
+					<c:set var="seatAvail" scope="session" value="${seatAvailValue}" />
+				</c:forEach> --%>
 				<h1>Check Availability</h1>
 				<label for="cls">Choose a Class</label> <select name="cls" id="cls">
 					<option value="Business">Business</option>
