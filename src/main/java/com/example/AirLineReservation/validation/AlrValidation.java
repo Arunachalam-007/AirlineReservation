@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.alrvalidation;
+package com.example.AirLineReservation.validation;
 
 public class AlrValidation {
 

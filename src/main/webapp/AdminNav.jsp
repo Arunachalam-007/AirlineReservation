@@ -8,15 +8,15 @@
 <title>Admin</title>
 </head>
 <body>
-	<form method="get">
+	<!-- <form method="get"> -->
 		<div class="nav_menu">
 
 			<ul id="nav_elements">
 
 				<li><a href="/logout">Logout</a></li>
 				<li><a href="Contact.jsp">Feedback</a></li>
-				<li><a href="Index.jsp">Cancelled Ticket</a></li>
-				<li><a href="bookedticketinfoadmin">Booked Ticket</a></li>
+				<!-- <li><a href="Index.jsp">Cancelled Ticket</a></li> -->
+				<li><a href="payticketbooking">Booked Ticket</a></li> 
 				<li><a href="Index.jsp">Passengers</a></li>
 				<li><a href="AdminFlight.jsp">Flight</a></li>
 				<li><a href="Index.jsp">Home</a></li>
@@ -27,6 +27,6 @@
 			</ul>
 
 		</div>
-	</form>
+	<!-- </form> -->
 </body>
 </html>

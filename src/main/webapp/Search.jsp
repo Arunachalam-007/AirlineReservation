@@ -13,10 +13,14 @@
 	<form action="flightsearch" method="post">
 		<!-- <form action="Validator.jsp"> -->
 
-		<jsp:include page="Nav.jsp" />
+		<%-- <jsp:include page="Nav.jsp" /> --%>
+		<jsp:include page="PassengerNav.jsp" />
 		<div class="container">
 			<div class="fdetails">
 
+				<c:set var="uname_value" scope="session" value="${param.username}" />
+
+				
 				<%-- <c:forEach var="seatAvailValue" items="${seatAvailVal}">
 					<c:set var="seatAvail" scope="session" value="${seatAvailValue}" />
 				</c:forEach> --%>
@@ -33,7 +37,7 @@
 					pattern="[A-Z]{1}[A-Za-z]{4, 18}"
 					title="Place should contain letters and white spaces" required>
 				<label for="bdate">Booking Date</label> <input type="date"
-					name="bdate" placeholder="Enter Booking Date"
+					name="bookingDate" placeholder="Enter Booking Date"
 					pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
 					title="Please enter the correct format dd-MM-yy" required>
 				<input type="submit" value="Search" class="search_btn">

@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.alrmapper;
+package com.example.AirLineReservation.mapper;
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.example.AirLineReservation.alrmodel.FlightBooking;
+import com.example.AirLineReservation.model.FlightBooking;
 
 public class FlightBookingMapper implements RowMapper<FlightBooking>{
 
@@ -21,11 +21,12 @@ public class FlightBookingMapper implements RowMapper<FlightBooking>{
 		Date dob=rs.getDate("dob");
 		String nationality=rs.getString("nationality");
 		String mobile=rs.getString("mobile");
-		String addr=rs.getString("address");
+		String address=rs.getString("address");
 		String bookingId=rs.getString("booking_id");
 		String seatNumber=rs.getString("seat_no");
 		String pnr=rs.getString("pnr_number");
-		int seatAvail=rs.getInt("seat");
+		int seatAvailability=rs.getInt("seat");
+		String uname=rs.getString("uname");
 		
 		fb.setFid(fid);
 		fb.setFname(fname);
@@ -34,11 +35,12 @@ public class FlightBookingMapper implements RowMapper<FlightBooking>{
 		fb.setDob(dob);
 		fb.setNationality(nationality);
 		fb.setMobile(mobile);
-		fb.setAddr(addr);
+		fb.setAddress(address);
 		fb.setBookingId(bookingId);
 		fb.setSeatNumber(seatNumber);
 		fb.setPnr(pnr);
-		fb.setSeatAvail(seatAvail);
+		fb.setSeatAvailability(seatAvailability);
+		fb.setUserName(uname);
 		
 		
 		return fb;

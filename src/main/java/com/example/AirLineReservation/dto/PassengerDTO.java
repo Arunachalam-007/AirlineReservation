@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.alrdto;
+package com.example.AirLineReservation.dto;
 
 import java.sql.Date;
 
@@ -9,13 +9,13 @@ public class PassengerDTO {
 	private String passengerEmail;
 	private String passengerUsername;
 	private String passengerPassword;
-	private Date passengerDob;
+	private Date passengerDateOfBirth;
 	@Override
 	public String toString() {
 		return "PassengerDTO [passengerName=" + passengerName + ", passengerAddr=" + passengerAddr
 				+ ", passengerMobile=" + passengerMobile + ", passengerEmail=" + passengerEmail + ", passengerUsername="
-				+ passengerUsername + ", passengerPassword=" + passengerPassword + ", passengerDob=" + passengerDob
-				+ "]";
+				+ passengerUsername + ", passengerPassword=" + passengerPassword + ", passengerDateOfBirth="
+				+ passengerDateOfBirth + "]";
 	}
 	public String getPassengerName() {
 		return passengerName;
@@ -53,11 +53,11 @@ public class PassengerDTO {
 	public void setPassengerPassword(String passengerPassword) {
 		this.passengerPassword = passengerPassword;
 	}
-	public Date getPassengerDob() {
-		return passengerDob;
+	public Date getPassengerDateOfBirth() {
+		return passengerDateOfBirth;
 	}
-	public void setPassengerDob(Date passengerDob) {
-		this.passengerDob = passengerDob;
+	public void setPassengerDateOfBirth(Date passengerDateOfBirth) {
+		this.passengerDateOfBirth = passengerDateOfBirth;
 	}
 
 }

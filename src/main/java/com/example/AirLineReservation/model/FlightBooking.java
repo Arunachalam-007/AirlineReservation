@@ -1,22 +1,16 @@
-package com.example.AirLineReservation.alrmodel;
+package com.example.AirLineReservation.model;
 
 import java.sql.Date;
-import java.time.LocalTime;
 
 public class FlightBooking {
-	private String bprice;
-	private String clsValue;
+	private String bookingPrice;
+	private String bookingClass;
 	private String bookingId;
 	private String pnr;
 	private String seatNumber;
-	private int seatAvail=40;
+	private String userName;
+	private int seatAvailability=40;
 	
-	public int getSeatAvail() {
-		return seatAvail;
-	}
-	public void setSeatAvail(int seatAvail) {
-		this.seatAvail = seatAvail;
-	}
 	public String getBookingId() {
 		return bookingId;
 	}
@@ -34,24 +28,17 @@ public class FlightBooking {
 	public String getSeatNumber() {
 		return seatNumber;
 	}
+	public String getBookingPrice() {
+		return bookingPrice;
+	}
+	public void setBookingPrice(String bookingPrice) {
+		this.bookingPrice = bookingPrice;
+	}
 	public void setSeatNumber(String seatNumber) {
 		this.seatNumber = seatNumber;
 	}
-	/* private LocalTime */
-	public String getBprice() {
-		return bprice;
-	}
-	public void setBprice(String bprice) {
-		this.bprice = bprice;
-	}
 	private String fid;
 	private String fname;
-	public String getClsValue() {
-		return clsValue;
-	}
-	public void setClsValue(String clsValue) {
-		this.clsValue = clsValue;
-	}
 	public String getFid() {
 		return fid;
 	}
@@ -69,7 +56,7 @@ public class FlightBooking {
 	private Date dob;
 	private String nationality;
 	private String mobile;
-	private String addr;
+	private String address;
 	public String getName() {
 		return name;
 	}
@@ -78,10 +65,30 @@ public class FlightBooking {
 	}
 	@Override
 	public String toString() {
-		return "FlightBooking [bprice=" + bprice + ", clsValue=" + clsValue + ", bookingId=" + bookingId + ", pnr="
-				+ pnr + ", seatNumber=" + seatNumber + ", seatAvail=" + seatAvail + ", fid=" + fid + ", fname=" + fname
-				+ ", name=" + name + ", email=" + email + ", dob=" + dob + ", nationality=" + nationality + ", mobile="
-				+ mobile + ", addr=" + addr + "]";
+		return "FlightBooking [bookingPrice=" + bookingPrice + ", bookingClass=" + bookingClass + ", bookingId="
+				+ bookingId + ", pnr=" + pnr + ", seatNumber=" + seatNumber + ", userName=" + userName
+				+ ", seatAvailability=" + seatAvailability + ", fid=" + fid + ", fname=" + fname + ", name=" + name
+				+ ", email=" + email + ", dob=" + dob + ", nationality=" + nationality + ", mobile=" + mobile
+				+ ", addr=" + address + "]";
+	}
+	public String getBookingClass() {
+		return bookingClass;
+	}
+	public void setBookingClass(String bookingClass) {
+		this.bookingClass = bookingClass;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	public int getSeatAvailability() {
+		return seatAvailability;
+	}
+	public void setSeatAvailability(int seatAvailability) {
+		this.seatAvailability = seatAvailability;
 	}
 	public String getEmail() {
 		return email;
@@ -107,11 +114,11 @@ public class FlightBooking {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	public String getAddr() {
-		return addr;
+	public String getAddress() {
+		return address;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 

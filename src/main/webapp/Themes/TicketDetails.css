@@ -31,7 +31,7 @@ body {
 /* ************** */
  table {
 	border-collapse: collapse;
-	width: 58%;
+	width: 70%;
 	display: block;
 	height: 400px;
 	margin: 50px auto;
@@ -57,7 +57,7 @@ tbody tr:hover {
 }
 
 td {
-	padding: 8px;
+	padding: 13px;
 	/* text-align: left; */
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
@@ -86,13 +86,15 @@ thead tr:nth-child(1) th {
 	z-index: 10;
 }
 
-td button {
+td a {
 	border: none;
 	padding: 13px;
 	background: transparent;
+	text-decoration: none;
+	color: black;
 }
 
-td button:hover {
+td a:hover {
 	background-color: hsl(322, 100%, 66%);
 	border-radius: 20px;
 	cursor: pointer;

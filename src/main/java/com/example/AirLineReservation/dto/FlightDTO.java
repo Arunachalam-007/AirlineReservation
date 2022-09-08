@@ -1,17 +1,19 @@
-package com.example.AirLineReservation.alrdto;
+package com.example.AirLineReservation.dto;
 
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class FlightDTO {
 	private String flightId;
 	private String FlightName;
 	private String flightDeparture;
-//	private String flightDuration;
 	private String start_time;
 	private String end_time;
+	private int flightSeat;
+	public int getFlightSeat() {
+		return flightSeat;
+	}
+	public void setFlightSeat(int flightSeat) {
+		this.flightSeat = flightSeat;
+	}
 	public String getStart_time() {
 		return start_time;
 	}
@@ -42,9 +44,9 @@ public class FlightDTO {
 	@Override
 	public String toString() {
 		return "FlightDTO [flightId=" + flightId + ", FlightName=" + FlightName + ", flightDeparture=" + flightDeparture
-				+ ", start_time=" + start_time + ", end_time=" + end_time + ", flightArrival=" + flightArrival
-				+ ", flightFromPlace=" + flightFromPlace + ", flightToPlace=" + flightToPlace + ", Price=" + Price
-				+ "]";
+				+ ", start_time=" + start_time + ", end_time=" + end_time + ", flightSeat=" + flightSeat
+				+ ", flightArrival=" + flightArrival + ", flightFromPlace=" + flightFromPlace + ", flightToPlace="
+				+ flightToPlace + ", Price=" + Price + "]";
 	}
 	public String getFlightId() {
 		return flightId;
@@ -64,12 +66,6 @@ public class FlightDTO {
 	public void setFlightDeparture(String flightDeparture) {
 		this.flightDeparture = flightDeparture;
 	}
-//	public String getFlightDuration() {
-//		return flightDuration;
-//	}
-//	public void setFlightDuration(String flightDuration) {
-//		this.flightDuration = flightDuration;
-//	}
 	public String getFlightArrival() {
 		return flightArrival;
 	}

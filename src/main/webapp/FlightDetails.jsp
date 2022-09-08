@@ -24,7 +24,7 @@
 					pattern="[A-Z]{1}[A-Za-z]{4, 18}"
 					title="Place should contain letters and white spaces" required>
 				<label for="bdate">Booking Date</label> <input type="date"
-					name="bdate" placeholder="Enter Booking Date"> <input
+					name="bookingDate" placeholder="Enter Booking Date"> <input
 					type="submit" value="Search" class="search_btn">
 			</div>
 

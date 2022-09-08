@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.alrmodel;
+package com.example.AirLineReservation.model;
 
 public class FlightSearch {
 

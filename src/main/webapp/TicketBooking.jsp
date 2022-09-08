@@ -16,16 +16,41 @@
 				<h1>Ticket Details</h1>
 				<c:forEach var="bvalues" items="${bookingvalues}">
 					<%-- 	<c:out value="${bvalues.fname}"/> --%>
-					<table border="0" class="booking_table">
+
+					<div class="booking_table">
+						<p id="fname">${bvalues.flightName}</p>
+						<div class="depart-left">
+							<p id="from">${bvalues.from_place}</p>
+							<p id="depart">${bvalues.departure}</p>
+
+						</div>
+						<p id="start_time">${bvalues.start_time}</p>
+						<p id="to_link">&nbsp;&nbsp;---------------&nbsp;&nbsp;</p>
+						<p id="end_time">${bvalues.end_time}</p>
+						<div class="arrival_right">
+							<p id="to_place">${bvalues.to_place}</p>
+							<p id="arrival">${bvalues.arrival}</p>
+
+						</div>
+						<p id="seat_avl">${seatAvailResult}Ticket'sLeft</p>
+					</div>
+					<%-- <table border="0" class="booking_table">
 						<tr>
+						
 							<td id="pfname" style="border-bottom-style: hidden;">${bvalues.fname}</td>
 							<td style="border-bottom-style: hidden;">${bvalues.departure}</td>
 							<td style="border-bottom-style: hidden;">${bvalues.from_place}</td>
 							<td style="border-bottom-style: hidden;">${bvalues.start_time}</td>
+							
+							
 							<td style="border-bottom-style: hidden;">${bvalues.end_time}</td>
+							<td style="border-bottom-style: hidden;">${bvalues.arrival}</td>
+							<td style="border-bottom-style: hidden;">${bvalues.to_place}</td>
+							
+							
 							<td style="border-bottom-style: hidden;">${seatAvailResult} Ticket's Left </td>
 						</tr>
-					</table>
+					</table> --%>
 				</c:forEach>
 
 				<div class="info">
@@ -47,7 +72,7 @@
 						<li>The latest DGCA guidelines state that it is compulsory to
 							wear a mask that covers the nose and mouth properly while at the
 							airport and on the flight. Any lapse might result in de-boarding.</li>
-							
+
 					</ol>
 
 					<!-- <input type="checkbox" id="terms" required>
@@ -100,7 +125,7 @@
 				</table>
 				<c:forEach var="bvalues" items="${bookingvalues}">
 					<%-- <a href="bookingpay/${bvalues.fid}" class="pay_btn">Continue</a> --%>
-					<a href="/bookingpay?id=${bvalues.fid}" class="pay_btn">Continue</a>
+					<a href="/bookingpay?flightid=${bvalues.flightId}" class="pay_btn">Continue</a>
 					<!-- <input type="submit" value="Continue" class="pay_btn"> -->
 
 				</c:forEach>

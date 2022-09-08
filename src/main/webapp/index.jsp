@@ -57,11 +57,11 @@
 
 
 
-				 <input type="text" class="u_name" name="uname"
+				 <input type="text" class="u_name" name="username"
 						placeholder="Enter Admin/Username"
 						pattern="^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$"
 						title="First character is alphanum,should contain 8 characters, then 6 to 18 characters, last character is alphanum."
-						required> <input type="password" class="paswd" name="pwd" id="pwdId"
+						required> <input type="password" class="paswd" name="password" id="pwdId"
 						placeholder="Enter Password"
 						pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
 						title="The password must contain atleast 8 character and one upper case,lowercase atleast 1 digit 1 special symbol"

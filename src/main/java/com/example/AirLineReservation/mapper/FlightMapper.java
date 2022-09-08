@@ -1,12 +1,11 @@
-package com.example.AirLineReservation.alrmapper;
+package com.example.AirLineReservation.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.example.AirLineReservation.alrmodel.Flight;
-import com.example.AirLineReservation.alrmodel.Passenger;
+import com.example.AirLineReservation.model.Flight;
 
 public class FlightMapper implements RowMapper<Flight> {
 
@@ -15,8 +14,8 @@ public class FlightMapper implements RowMapper<Flight> {
 
 		Flight f = new Flight();
 
-		String fid = rs.getString("flightId");
-		String fname = rs.getString("flightName");
+		String flightid = rs.getString("flightId");
+		String flightName = rs.getString("flightName");
 		String departure = rs.getString("departure");
 		String arrival = rs.getString("arrival");
 		String from_place = rs.getString("from_place");
@@ -24,10 +23,11 @@ public class FlightMapper implements RowMapper<Flight> {
 		String price = rs.getString("price");
 		String start_time=rs.getString("start_time");
 		String end_time=rs.getString("end_time");
+		int seat=rs.getInt("seat");
 
 		
-		f.setFid(fid);
-		f.setFname(fname);
+		f.setFlightId(flightid);
+		f.setFlightName(flightName);
 		f.setDeparture(departure);
 		f.setArrival(arrival);
 		f.setFrom_place(from_place);
@@ -35,6 +35,7 @@ public class FlightMapper implements RowMapper<Flight> {
 		f.setPrice(price);
 		f.setStart_time(start_time);
 		f.setEnd_time(end_time);
+		f.setSeat(seat);
 		
 		
 		return f;

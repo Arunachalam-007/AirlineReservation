@@ -1,9 +1,9 @@
-package com.example.AirLineReservation.alrbeanconfig;
+package com.example.AirLineReservation.beanconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.AirLineReservation.alrdaoimpl.RegisterDaoImpl;
+import com.example.AirLineReservation.daoimpl.RegisterDaoImpl;
 
 //@Configuration
 //public class BeanConfigALR {

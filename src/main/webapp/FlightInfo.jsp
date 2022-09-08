@@ -13,23 +13,24 @@
 		<%-- <jsp:include page="Nav.jsp" /> --%>
 		<table>
 
-			 <jsp:include page="AdminNav.jsp" /> 
+			<jsp:include page="AdminNav.jsp" />
 
 
-			<c:forEach var="booked_val" items="${bookedticketval}">
-				<thead>
-					<tr>
-						<th>BookingId</th>
-						<th>FlightId</th>
-						<th>PNR</th>
-						<th>Passenger Name</th>
-						<th>Passenger Email</th>
-						<th>Passenger Mobile</th>
-						<th>Seat Number</th>
-						<th colspan="2">Action</th>
-					</tr>
-				</thead>
-				<tbody>
+
+			<thead>
+				<tr>
+					<th>BookingId</th>
+					<th>FlightId</th>
+					<th>PNR</th>
+					<th>Passenger Name</th>
+					<th>Passenger Email</th>
+					<th>Passenger Mobile</th>
+					<th>Seat Number</th>
+					<th colspan="2">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="booked_val" items="${bookedticketval}">
 					<tr>
 						<td>${booked_val.bookingId }</td>
 						<td>${booked_val.fid}</td>
@@ -41,8 +42,9 @@
 						<td><a href="AdminFlight.jsp">Delete</a></td>
 
 					</tr>
-				</tbody>
-			</c:forEach>
+					</c:forEach>
+			</tbody>
+			
 		</table>
 
 

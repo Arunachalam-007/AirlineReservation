@@ -1,16 +1,16 @@
-package com.example.AirLineReservation.alrmodel;
+package com.example.AirLineReservation.model;
 
 import java.sql.Date;
 
 public class Passenger {
 
 	private String name;
-	private String addr;
+	private String address;
 	private String mobile;
 	private String email;
 	private String uname;
 	private String password;
-	private Date dob;
+	private Date dateOfBirth;
 
 	public String getName() {
 		return name;
@@ -20,13 +20,6 @@ public class Passenger {
 		this.name = name;
 	}
 
-	public String getAddr() {
-		return addr;
-	}
-
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
 
 	public String getMobile() {
 		return mobile;
@@ -48,6 +41,14 @@ public class Passenger {
 		return uname;
 	}
 
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
@@ -60,18 +61,19 @@ public class Passenger {
 		this.password = password;
 	}
 
-	public Date getDob() {
-		return dob;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
 
 	@Override
 	public String toString() {
-		return "Passenger [name=" + name + ", addr=" + addr + ", mobile=" + mobile + ", email=" + email + ", uname="
-				+ uname + ", password=" + password + ", dob=" + dob + "]";
+		return "Passenger [name=" + name + ", address=" + address + ", mobile=" + mobile + ", email=" + email
+				+ ", uname=" + uname + ", password=" + password + ", dateOfBirth=" + dateOfBirth + "]";
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 }

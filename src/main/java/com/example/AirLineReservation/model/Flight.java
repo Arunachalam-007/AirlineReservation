@@ -1,19 +1,22 @@
-package com.example.AirLineReservation.alrmodel;
+package com.example.AirLineReservation.model;
 
 
-import java.sql.Timestamp;
-import java.sql.Time;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class Flight {
-	private String fid;
-	private String fname;
+	private String flightId;
+	private String flightName;
 	private String departure;
 	private String from_place;
 	private String to_place;
+	private int seat;
 	public String getFrom_place() {
 		return from_place;
+	}
+	public int getSeat() {
+		return seat;
+	}
+	public void setSeat(int seat) {
+		this.seat = seat;
 	}
 	public void setFrom_place(String from_place) {
 		this.from_place = from_place;
@@ -26,21 +29,22 @@ public class Flight {
 	}
 	@Override
 	public String toString() {
-		return "Flight [fid=" + fid + ", fname=" + fname + ", departure=" + departure + ", from_place=" + from_place
-				+ ", to_place=" + to_place + ", start_time=" + start_time + ", end_time=" + end_time + ", arrival="
-				+ arrival + ", price=" + price + "]";
+		return "Flight [flightId=" + flightId + ", flightName=" + flightName + ", departure=" + departure
+				+ ", from_place=" + from_place + ", to_place=" + to_place + ", seat=" + seat + ", start_time="
+				+ start_time + ", end_time=" + end_time + ", arrival=" + arrival + ", price=" + price + "]";
 	}
-	public String getFid() {
-		return fid;
+	public String getFlightId() {
+		return flightId;
 	}
-	public void setFid(String fid) {
-		this.fid = fid;
+	public void setFlightId(String flightId) {
+		this.flightId = flightId;
 	}
-	public String getFname() {
-		return fname;
+
+	public String getFlightName() {
+		return flightName;
 	}
-	public void setFname(String fname) {
-		this.fname = fname;
+	public void setFlightName(String flightName) {
+		this.flightName = flightName;
 	}
 	public String getDeparture() {
 		return departure;

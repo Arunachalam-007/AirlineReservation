@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.alrdto;
+package com.example.AirLineReservation.dto;
 
 public class FlightSearchDTO {
 	

@@ -1,13 +1,12 @@
-package com.example.AirLineReservation.alrmapper;
+package com.example.AirLineReservation.mapper;
 
-import java.sql.Date;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.example.AirLineReservation.alrmodel.Passenger;
+import com.example.AirLineReservation.model.Passenger;
 
 
 

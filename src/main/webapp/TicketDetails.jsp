@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,41 +9,44 @@
 <title>AirLine Ticket</title>
 </head>
 <body>
-	<form action="TicketBooking.jsp">
-		<jsp:include page="Nav.jsp" />
+	<form>
+		<%-- <jsp:include page="Nav.jsp" /> --%>
+		<jsp:include page="PassengerNav.jsp" />
+
+
+
+
 		<table>
 
 			<thead>
 				<tr>
-					<th>Flight ID</th>
+					<th>Booking Id</th>
 					<th>Flight Name</th>
-					<th>Departure</th>
-					<th>Duration</th>
-					<th>Arrival</th>
-					<th colspan="2">Price</th>
+					<th>PNR</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Mobile</th>
+					<th>Seat Number</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<tr>
-					<td>AI2</td>
-					<td>Indigo</td>
-					<td>07:00</td>
-					<td>02 h 35 m</td>
-					<td>09:35</td>
-					<td>&#x20B9; 9,527</td>
-					<td><button>VIEW PRICES</button></td>
-				</tr>
+				<c:forEach var="passengertiket"
+					items="${passengerbookedticketvalue}">
 
-				<tr>
-					<td>BA3</td>
-					<td>Vistara</td>
-					<td>03:00</td>
-					<td>04 h 35 m</td>
-					<td>07:35</td>
-					<td>&#x20B9; 12,532</td>
-					<td><button>VIEW PRICES</button></td>
-				</tr>
+					
+					<tr>
+						<td>${passengertiket.bookingId}</td>
+						<td>${passengertiket.fname}</td>
+						<td>${passengertiket.pnr}</td>
+						<td>${passengertiket.name}</td>
+						<td>${passengertiket.email}</td>
+						<td>${passengertiket. mobile}</td>
+						<td>${passengertiket.seatNumber}</td>
+						<td><a href="/cancelticket?bookid=${passengertiket.bookingId}&username=${uname_value}">Cancel</a></td>
+					</tr>
+				</c:forEach>
 			</tbody>
 
 		</table>
