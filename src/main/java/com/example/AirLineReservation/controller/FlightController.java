@@ -181,8 +181,8 @@ public class FlightController {
 
 
 	@GetMapping("/cancelticket")
-	public String passengerCancelTicket(@RequestParam("bookid") String bookingId,@RequestParam("username") String username, Model mod) {
-		flightDaoImpl.cancelTicket(bookingId);
+	public String passengerCancelTicket(@RequestParam("bookid") String bookingId,@RequestParam("username") String username,@RequestParam("flightId") String flightId, Model mod) {
+		flightDaoImpl.cancelTicket(bookingId,flightId);
 		List<FlightBooking> result = flightDaoImpl.passengerBookedTicket(username);
 		mod.addAttribute("passengerbookedticketvalue", result);
 		return "TicketDetails.jsp";

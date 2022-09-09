@@ -108,11 +108,28 @@ public class FlightDaoImpl implements FlightDao {
 		return data;
 	}
 	
-	public void cancelTicket(String bookingid) {
+	public void cancelTicket(String bookingid,String flightId) {
 		String deleteQuery1 = "delete from flightbooking where booking_id=?";
 		Object[] values1 = {bookingid};
 		int j = jdbctemp.update(deleteQuery1, values1);
 		System.out.println(j);	
+		
+		
+		
+		//****************************
+		String updatebookingQuery2="update flightbooking set seat=seat+1 where booking_id=?";
+		Object[] values3 = {bookingid};
+		int k = jdbctemp.update(updatebookingQuery2,values3);
+		System.out.println(k);
+		
+		
+		
+		
+		String updateAdminQuery3="update alrflightadmin set seat=seat+1 where flightId=?";
+		Object[] values2 = { flightId };
+		int affected = jdbctemp.update(updateAdminQuery3, values2);
+		System.out.println(affected);
+		//****************************
 	}
 
 

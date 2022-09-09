@@ -31,12 +31,12 @@ body {
 /* ************** */
  table {
 	border-collapse: collapse;
-	width: 70%;
+	width: 75%;
 	display: block;
 	height: 400px;
-	margin: 50px auto;
+	margin: 40px auto;
 	overflow-y: auto;
-	border-spacing: 25px 10px;
+	border-spacing: 30px 10px;
 	border-spacing: 0 1em;
 	border-radius: 20px; 
 	/* border-top-right-radius: 20px; */

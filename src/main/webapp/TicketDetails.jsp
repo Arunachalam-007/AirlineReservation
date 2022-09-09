@@ -20,6 +20,7 @@
 
 			<thead>
 				<tr>
+					<th>Flight ID</th>
 					<th>Booking Id</th>
 					<th>Flight Name</th>
 					<th>PNR</th>
@@ -35,8 +36,11 @@
 				<c:forEach var="passengertiket"
 					items="${passengerbookedticketvalue}">
 
-					
+
+
+
 					<tr>
+						<td>${passengertiket.fid}</td>
 						<td>${passengertiket.bookingId}</td>
 						<td>${passengertiket.fname}</td>
 						<td>${passengertiket.pnr}</td>
@@ -44,7 +48,8 @@
 						<td>${passengertiket.email}</td>
 						<td>${passengertiket. mobile}</td>
 						<td>${passengertiket.seatNumber}</td>
-						<td><a href="/cancelticket?bookid=${passengertiket.bookingId}&username=${uname_value}">Cancel</a></td>
+						<td><a
+							href="/cancelticket?bookid=${passengertiket.bookingId}&username=${uname_value}&flightId=${passengertiket.fid}">Cancel</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

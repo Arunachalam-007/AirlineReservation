@@ -27,6 +27,6 @@ public interface FlightDao {
 
 	public List<FlightBooking> passengerBookedTicket(String uname);
 
-	public void cancelTicket(String bookingid);
+	public void cancelTicket(String bookingid,String flightId);
 
 }
