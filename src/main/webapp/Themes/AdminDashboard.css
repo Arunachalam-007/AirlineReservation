@@ -13,34 +13,69 @@
 }
 
 body {
-	background-image: url("../Images/bg-hero-desktop.svg");
-	background-color: hsl(193, 100%, 96%);
-	max-height: 100vh;
-	/* background-image:url("../Images/alr7.jpg")*/
+	 background-image: url("../Images/bg-hero-desktop.svg"); 
+	 background-color: hsl(193, 100%, 96%);
+	/* background-color: hsl(193, 100%, 96%); */
 }
 
-table {
+/* table {
 	display: block;
-	margin: 30px 130px;
-	/* border-spacing: 20px 10px; */
+	margin: 20px auto;
+	border-spacing: 25px 10px;
 	background-color: #85adad;
-	width: 80%;
+	width: 57%;
 	height: 500px;
 	border-radius: 20px;
 	overflow-y: auto;
-	
-	border-collapse: separate;
-	border-spacing: 12px 25px;
-	
 }
-
-table::-webkit-scrollbar {
-	display: none;
-	
+ */
+/* ************** */
+ table {
+	border-collapse: collapse;
+	width: 85%;
+	display: block;
+	height: 400px;
+	margin: 40px 150px;
+	overflow-y: auto;
+	border-spacing: 30px 10px;
+	border-spacing: 0 1em;
+	/* border-top-right-radius: 20px; */
 }
 
 th {
-	font-size: 19px;
+	padding: 10px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	font-size: 20px;
+	font-family: "Poppins", sans-serif;
+	background: #85adad;
+}
+
+h1{
+	text-align: center;
+	font-family: "Poppins", sans-serif;
+	margin-top: 10px;
+}
+
+tbody tr:hover {
+	background-color: #9CD3D8;
+}
+
+td {
+	padding: 14px;
+	/* text-align: left; */
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+	text-align: center;
+	
+} 
+/* ************** */
+table::-webkit-scrollbar {
+	display: none;
+}
+
+/* th {
+	font-size: 20px;
 	font-family: "Poppins", sans-serif;
 	background: #85adad;
 }
@@ -48,7 +83,7 @@ th {
 td {
 	font-size: 18px;
 	text-align: center;
-}
+} */
 
 thead tr:nth-child(1) th {
 	position: sticky;
@@ -56,31 +91,16 @@ thead tr:nth-child(1) th {
 	z-index: 10;
 }
 
-td button {
-	border: none;
-	padding: 10px;
-	background: transparent;
-}
-
 td a {
 	border: none;
 	padding: 13px;
 	background: transparent;
 	text-decoration: none;
-	font-size: 15px;
 	color: black;
 }
 
 td a:hover {
-	background-color: coral;
-	/* background-color: hsl(322, 100%, 66%); */
-	border-radius: 20px;
-	cursor: pointer;
-}
-
-td button:hover {
-	background-color: coral;
-	/* background-color: hsl(322, 100%, 66%); */
+	background-color: hsl(322, 100%, 66%);
 	border-radius: 20px;
 	cursor: pointer;
 }
@@ -88,4 +108,3 @@ td button:hover {
 tr:nth-child(even) {
 	background: transparent;
 }
-

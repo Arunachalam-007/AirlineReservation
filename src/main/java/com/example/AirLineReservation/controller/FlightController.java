@@ -20,6 +20,7 @@ import com.example.AirLineReservation.dto.FlightDTO;
 import com.example.AirLineReservation.dto.FlightSearchDTO;
 import com.example.AirLineReservation.model.Flight;
 import com.example.AirLineReservation.model.FlightBooking;
+import com.example.AirLineReservation.model.Passenger;
 import com.example.AirLineReservation.service.ServiceALR;
 
 @Controller
@@ -110,7 +111,7 @@ public class FlightController {
 			@RequestParam("flightId") String flightId, @RequestParam("flightName") String flightName, @RequestParam("name") String name,
 			@RequestParam("email") String email, @RequestParam("dateOfBirth") String dateOfBirth,
 			@RequestParam("nationality") String nationality, @RequestParam("mobile") String mobile,
-			@RequestParam("address") String address, @RequestParam("username") String username, Model mod) {
+			@RequestParam("address") String address, @RequestParam("username") String username,@RequestParam("bookingdate") String bookingDate,@RequestParam("bookingfrom_place") String bookingFromPlace, Model mod) {
 
 		flightBooking.setBookingClass(bookingClass);
 		try {
@@ -157,12 +158,21 @@ public class FlightController {
 		flightBooking.setNationality(nationality);
 		flightBooking.setMobile(mobile);
 		flightBooking.setAddress(address);
+		
+		LocalDate conversion = LocalDate.parse(bookingDate);
+		Date date1 = Date.valueOf(conversion);
+		flightBooking.setBooking_date(date1);
+		
+		
+		flightBooking.setBooking_from_place(bookingFromPlace);
 
 		flightDaoImpl.bookingFlight(flightBooking, bookingClass);
 
+		List<FlightBooking> result=flightDaoImpl.confirmPasengerInfo(name,date);
+		mod.addAttribute("confirmPassengers",result);
 		flightDaoImpl.seatCountDecrease(flightId, bookingClass);
-
-		return "Index.jsp";
+//		return "Index.jsp";
+		return "BookConfirm.jsp";
 	}
 
 	@PostMapping("/bookedticketinfoadmin")
@@ -187,6 +197,32 @@ public class FlightController {
 		mod.addAttribute("passengerbookedticketvalue", result);
 		return "TicketDetails.jsp";
 //		return "/passengerbookedticket";
+	}
+	@GetMapping("/bookedTicketDisplay")
+	public String bookedTicketDisplay(Model mod) {
+		List<FlightBooking> result = flightDaoImpl.flightInfoAdmin();
+		mod.addAttribute("bookedticketval", result);
+		return "AdminDashboard.jsp";
+	}
+	
+	@GetMapping("/passengerDisplayToAdmin")
+	public String passengerDetails(Model mod) {
+		List<Passenger> passengerResult=flightDaoImpl.passengerInfo();
+		mod.addAttribute("passengerInfo",passengerResult);
+		return "PassengerInfo.jsp";
+	}
+	
+	@GetMapping("/deletepassenger")
+	public String deletePassengerByAdmin(@RequestParam("username") String username,Model mod) {
+		flightDaoImpl.deletePassenger(username);
+		List<Passenger> passengerResult=flightDaoImpl.passengerInfo();
+		mod.addAttribute("passengerInfo",passengerResult);
+		return "PassengerInfo.jsp";
+	}
+	
+	@GetMapping("/bookconfirm")
+	public String bookingConfirm() {
+		return null;
 	}
 
 }

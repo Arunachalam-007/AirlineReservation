@@ -20,7 +20,9 @@
 
 			<thead>
 				<tr>
-					<th>Flight ID</th>
+					<!-- <th>Flight ID</th> -->
+					<th>Start Date</th>
+					<th>From City</th>
 					<th>Booking Id</th>
 					<th>Flight Name</th>
 					<th>PNR</th>
@@ -40,7 +42,9 @@
 
 
 					<tr>
-						<td>${passengertiket.fid}</td>
+						<%-- <td>${passengertiket.fid}</td> --%>
+						<td>${passengertiket.booking_date}</td>
+						<td>${passengertiket.booking_from_place}</td>
 						<td>${passengertiket.bookingId}</td>
 						<td>${passengertiket.fname}</td>
 						<td>${passengertiket.pnr}</td>

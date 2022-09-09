@@ -20,10 +20,12 @@
 			<li><a href="/logout">Logout</a></li>
 			<li><a href="Contact.jsp">Contact</a></li>
 			<!-- <li><a href="Index.jsp" class="active">Cancelled Ticket</a></li> -->
-			<li><a href="passengerbookedticket?username_value=${uname_value}" class="active">Booked
-					Ticket</a></li>
+			<li><a
+				href="passengerbookedticket?username_value=${uname_value}"
+				class="active">Booked Ticket</a></li>
 			<li><a href="Index.jsp" class="active">Home</a></li>
 
+			<!-- <li><a href="javascript: history.go(-1)">Go Back</a></li> -->
 			<li><a href="#" class="nav_left">ALR <span>AirLine
 						Reservation </span></a></li>
 

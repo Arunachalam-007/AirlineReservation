@@ -15,7 +15,7 @@
 		<div class="whole_cont">
 			<div class="container">
 				<div class="fdetails">
-					<h1>Flight Details</h1>
+					<h1>Add Flight Details</h1>
 					<label for="fid">Flight Id</label> <input type="text" name="flightid"
 						placeholder="Enter Flight Id"> <label for="fname">Flight Name</label>
 					<input type="text" name="flightname" placeholder="Enter Flight Name">

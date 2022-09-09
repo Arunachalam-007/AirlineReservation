@@ -18,6 +18,10 @@
 
 		<%-- <input type="hidden" value="${param.cls}" id="cls" name="dd_value"> --%>
 		<c:set var="cls_value" scope="session" value="${param.cls}" />
+		<c:set var="bookingdate_value" scope="session" value="${param.bookingDate}" />
+		<c:set var="bookingfromplace_value" scope="session" value="${param.from_place}" />
+		
+		
 
 		<table>
 			<tr>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -11,14 +11,15 @@
 <body>
 
 
-<form>
+	<form>
 		<%-- <jsp:include page="Nav.jsp" /> --%>
+
+
+		<jsp:include page="AdminNav.jsp" />
+
+
+		<h1>Booked Ticket</h1>
 		<table>
-
-			<jsp:include page="AdminNav.jsp" />
-
-
-
 			<thead>
 				<tr>
 					<th>BookingId</th>
@@ -28,7 +29,7 @@
 					<th>Passenger Email</th>
 					<th>Passenger Mobile</th>
 					<th>Seat Number</th>
-					<th colspan="2">Action</th>
+					<!-- <th colspan="2">Action</th> -->
 				</tr>
 			</thead>
 			<tbody>
@@ -41,18 +42,18 @@
 						<td>${booked_val.email }</td>
 						<td>${booked_val.mobile }</td>
 						<td>${booked_val.seatNumber }</td>
-						<td><a href="AdminFlight.jsp">Delete</a></td>
+						<!-- <td><a href="AdminFlight.jsp">Delete</a></td> -->
 
 					</tr>
-					</c:forEach>
+				</c:forEach>
 			</tbody>
-			
+
 		</table>
 
 
 	</form>
 
-<%-- <jsp:include page="FlightInfo.jsp" />
+	<%-- <jsp:include page="FlightInfo.jsp" />
  --%>
 
 </body>

@@ -9,6 +9,20 @@ public class FlightBooking {
 	private String pnr;
 	private String seatNumber;
 	private String userName;
+	private Date booking_date;
+	private String booking_from_place;
+	public String getBooking_from_place() {
+		return booking_from_place;
+	}
+	public void setBooking_from_place(String booking_from_place) {
+		this.booking_from_place = booking_from_place;
+	}
+	public Date getBooking_date() {
+		return booking_date;
+	}
+	public void setBooking_date(Date booking_date) {
+		this.booking_date = booking_date;
+	}
 	private int seatAvailability=40;
 	
 	public String getBookingId() {
@@ -67,9 +81,10 @@ public class FlightBooking {
 	public String toString() {
 		return "FlightBooking [bookingPrice=" + bookingPrice + ", bookingClass=" + bookingClass + ", bookingId="
 				+ bookingId + ", pnr=" + pnr + ", seatNumber=" + seatNumber + ", userName=" + userName
+				+ ", booking_date=" + booking_date + ", booking_from_place=" + booking_from_place
 				+ ", seatAvailability=" + seatAvailability + ", fid=" + fid + ", fname=" + fname + ", name=" + name
 				+ ", email=" + email + ", dob=" + dob + ", nationality=" + nationality + ", mobile=" + mobile
-				+ ", addr=" + address + "]";
+				+ ", address=" + address + "]";
 	}
 	public String getBookingClass() {
 		return bookingClass;

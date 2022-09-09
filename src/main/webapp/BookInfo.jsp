@@ -23,7 +23,9 @@
 <input type="hidden" id="bprice" name="bookingprice" value="${fid_val.price + fid_val.price/100*5}">
 
 
- 
+
+<input id="bdate" name="bookingdate" value="${bookingdate_value}" type="hidden"/>
+<input id="bfrom" name="bookingfrom_place" value="${bookingfromplace_value}" type="hidden"/>
 <input id="flightId" name="flightId" value="${fid_val.flightId}" type="hidden" readonly/>
 
 <label for="name">Flight Name</label> 

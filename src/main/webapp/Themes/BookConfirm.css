@@ -1,0 +1,94 @@
+@import
+	url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap")
+	;
+
+@import
+	url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap")
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("../Images/bg-hero-desktop.svg");
+	background-color: hsl(193, 100%, 96%);
+}
+
+input {
+	padding: 10px;
+	border-radius: 20px;
+	/* border: 1px solid steelblue; */
+	border:none;
+	font-size: 15px;
+	background:transparent;
+	margin: 10px 0px 10px 30px;
+	letter-spacing: 2px;
+	outline: none;
+	letter-spacing: 2px;
+}
+
+#qrcode {
+	margin-left: 10px;
+}
+.qr_design{
+	margin: -330px 20px 0px 650px;
+}
+
+button {
+	
+	width: 100px;
+	border-radius: 10px;
+	border: 1px solid black;
+	color: white;
+	font-size: 18px;
+	position:absolute;
+	left:700px;
+	margin-bottom:30px;
+	cursor: pointer;
+	padding: 10px;
+	background-color: hsl(322, 100%, 66%);
+	border-radius: 10px;
+	text-decoration: none;
+	margin-left: 100px;
+	
+}
+
+button:hover {
+	border: 1px solid black;
+	background: transparent;
+	color: black;
+	cursor: pointer;
+}
+
+.bookhead {
+	text-align: center;
+	font-family: "Poppins", sans-serif;
+	margin-top: 10px;
+}
+
+.payment{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+.confirm_left{
+	margin-left:200px;
+}
+p{
+	font-size: 20px;
+}
+.info{
+	width: 87%;
+	margin-left: 100px;
+	margin-top: 70px;
+	
+}
+ol{
+	display: flex;
+	flex-direction: column;
+	margin-left: 30px;
+}
