@@ -77,7 +77,7 @@ public class FlightController {
 	public String flightSearchController(@RequestParam("from_place") String fromPlace,
 			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
 
-		List<Flight> values = flightDaoImpl.flightDisplay(fromPlace, bookingDate);
+		List<Flight> values = flightDaoImpl.flightsDisplay(fromPlace, bookingDate);
 		mod.addAttribute("infos", values);
 		return "FlightDisplay.jsp";
 
@@ -140,7 +140,7 @@ public class FlightController {
 				bookingPrice = String.valueOf(value);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 
 		LocalDate birthday = LocalDate.parse(dateOfBirth);
@@ -148,15 +148,11 @@ public class FlightController {
 		int age = today.compareTo(birthday);
 
 		try {
-			if (age <= 10) {
+			if ((age <= 10)&&(age>=70)) {
 				double result = Double.parseDouble(bookingPrice);
 				double value = result / 2;
 				bookingPrice = String.valueOf(value);
-			} else if (age >= 70) {
-				double result = Double.parseDouble(bookingPrice);
-				double value =  result / 2;
-				bookingPrice = String.valueOf(value);
-			}
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -191,7 +187,7 @@ public class FlightController {
 	}
 
 	@PostMapping("/bookedticketinfoadmin")
-	public String bookedInfoAdmin(Model mod) {
+	public String bookedInfoToAdmin(Model mod) {
 		List<FlightBooking> result = flightDaoImpl.flightInfoAdmin();
 		mod.addAttribute("bookedticketval", result);
 		return "AdminDashboard.jsp";

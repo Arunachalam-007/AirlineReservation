@@ -3,7 +3,7 @@ package com.example.airlinereservation.dto;
 
 public class FlightDTO {
 	private String flightId;
-	private String FlightName;
+	private String flightName;
 	private String flightDeparture;
 	private String startTime;
 	private String endTime;
@@ -32,7 +32,7 @@ public class FlightDTO {
 	}
 	@Override
 	public String toString() {
-		return "FlightDTO [flightId=" + flightId + ", FlightName=" + FlightName + ", flightDeparture=" + flightDeparture
+		return "FlightDTO [flightId=" + flightId + ", flightName=" + flightName + ", flightDeparture=" + flightDeparture
 				+ ", startTime=" + startTime + ", endTime=" + endTime + ", flightSeat=" + flightSeat
 				+ ", flightArrival=" + flightArrival + ", flightFromPlace=" + flightFromPlace + ", flightToPlace="
 				+ flightToPlace + ", price=" + price + "]";
@@ -61,11 +61,12 @@ public class FlightDTO {
 	public void setFlightId(String flightId) {
 		this.flightId = flightId;
 	}
+
 	public String getFlightName() {
-		return FlightName;
+		return flightName;
 	}
 	public void setFlightName(String flightName) {
-		FlightName = flightName;
+		this.flightName = flightName;
 	}
 	public String getFlightDeparture() {
 		return flightDeparture;

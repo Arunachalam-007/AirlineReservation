@@ -11,7 +11,7 @@ public interface FlightDao {
 
 	public void searchFlight(FlightSearch fs);
 
-	public List<Flight> flightDisplay(String fromPlace, String departure);
+	public List<Flight> flightsDisplay(String fromPlace, String departure);
 
 	public List<Flight> flightDisplayInfo(String fromPlace, String departure);
 

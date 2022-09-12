@@ -20,7 +20,10 @@ import com.example.airlinereservation.model.Passenger;
 public class FlightDaoImpl implements FlightDao {
 	@Autowired
 	JdbcTemplate jdbctemp;
+	
+	List<Flight> data ;
 
+	List<FlightBooking> data1;
 	public void addFlight(Flight f) {
 		String insertQuery = "insert into alrflightadmin(flightId,flightName,departure,arrival,from_place,to_place,price,seat,start_time,end_time) values(?,?,?,?,?,?,?,?,?,?)";
 		Object[] values = { f.getFlightId(), f.getFlightName(), f.getDeparture(), f.getArrival(), f.getFromPlace(),
@@ -35,17 +38,17 @@ public class FlightDaoImpl implements FlightDao {
 		jdbctemp.update(insertQuery, values);
 	}
 
-	public List<Flight> flightDisplay(String fromPlace, String departure) {
+	public List<Flight> flightsDisplay(String fromPlace, String departure) {
 		String selectQuery = "select flightId,flightName,departure,arrival,from_place,to_place,price,start_time,end_time,seat from alrflightadmin where from_place=? and departure=?";
 		Object[] values = { fromPlace, departure };
-		List<Flight> data = jdbctemp.query(selectQuery, new FlightMapper(), values);
+		data = jdbctemp.query(selectQuery, new FlightMapper(), values);
 		return data;
 	}
 
 	public List<Flight> flightDisplayInfo(String fromPlace, String departure) {
 		String selectQuery = "select flightId,flightName,departure,arrival,from_place,to_place,price,start_time,end_time,seat from alrflightadmin where from_place=? and departure=?";
 		Object[] values = { fromPlace, departure };
-		List<Flight> data = jdbctemp.query(selectQuery, new FlightMapper(), values);
+		data = jdbctemp.query(selectQuery, new FlightMapper(), values);
 		return data;
 	}
 
@@ -53,7 +56,7 @@ public class FlightDaoImpl implements FlightDao {
 
 		String selectQuery = "select flightId,flightName,departure,arrival,from_place,to_place,price,start_time,end_time,seat from alrflightadmin where flightId=?";
 		Object[] values = { flightId };
-		List<Flight> data = jdbctemp.query(selectQuery, new FlightMapper(), values);
+		data = jdbctemp.query(selectQuery, new FlightMapper(), values);
 		return data;
 
 	}
@@ -69,13 +72,13 @@ public class FlightDaoImpl implements FlightDao {
 	}
 
 	public int seatAvailCheck(String id, String cls) {
-		int SEATAVL = 40;
+		int seatAvl = 40;
 		int result;
 		String selectQuery = "select seat from alrflightadmin where flightId=?";
 		Object[] values = { id };
 		result = jdbctemp.queryForObject(selectQuery, int.class, values);
 		if (result == 40) {
-			return SEATAVL;
+			return seatAvl;
 		}
 
 		else {
@@ -90,33 +93,33 @@ public class FlightDaoImpl implements FlightDao {
 	public void seatCountDecrease(String id, String cls) {
 		String updateQuery = "update flightbooking set seat=seat-1 where flightId=?";
 		Object[] values1 = { id };
-		int j = jdbctemp.update(updateQuery, values1);
-		System.out.println(j);
+		jdbctemp.update(updateQuery, values1);
+		
 
 		String updateAdminQuery2 = "update alrflightadmin set seat=seat-1 where flightId=?";
 		Object[] values2 = { id };
-		int k = jdbctemp.update(updateAdminQuery2, values2);
-		System.out.println(k);
+		jdbctemp.update(updateAdminQuery2, values2);
+	
 	}
 
 	public List<FlightBooking> flightInfoAdmin() {
 		String selectQuery = "select flightId,flightName,name,email,dob,nationality,mobile,address,seat_no,booking_id,pnr_number,price,class,seat,uname,booking_date,booking_from_place from flightbooking";
-		List<FlightBooking> data = jdbctemp.query(selectQuery, new FlightBookingMapper());
-		return data;
+		 data1 = jdbctemp.query(selectQuery, new FlightBookingMapper());
+		return data1;
 	}
 
 	public List<FlightBooking> confirmPasengerInfo(String name, Date dob) {
 		String selectQuery = "select distinct flightId,flightName,name,email,dob,nationality,mobile,address,seat_no,booking_id,pnr_number,price,class,seat,uname,booking_date,booking_from_place from flightbooking where name=? and dob=? ";
 		Object[] values2 = { name, dob };
-		List<FlightBooking> data = jdbctemp.query(selectQuery, new FlightBookingMapper(), values2);
-		return data;
+		data1 = jdbctemp.query(selectQuery, new FlightBookingMapper(), values2);
+		return data1;
 	}
 
 	public List<FlightBooking> passengerBookedTicket(String uname) {
 		String selectQuery = "select flightId,flightName,name,email,dob,nationality,mobile,address,seat_no,booking_id,pnr_number,price,class,seat,uname,booking_date,booking_from_place from flightbooking where uname=?";
 		Object[] values2 = { uname };
-		List<FlightBooking> data = jdbctemp.query(selectQuery, new FlightBookingMapper(), values2);
-		return data;
+		data1 = jdbctemp.query(selectQuery, new FlightBookingMapper(), values2);
+		return data1;
 	}
 
 	public void cancelTicket(String bookingid, String flightId) {
@@ -153,7 +156,7 @@ public class FlightDaoImpl implements FlightDao {
 
 	public List<Flight> viewFlight() {
 		String selectQuery = "select flightId,flightName,departure,arrival,from_place,to_place,price,start_time,end_time,seat from alrflightadmin";
-		List<Flight> data = jdbctemp.query(selectQuery, new FlightMapper());
+		data = jdbctemp.query(selectQuery, new FlightMapper());
 		return data;
 	}
 

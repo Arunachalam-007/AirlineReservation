@@ -2,8 +2,7 @@ package com.example.airlinereservation.daoimpl;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -19,6 +18,10 @@ public class RegisterDaoImpl implements RegisterDao {
 
 	@Autowired
 	JdbcTemplate jdbctemp;
+	
+	List<Feedback> data;
+	
+	int noOfRowsAffected;
 
 	public void registerInfo(Passenger passenger, String uname) {
 
@@ -38,7 +41,7 @@ public class RegisterDaoImpl implements RegisterDao {
 
 		try {
 			result = jdbctemp.queryForObject(selectQuery, String.class, values);
-			System.out.println(result);
+		
 			if (result.equals(username)) {
 				return true;
 			} else {
@@ -57,7 +60,7 @@ public class RegisterDaoImpl implements RegisterDao {
 		String result;
 		try {
 			result = jdbctemp.queryForObject(selectQuery, String.class, values);
-			System.out.println(result);
+			
 			if (result.equals(username)) {
 				return true;
 			} else {
@@ -74,7 +77,7 @@ public class RegisterDaoImpl implements RegisterDao {
 		String updatePassword = "update alrpassenger set password = ? where username = ?";
 		Object[] userData = { password, username };
 		try {
-			int noOfRowsAffected = jdbctemp.update(updatePassword, userData);
+			noOfRowsAffected = jdbctemp.update(updatePassword, userData);
 			return noOfRowsAffected;
 		} catch (Exception e) {
 			return 0;
@@ -90,7 +93,7 @@ public class RegisterDaoImpl implements RegisterDao {
 	
 	public List<Feedback> feedBackView(){
 		String selectQuery="select email,city,subject from feedback";
-		List<Feedback> data = jdbctemp.query(selectQuery, new FeedbackMapper());
+		data = jdbctemp.query(selectQuery, new FeedbackMapper());
 		return data;
 	}
 }

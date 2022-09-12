@@ -89,7 +89,7 @@ public class RegisterController {
 	public String updatePassword(@RequestParam("username") String username,@RequestParam("password1") String password,@RequestParam("password2") String confirmPassword,Model mod) {
 		if(password.equals(confirmPassword)) {
 			if(serviceALR.updatePassword(username, confirmPassword)) {
-				mod.addAttribute("message", "Your password has been changed!");
+				mod.addAttribute("msg", "Your password has been changed!");
                 return "Index.jsp";
 			}
 			 else {
@@ -99,7 +99,7 @@ public class RegisterController {
 			
 		}
 		else {
-            mod.addAttribute("message", "The Change password and Confirm Password should be same!");
+            mod.addAttribute("messages", "The Change password and Confirm Password should be same!");
             return "ForgotPassword.jsp";
         }
 	}
