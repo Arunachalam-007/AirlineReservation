@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="./Themes/AdminDashboard.css">
@@ -20,6 +20,7 @@
 
 		<h1>Booked Ticket</h1>
 		<table>
+			<caption style="display:hidden;">Booking Flight Details</caption>
 			<thead>
 				<tr>
 					<th>BookingId</th>
@@ -29,7 +30,6 @@
 					<th>Passenger Email</th>
 					<th>Passenger Mobile</th>
 					<th>Seat Number</th>
-					<!-- <th colspan="2">Action</th> -->
 				</tr>
 			</thead>
 			<tbody>
@@ -42,7 +42,6 @@
 						<td>${booked_val.email }</td>
 						<td>${booked_val.mobile }</td>
 						<td>${booked_val.seatNumber }</td>
-						<!-- <td><a href="AdminFlight.jsp">Delete</a></td> -->
 
 					</tr>
 				</c:forEach>
@@ -52,9 +51,6 @@
 
 
 	</form>
-
-	<%-- <jsp:include page="FlightInfo.jsp" />
- --%>
 
 </body>
 </html>

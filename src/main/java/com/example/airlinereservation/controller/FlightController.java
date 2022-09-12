@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.controller;
+package com.example.airlinereservation.controller;
 
 import java.util.List;
 
@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.AirLineReservation.daoimpl.FlightDaoImpl;
-import com.example.AirLineReservation.dto.FlightBookingDTO;
-import com.example.AirLineReservation.dto.FlightDTO;
-import com.example.AirLineReservation.dto.FlightSearchDTO;
-import com.example.AirLineReservation.model.Feedback;
-import com.example.AirLineReservation.model.Flight;
-import com.example.AirLineReservation.model.FlightBooking;
-import com.example.AirLineReservation.model.Passenger;
-import com.example.AirLineReservation.service.ServiceALR;
+import com.example.airlinereservation.daoimpl.FlightDaoImpl;
+import com.example.airlinereservation.dto.FlightBookingDTO;
+import com.example.airlinereservation.dto.FlightDTO;
+import com.example.airlinereservation.dto.FlightSearchDTO;
+import com.example.airlinereservation.model.Feedback;
+import com.example.airlinereservation.model.Flight;
+import com.example.airlinereservation.model.FlightBooking;
+import com.example.airlinereservation.model.Passenger;
+import com.example.airlinereservation.service.ServiceALR;
 
 @Controller
 public class FlightController {

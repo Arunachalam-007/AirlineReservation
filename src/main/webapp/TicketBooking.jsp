@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="../Themes/TicketBooking.css">
@@ -15,8 +15,7 @@
 			<div class="ticket_info">
 				 <input type="hidden" id="seatavailabilityresult"
 					name="seatavailabilityresult" value="${seatAvailResult}">
-				<%-- 				<input type="hidden" value="${seatAvailResult}"
-					name="seatavailabilityresult" id="seatavailabilityresult"> --%>
+				
 				<h1>Ticket Details</h1>
 				<c:forEach var="bvalues" items="${bookingvalues}">
 					<%-- 	<c:out value="${bvalues.fname}"/> --%>
@@ -38,23 +37,7 @@
 						</div>
 						<p id="seat_avl">${seatAvailResult}Ticket'sLeft</p>
 					</div>
-					<%-- <table border="0" class="booking_table">
-						<tr>
-						
-							<td id="pfname" style="border-bottom-style: hidden;">${bvalues.fname}</td>
-							<td style="border-bottom-style: hidden;">${bvalues.departure}</td>
-							<td style="border-bottom-style: hidden;">${bvalues.from_place}</td>
-							<td style="border-bottom-style: hidden;">${bvalues.start_time}</td>
-							
-							
-							<td style="border-bottom-style: hidden;">${bvalues.end_time}</td>
-							<td style="border-bottom-style: hidden;">${bvalues.arrival}</td>
-							<td style="border-bottom-style: hidden;">${bvalues.to_place}</td>
-							
-							
-							<td style="border-bottom-style: hidden;">${seatAvailResult} Ticket's Left </td>
-						</tr>
-					</table> --%>
+					
 				</c:forEach>
 
 				<div class="info">
@@ -79,17 +62,7 @@
 
 					</ol>
 
-					<!-- <input type="checkbox" id="terms" required>
-					<label for="terms">I've read and agree to the terms and conditions.</label>
-					<input type="submit" value="Continue" class="terms_btn"> -->
-
-
-					<%-- <c:forEach var="bvalues" items="${bookingvalues}">
-						<button></button>
-						<a href="bookingpay/${bvalues.fid}" class="terms_btn">Continue</a>
-					</c:forEach> --%>
-
-					<!-- <input type="submit" class="contd_btn" value="Continue"> -->
+					
 				</div>
 
 
@@ -128,10 +101,10 @@
 
 				</table>
 				<c:forEach var="bvalues" items="${bookingvalues}">
-					<%-- <a href="bookingpay/${bvalues.fid}" class="pay_btn">Continue</a> --%>
+					
 					<a href="/bookingpay?flightid=${bvalues.flightId}&seatavailabilityresult=${seatAvailResult}" class="pay_btn"
 						id="continue_link" onclick="seatAlert();">Continue</a>
-					<!-- <input type="submit" value="Continue" class="pay_btn"> -->
+				
 
 				</c:forEach>
 			</div>
@@ -145,7 +118,7 @@
 			var seatValue = document.getElementById('seatavailabilityresult').value;
 			if (seatValue == 36) {
 				alert("it's working");
-				//return true;
+				
 			}
 			else{
 				console.log("Proceed");

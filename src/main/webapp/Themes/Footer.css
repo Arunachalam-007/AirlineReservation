@@ -31,7 +31,7 @@ footer #alr_footer {
 	font-family: 'Dancing Script', cursive;
 }
 
-.social-icons i {
+.social-icons em {
 	border: 1px solid hsl(223, 100%, 88%);
 	padding: 0.5em;
 	border-radius: 50%;
@@ -41,6 +41,6 @@ footer #alr_footer {
 	color: white;
 }
 
-.social-icons i:hover {
+.social-icons em:hover {
 	color: #C27DFC;
 }

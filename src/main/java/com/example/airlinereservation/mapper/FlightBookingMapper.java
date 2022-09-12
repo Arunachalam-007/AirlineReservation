@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.mapper;
+package com.example.airlinereservation.mapper;
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.example.AirLineReservation.model.FlightBooking;
+import com.example.airlinereservation.model.FlightBooking;
 
 public class FlightBookingMapper implements RowMapper<FlightBooking>{
 

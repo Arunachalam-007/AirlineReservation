@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="../Themes/TicketDetails.css">
@@ -10,13 +10,14 @@
 </head>
 <body>
 	<form>
-		<%-- <jsp:include page="Nav.jsp" /> --%>
+	
 		<jsp:include page="PassengerNav.jsp" />
 
 
 
 
 		<table>
+			<caption style="display:hidden;">Ticket Details</caption>
 
 			<thead>
 				<tr>

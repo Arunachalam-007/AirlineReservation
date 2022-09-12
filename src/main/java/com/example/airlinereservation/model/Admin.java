@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.model;
+package com.example.airlinereservation.model;
 
 public class Admin {
  private String adminUsername="AdminLogin";

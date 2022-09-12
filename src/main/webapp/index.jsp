@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 
@@ -68,9 +68,7 @@
 						pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
 						title="The password must contain atleast 8 character and one upper case,lowercase atleast 1 digit 1 special symbol"
 						required>
-					<!--  <i class="bi bi-eye-slash" id="togglePassword"></i> -->
-
-					<!-- 	<p id="text">WARNING! Caps lock is ON.</p> -->
+					
 					<input type="submit" value="Login" class="login_btn"
 						onclick="validator();"> <span>${error}</span>
 					<div class="link_align">
@@ -87,7 +85,7 @@
 					<a href="FlightDetails.jsp"> <img src="./Images/british.jpg"
 						id="flight_img" alt="Air India">
 					</a>
-					<!-- <p>Business Class</p> -->
+					
 
 				</div>
 
@@ -95,7 +93,7 @@
 					<a href="FlightDetails.jsp"> <img src="./Images/malaysia.jpg"
 						id="flight_img" alt="Malaysia Airline">
 					</a>
-					<!-- <p>Economy Class</p> -->
+				
 
 
 				</div>
@@ -104,7 +102,7 @@
 					<a href="FlightDetails.jsp"> <img src="./Images/airline.jpg"
 						id="flight_img" alt="Airline">
 					</a>
-					<!-- <p>Economy Class</p> -->
+			
 				</div>
 			</div>
 		</div>

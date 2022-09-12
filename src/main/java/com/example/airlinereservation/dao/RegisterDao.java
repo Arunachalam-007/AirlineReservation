@@ -1,8 +1,8 @@
-package com.example.AirLineReservation.dao;
+package com.example.airlinereservation.dao;
 
 
 
-import com.example.AirLineReservation.model.Passenger;
+import com.example.airlinereservation.model.Passenger;
 
 public interface RegisterDao {
 

@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="com.example.AirLineReservation.model.Flight"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="../Themes/FlightDisplay.css">
@@ -13,7 +13,6 @@
 <body>
 	<form>
 
-		<%-- <jsp:include page="Nav.jsp" /> --%>
 		<jsp:include page="PassengerNav.jsp" />
 
 		<%-- <input type="hidden" value="${param.cls}" id="cls" name="dd_value"> --%>
@@ -24,6 +23,7 @@
 		
 
 		<table>
+			<caption style="display:hidden;">Flight Details</caption>
 			<tr>
 				<th>Flight ID</th>
 				<th>Flight Name</th>
@@ -36,7 +36,7 @@
 			</tr>
 
 			<c:forEach var="flight" items="${infos}">
-				<%-- <c:set var="list" value="${flight.departure}" scope="request" /> --%>
+				
 				<tr style="font-size: 10">
 					<td>${flight.flightId}</td>
 					<td>${flight.flightName}</td>
@@ -45,7 +45,6 @@
 					<td>${flight.fromPlace}</td>
 					<td>${flight.toPlace}</td>
 					<td>&#x20B9; ${flight.price}</td>
-					<%-- <td><a href="ticketbook/${flight.fid}">Book</a></td> --%>
 					<td><a href="/ticketbook?flightId=${flight.flightId}&bookingClass=${cls_value}">Book</a></td>
 
 				</tr>

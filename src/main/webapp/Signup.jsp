@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<!-- <form action="Search.jsp"> -->
+	
 	<form action="search" method="post" name="signup" >
 		<jsp:include page="Nav.jsp" />
 		<div class="whole_cont">
@@ -50,9 +50,7 @@
 
 
 
-			<!-- <div class="flight_img">
-	<img src="./Images/emirates.jpg">
-	</div> -->
+		
 		</div>
 
 	</form>

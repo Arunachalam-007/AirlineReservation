@@ -1,14 +1,14 @@
-package com.example.AirLineReservation.service;
+package com.example.airlinereservation.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.AirLineReservation.daoimpl.FlightDaoImpl;
-import com.example.AirLineReservation.daoimpl.RegisterDaoImpl;
-import com.example.AirLineReservation.dto.FlightDTO;
-import com.example.AirLineReservation.dto.PassengerDTO;
-import com.example.AirLineReservation.model.Flight;
-import com.example.AirLineReservation.model.Passenger;
+import com.example.airlinereservation.daoimpl.FlightDaoImpl;
+import com.example.airlinereservation.daoimpl.RegisterDaoImpl;
+import com.example.airlinereservation.dto.FlightDTO;
+import com.example.airlinereservation.dto.PassengerDTO;
+import com.example.airlinereservation.model.Flight;
+import com.example.airlinereservation.model.Passenger;
 
 @Service
 public class ServiceALR {

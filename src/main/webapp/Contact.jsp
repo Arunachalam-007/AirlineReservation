@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="../Themes/Contact.css">
 <title>Contact</title>
@@ -17,7 +17,7 @@
   </div>
   <div class="row">
     <div class="column">
-      <img src="./Images/alr.jpg" style="width:100%">
+      <img src="./Images/alr.jpg" style="width:100%" alt="image">
     </div>
     <div class="column">
      

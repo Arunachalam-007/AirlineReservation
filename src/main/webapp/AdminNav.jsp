@@ -2,20 +2,18 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="./Themes/AdminNav.css">
 <title>Admin</title>
 </head>
 <body>
-	<!-- <form method="get"> -->
 		<div class="nav_menu">
 
 			<ul id="nav_elements">
 
 				<li><a href="/logout">Logout</a></li>
 				<li><a href="Contact.jsp">Feedback</a></li>
-				<!-- <li><a href="Index.jsp">Cancelled Ticket</a></li> -->
 				<li><a href="bookedTicketDisplay">Booked Ticket</a></li> 
 				<li><a href="passengerDisplayToAdmin">Passengers</a></li>
 				<li><a href="viewFlight">View Flight</a></li>
@@ -28,6 +26,5 @@
 			</ul>
 
 		</div>
-	<!-- </form> -->
 </body>
 </html>

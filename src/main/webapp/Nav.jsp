@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="../Themes/Nav.css">
@@ -15,7 +15,6 @@
 		<ul>
 
 
-		 	<!-- <li><a href="#">About</a></li>  -->
 		<li><a href="#">About</a></li>
 			<li><a href="Contact.jsp">Contact</a></li>
 			<li><a href="Index.jsp" class="active">Home</a></li>

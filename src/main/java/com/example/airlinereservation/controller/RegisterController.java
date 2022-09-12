@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.controller;
+package com.example.airlinereservation.controller;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.AirLineReservation.daoimpl.RegisterDaoImpl;
-import com.example.AirLineReservation.dto.PassengerDTO;
-import com.example.AirLineReservation.model.Admin;
-import com.example.AirLineReservation.model.Feedback;
+import com.example.airlinereservation.daoimpl.RegisterDaoImpl;
+import com.example.airlinereservation.dto.PassengerDTO;
+import com.example.airlinereservation.model.Admin;
+import com.example.airlinereservation.model.Feedback;
 
-import com.example.AirLineReservation.model.Passenger;
-import com.example.AirLineReservation.service.ServiceALR;
+import com.example.airlinereservation.model.Passenger;
+import com.example.airlinereservation.service.ServiceALR;
 
 @Controller
 public class RegisterController {

@@ -1,10 +1,10 @@
-package com.example.AirLineReservation.dao;
+package com.example.airlinereservation.dao;
 
 import java.util.List;
 
-import com.example.AirLineReservation.model.Flight;
-import com.example.AirLineReservation.model.FlightBooking;
-import com.example.AirLineReservation.model.FlightSearch;
+import com.example.airlinereservation.model.Flight;
+import com.example.airlinereservation.model.FlightBooking;
+import com.example.airlinereservation.model.FlightSearch;
 
 public interface FlightDao {
 	public void addFlight(Flight f);

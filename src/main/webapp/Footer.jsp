@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
 <meta charset="ISO-8859-1">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,9 +14,9 @@
 		<footer id="footer">
 			<div class="footer1">
 				<div class="social-icons">
-					<a href="#"> <i class="fa fa-facebook"></i>
-					</a> <a href="#"> <i class="fa fa-twitter"></i>
-					</a> <a href="#"> <i class="fa fa-instagram"></i>
+					<a href="#"> <em class="fa fa-facebook"></em>
+					</a> <a href="#"> <em class="fa fa-twitter"></em>
+					</a> <a href="#"> <em class="fa fa-instagram"></em>
 					</a>
 				</div>
 			</div>

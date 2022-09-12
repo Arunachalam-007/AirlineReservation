@@ -1,4 +1,4 @@
-package com.example.AirLineReservation.daoimpl;
+package com.example.airlinereservation.daoimpl;
 
 import java.sql.Date;
 import java.util.List;
@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.AirLineReservation.dao.FlightDao;
-import com.example.AirLineReservation.mapper.FlightBookingMapper;
-import com.example.AirLineReservation.mapper.FlightMapper;
-import com.example.AirLineReservation.mapper.PassengerMapper;
-import com.example.AirLineReservation.model.Flight;
-import com.example.AirLineReservation.model.FlightBooking;
-import com.example.AirLineReservation.model.FlightSearch;
-import com.example.AirLineReservation.model.Passenger;
+import com.example.airlinereservation.dao.FlightDao;
+import com.example.airlinereservation.mapper.FlightBookingMapper;
+import com.example.airlinereservation.mapper.FlightMapper;
+import com.example.airlinereservation.mapper.PassengerMapper;
+import com.example.airlinereservation.model.Flight;
+import com.example.airlinereservation.model.FlightBooking;
+import com.example.airlinereservation.model.FlightSearch;
+import com.example.airlinereservation.model.Passenger;
 
 @Repository
 public class FlightDaoImpl implements FlightDao {

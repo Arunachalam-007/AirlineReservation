@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="./Themes/ViewFlight.css">
@@ -13,6 +13,7 @@
 		<jsp:include page="AdminNav.jsp" />
 
 		<table>
+		<caption style="display:hidden;">Flight Details</caption>
 			<tr>
 				<th>Flight ID</th>
 				<th>Flight Name</th>
