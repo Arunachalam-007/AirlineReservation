@@ -75,6 +75,7 @@
 			
 				<table>
 				<caption>Price Details</caption>
+				<tr><th></th></tr>
 					<tbody>
 						<c:forEach var="bvalues" items="${bookingvalues}">
 
