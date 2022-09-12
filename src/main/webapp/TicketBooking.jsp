@@ -72,8 +72,9 @@
 
 			<div class="ticket_amt">
 				<h1>Fare Summary</h1>
-				<!-- <p>Base Fare</p><span>&#x20B9; 8,573</span> -->
+			
 				<table>
+				<caption>Price Details</caption>
 					<tbody>
 						<c:forEach var="bvalues" items="${bookingvalues}">
 

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.Date;
 import java.time.LocalDate;
 
-import java.text.ParseException;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ import com.example.airlinereservation.daoimpl.FlightDaoImpl;
 import com.example.airlinereservation.dto.FlightBookingDTO;
 import com.example.airlinereservation.dto.FlightDTO;
 import com.example.airlinereservation.dto.FlightSearchDTO;
-import com.example.airlinereservation.model.Feedback;
+
 import com.example.airlinereservation.model.Flight;
 import com.example.airlinereservation.model.FlightBooking;
 import com.example.airlinereservation.model.Passenger;
@@ -45,7 +45,6 @@ public class FlightController {
 	
 	
 
-	// Admin Adding flights
 	@PostMapping("/adminflight")
 	public String flightInfo(@RequestParam("flightid") String flightId, @RequestParam("flightname") String flightName,
 			@RequestParam("departure") String departure, @RequestParam("arrival") String arrival,
@@ -134,11 +133,10 @@ public class FlightController {
 
 		flightBooking.setBookingClass(bookingClass);
 		try {
-			if (bookingClass.equals("Economy")) {
-				bookingPrice = bookingPrice;
-			} else if (bookingClass.equals("Business")) {
+			
+			 if (bookingClass.equals("Business")) {
 				double result = Double.parseDouble(bookingPrice);
-				double value = (double) (result + result / 100 * 10);
+				double value =  (result + result / 100 * 10);
 				bookingPrice = String.valueOf(value);
 			}
 		} catch (Exception e) {
@@ -152,11 +150,11 @@ public class FlightController {
 		try {
 			if (age <= 10) {
 				double result = Double.parseDouble(bookingPrice);
-				double value = (Double) result / 2;
+				double value = result / 2;
 				bookingPrice = String.valueOf(value);
 			} else if (age >= 70) {
 				double result = Double.parseDouble(bookingPrice);
-				double value = (Double) result / 2;
+				double value =  result / 2;
 				bookingPrice = String.valueOf(value);
 			}
 		} catch (Exception e) {
