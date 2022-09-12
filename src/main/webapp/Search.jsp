@@ -29,22 +29,24 @@
 					<option value="Business">Business</option>
 					<option value="Economy">Economy</option>
 				</select> <label for="from_place">From Place</label> <input type="text"
-					name="from_place" placeholder="Enter from place"
+					name="from_place" placeholder="Enter from place" id="from_place"
 					pattern="[A-Z]{1}[A-Za-z]{4, 18}"
 					title="Place should contain letters and white spaces" required>
 				<label for="to_place">To Place</label> <input type="text"
-					name="to_place" placeholder="Enter to place"
+					name="to_place" placeholder="Enter to place" id="to_place"
 					pattern="[A-Z]{1}[A-Za-z]{4, 18}"
 					title="Place should contain letters and white spaces" required>
 				<label for="bdate">Booking Date</label> <input type="date"
 					name="bookingDate" placeholder="Enter Booking Date"
 					pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
 					title="Please enter the correct format dd-MM-yy" required>
-				<input type="submit" value="Search" class="search_btn">
+				<input type="submit" value="Search" class="search_btn" onclick="inputCheck(); return false;">
 			</div>
 		</div>
 
 	</form>
 
+<script type="text/javascript" src="InputSameCheck.js">
+</script>
 </body>
 </html>

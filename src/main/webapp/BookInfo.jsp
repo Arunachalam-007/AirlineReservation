@@ -32,17 +32,23 @@
 <input id="flightId" name="flightName" type="text" value="${fid_val.flightName}" readonly/>
 
 <label for="name">Name</label> 
-<input type="text"name="name" placeholder="Enter Name">
+<input type="text"name="name" placeholder="Enter Name" id="name" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
+						title="Name should contain letters and white spaces" required>
 <label for="email">Email</label> 
-<input type="email"name="email" placeholder="example@gmail.com">
+<input type="email"name="email" placeholder="example@gmail.com" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+						title="Please enter the valid email" required>
 <label for="dob">DOB</label> 
-<input type="date"name="dateOfBirth" placeholder="Enter DOB">
+<input type="date"name="dateOfBirth" placeholder="Enter DOB" pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
+						title="Please enter the correct format dd-MM-yy" required>
 <label for="nationality">Nationality</label> 
-<input type="text" name="nationality" placeholder="Enter Nationality">
+<input type="text" name="nationality" placeholder="Enter Nationality" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
+						title="Nationality should contain letters and white spaces" required>
 <label for="mobile">Mobile</label> 
-<input type="text"name="mobile" placeholder="Enter Mobile Number">
+<input type="text"name="mobile" placeholder="Enter Mobile Number" pattern="(0/91)?[7-9][0-9]{9}"
+						title="Please enter the valid mobile Number" required>
 <label for="address">Address</label> 
-<textarea rows="7" cols="160" name="address" placeholder="Enter Address"></textarea>
+<textarea rows="7" cols="160" name="address" placeholder="Enter Address" pattern="[A-Za-z0-9'\.\-\s\,]"
+						title="Please Enter the valid address" required></textarea>
 <input type="submit" value="Reserve Flight" class="res_btn"> 
 </c:forEach>
 </div>

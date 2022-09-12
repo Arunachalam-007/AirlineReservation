@@ -1,11 +1,13 @@
 package com.example.AirLineReservation.controller;
 
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import java.sql.Date;
 import java.time.LocalDate;
 
 import java.text.ParseException;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -80,13 +82,17 @@ public class FlightController {
 	}
 
 	@GetMapping("/ticketbook")
-	public String bookingTicket(@RequestParam("flightId") String flightId, @RequestParam("bookingClass") String bookingClass, Model mod) {
+	public String bookingTicket(@RequestParam("flightId") String flightId,
+			@RequestParam("bookingClass") String bookingClass, Model mod) {
 
 		List<Flight> result = flightDaoImpl.ticketBooking(flightId);
 		mod.addAttribute("bookingvalues", result);
 
+		System.out.println(flightId);
+		System.out.println(bookingClass);
 		int seatAvailResult = flightDaoImpl.seatAvailCheck(flightId, bookingClass);
 		mod.addAttribute("seatAvailResult", seatAvailResult);
+
 		return "TicketBooking.jsp";
 	}
 
@@ -99,19 +105,31 @@ public class FlightController {
 	}
 
 	@GetMapping("/bookingpay")
-	public String ticketBookingPay(@RequestParam("flightid") String flightId, Model mod) {
+	public String ticketBookingPay(@RequestParam("flightid") String flightId,
+			@RequestParam("seatavailabilityresult") int seatResult, Model mod, HttpSession session) {
 
-		List<Flight> result = flightDaoImpl.ticketBooking(flightId);
-		mod.addAttribute("flightid_value", result);
-		return "BookInfo.jsp";
+		if (session.getAttribute("passengerusername") != null) {
+			List<Flight> result = flightDaoImpl.ticketBooking(flightId);
+			mod.addAttribute("flightid_value", result);
+			if (seatResult != 36) {
+				return "BookInfo.jsp";
+			} else {
+				return "Index.jsp";
+			}
+		} else {
+			return "Index.jsp";
+		}
 	}
 
 	@PostMapping("/payticketbooking")
-	public String bookingInfoPay(@RequestParam("bookingclass") String bookingClass, @RequestParam("bookingprice") String bookingPrice,
-			@RequestParam("flightId") String flightId, @RequestParam("flightName") String flightName, @RequestParam("name") String name,
+	public String bookingInfoPay(@RequestParam("bookingclass") String bookingClass,
+			@RequestParam("bookingprice") String bookingPrice, @RequestParam("flightId") String flightId,
+			@RequestParam("flightName") String flightName, @RequestParam("name") String name,
 			@RequestParam("email") String email, @RequestParam("dateOfBirth") String dateOfBirth,
 			@RequestParam("nationality") String nationality, @RequestParam("mobile") String mobile,
-			@RequestParam("address") String address, @RequestParam("username") String username,@RequestParam("bookingdate") String bookingDate,@RequestParam("bookingfrom_place") String bookingFromPlace, Model mod) {
+			@RequestParam("address") String address, @RequestParam("username") String username,
+			@RequestParam("bookingdate") String bookingDate, @RequestParam("bookingfrom_place") String bookingFromPlace,
+			Model mod) {
 
 		flightBooking.setBookingClass(bookingClass);
 		try {
@@ -158,18 +176,17 @@ public class FlightController {
 		flightBooking.setNationality(nationality);
 		flightBooking.setMobile(mobile);
 		flightBooking.setAddress(address);
-		
+
 		LocalDate conversion = LocalDate.parse(bookingDate);
 		Date date1 = Date.valueOf(conversion);
 		flightBooking.setBooking_date(date1);
-		
-		
+
 		flightBooking.setBooking_from_place(bookingFromPlace);
 
 		flightDaoImpl.bookingFlight(flightBooking, bookingClass);
 
-		List<FlightBooking> result=flightDaoImpl.confirmPasengerInfo(name,date);
-		mod.addAttribute("confirmPassengers",result);
+		List<FlightBooking> result = flightDaoImpl.confirmPasengerInfo(name, date);
+		mod.addAttribute("confirmPassengers", result);
 		flightDaoImpl.seatCountDecrease(flightId, bookingClass);
 //		return "Index.jsp";
 		return "BookConfirm.jsp";
@@ -189,40 +206,56 @@ public class FlightController {
 		return "TicketDetails.jsp";
 	}
 
-
 	@GetMapping("/cancelticket")
-	public String passengerCancelTicket(@RequestParam("bookid") String bookingId,@RequestParam("username") String username,@RequestParam("flightId") String flightId, Model mod) {
-		flightDaoImpl.cancelTicket(bookingId,flightId);
+	public String passengerCancelTicket(@RequestParam("bookid") String bookingId,
+			@RequestParam("username") String username, @RequestParam("flightId") String flightId, Model mod) {
+		flightDaoImpl.cancelTicket(bookingId, flightId);
 		List<FlightBooking> result = flightDaoImpl.passengerBookedTicket(username);
 		mod.addAttribute("passengerbookedticketvalue", result);
 		return "TicketDetails.jsp";
 //		return "/passengerbookedticket";
 	}
+
 	@GetMapping("/bookedTicketDisplay")
 	public String bookedTicketDisplay(Model mod) {
 		List<FlightBooking> result = flightDaoImpl.flightInfoAdmin();
 		mod.addAttribute("bookedticketval", result);
 		return "AdminDashboard.jsp";
 	}
-	
+
 	@GetMapping("/passengerDisplayToAdmin")
 	public String passengerDetails(Model mod) {
-		List<Passenger> passengerResult=flightDaoImpl.passengerInfo();
-		mod.addAttribute("passengerInfo",passengerResult);
+		List<Passenger> passengerResult = flightDaoImpl.passengerInfo();
+		mod.addAttribute("passengerInfo", passengerResult);
 		return "PassengerInfo.jsp";
 	}
-	
+
 	@GetMapping("/deletepassenger")
-	public String deletePassengerByAdmin(@RequestParam("username") String username,Model mod) {
+	public String deletePassengerByAdmin(@RequestParam("username") String username, Model mod) {
 		flightDaoImpl.deletePassenger(username);
-		List<Passenger> passengerResult=flightDaoImpl.passengerInfo();
-		mod.addAttribute("passengerInfo",passengerResult);
+		List<Passenger> passengerResult = flightDaoImpl.passengerInfo();
+		mod.addAttribute("passengerInfo", passengerResult);
 		return "PassengerInfo.jsp";
 	}
-	
-	@GetMapping("/bookconfirm")
-	public String bookingConfirm() {
-		return null;
+
+	/*
+	 * @GetMapping("/bookconfirm") public String bookingConfirm() { return null; }
+	 */
+
+	@GetMapping("/viewFlight")
+	public String viewFlight(Model mod) {
+		List<Flight> flightResult = flightDaoImpl.viewFlight();
+		mod.addAttribute("flightInfo", flightResult);
+		return "ViewFlight.jsp";
+	}
+
+	@GetMapping("/deleteflight")
+	public String deleteFlightByAdmin(@RequestParam("flightId") String flightId, Model mod) {
+		flightDaoImpl.deleteFlight(flightId);
+		List<Flight> flightResult = flightDaoImpl.viewFlight();
+		mod.addAttribute("flightInfo", flightResult);
+		return "ViewFlight.jsp";
+
 	}
 
 }

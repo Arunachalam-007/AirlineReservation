@@ -13,6 +13,10 @@
 		<jsp:include page="PassengerNav.jsp" />
 		<div class="container">
 			<div class="ticket_info">
+				 <input type="hidden" id="seatavailabilityresult"
+					name="seatavailabilityresult" value="${seatAvailResult}">
+				<%-- 				<input type="hidden" value="${seatAvailResult}"
+					name="seatavailabilityresult" id="seatavailabilityresult"> --%>
 				<h1>Ticket Details</h1>
 				<c:forEach var="bvalues" items="${bookingvalues}">
 					<%-- 	<c:out value="${bvalues.fname}"/> --%>
@@ -125,7 +129,8 @@
 				</table>
 				<c:forEach var="bvalues" items="${bookingvalues}">
 					<%-- <a href="bookingpay/${bvalues.fid}" class="pay_btn">Continue</a> --%>
-					<a href="/bookingpay?flightid=${bvalues.flightId}" class="pay_btn">Continue</a>
+					<a href="/bookingpay?flightid=${bvalues.flightId}&seatavailabilityresult=${seatAvailResult}" class="pay_btn"
+						id="continue_link" onclick="seatAlert();">Continue</a>
 					<!-- <input type="submit" value="Continue" class="pay_btn"> -->
 
 				</c:forEach>
@@ -133,5 +138,19 @@
 		</div>
 
 	</form>
+
+	<script type="text/javascript">
+		function seatAlert() {
+
+			var seatValue = document.getElementById('seatavailabilityresult').value;
+			if (seatValue == 36) {
+				alert("it's working");
+				//return true;
+			}
+			else{
+				console.log("Proceed");
+			}
+		}
+	</script>
 </body>
 </html>

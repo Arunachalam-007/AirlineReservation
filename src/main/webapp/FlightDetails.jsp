@@ -9,23 +9,25 @@
 </head>
 <body>
 	<form action="searchflightwithoutlogin" method="post">
-		<jsp:include page="Nav.jsp" />
+		<%-- <jsp:include page="Nav.jsp" /> --%>
+		<jsp:include page="PassengerNav.jsp" />
 		<div class="container">
 
 			<div class="fdetails">
 
 				<h1>Check Availability</h1>
 				<label for="from_place">From Place</label> <input type="text"
-					name="from_place" placeholder="Enter from place"
+					name="from_place" placeholder="Enter from place" id="from_place"
 					pattern="[A-Z]{1}[A-Za-z]{4, 18}"
 					title="Place should contain letters and white spaces" required>
 				<label for="to_place">To Place</label> <input type="text"
-					name="to_place" placeholder="Enter to place"
-					pattern="[A-Z]{1}[A-Za-z]{4, 18}"
+					 name="to_place" placeholder="Enter to place"
+					id="to_place" pattern="[A-Z]{1}[A-Za-z]{4, 18}"
 					title="Place should contain letters and white spaces" required>
 				<label for="bdate">Booking Date</label> <input type="date"
 					name="bookingDate" placeholder="Enter Booking Date"> <input
-					type="submit" value="Search" class="search_btn">
+					type="submit" value="Search" class="search_btn"
+					onclick="inputCheck(); return false;">
 			</div>
 
 			<div class="quote">
@@ -40,5 +42,7 @@
 		<!-- Climb the mountain so you can see the world, not so the world can see you -->
 
 	</form>
+	<script type="text/javascript" src="InputSameCheck.js">
+	</script>
 </body>
 </html>

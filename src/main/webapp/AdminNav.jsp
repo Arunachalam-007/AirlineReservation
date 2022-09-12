@@ -18,6 +18,7 @@
 				<!-- <li><a href="Index.jsp">Cancelled Ticket</a></li> -->
 				<li><a href="bookedTicketDisplay">Booked Ticket</a></li> 
 				<li><a href="passengerDisplayToAdmin">Passengers</a></li>
+				<li><a href="viewFlight">View Flight</a></li>
 				<li><a href="AdminFlight.jsp">Add Flight</a></li>
 				<li><a href="Index.jsp">Home</a></li>
 

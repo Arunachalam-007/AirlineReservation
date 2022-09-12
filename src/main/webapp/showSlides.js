@@ -15,14 +15,30 @@ function showSlides() {
 	setTimeout(showSlides, 2000);
 }
 
+const togglePassword = document.querySelector("#togglePassword");
+const password = document.querySelector("#password");
+
+togglePassword.addEventListener("click", function() {
+
+	const type = password.getAttribute("type") === "password" ? "text" : "password";
+	password.setAttribute("type", type);
+
+	this.classList.toggle("bi-eye");
+});
+
+
+const form = document.querySelector("form");
+form.addEventListener('submit', function(e) {
+	e.preventDefault();
+});
 
 /*var input = document.getElementById("pwdId");
 var text = document.getElementById("text");
 input.addEventListener("keyup", function(event) {
 
 if (event.getModifierState("CapsLock")) {
-    text.style.display = "block";
+	text.style.display = "block";
   } else {
-    text.style.display = "none"
+	text.style.display = "none"
   }
 });*/

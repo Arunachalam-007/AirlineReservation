@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -63,7 +64,7 @@ public class RegisterController {
 			session.setAttribute("username", username);
 			return "/bookedticketinfoadmin";
 		} else if (registerDaoImpl.checkLogin(username,password)) {
-			session.setAttribute("username", username);
+			session.setAttribute("passengerusername", username);
 			return "Search.jsp";
 		}
 		else {
@@ -73,10 +74,11 @@ public class RegisterController {
 	}
 	
 	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@GetMapping("/logout")
 	public String logout(HttpSession session ) {
-	    session.invalidate();
-	    return "redirect:/login";
+		session.removeAttribute("passengerusername");
+//	    session.invalidate();
+	    return "Index.jsp";
 	}
 
 }

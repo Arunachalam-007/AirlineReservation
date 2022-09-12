@@ -20,6 +20,7 @@ body {
 	background-color: hsl(193, 100%, 96%);
 	font-size: 18px;
 	font-family: "Open Sans", sans-serif;
+	
 }
 
 .login_btn {
@@ -30,6 +31,7 @@ body {
 	padding: 15px 70px;
 	font-size: 15px;
 	cursor: pointer;
+	margin-top: 20px;
 }
 
 /* .login_btn:hover {
@@ -40,6 +42,11 @@ body {
 	background-color: hsl(322, 100%, 66%);
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
+}
+
+form #togglePassword {
+    margin: -65px 20px 0px 650px;
+    cursor: pointer;
 }
 /* ******************************************* */
 
@@ -68,14 +75,14 @@ body {
 
 .home_page_first h1 {
 	font-size: 42px;
-	margin: 25px 0px;
+	margin: 10px 0px;
 	padding-right: 40px;
 	font-family: "Poppins", sans-serif;
 }
 
 .home_page_first p {
 	color: hsl(208, 11%, 55%);
-	margin: 25px 0px;
+	margin: 10px 0px;
 	padding-right: 40px;
 }
 
@@ -115,6 +122,7 @@ body {
 	text-decoration: none;
 	color: black;
 	margin-left: 110px;
+	margin-top: -20px;
 }
 
 .login #acnt1 {
@@ -122,6 +130,7 @@ body {
 	text-decoration: none;
 	color: black;
 	margin-right: 100px;
+	margin-top: -20px;
 }
 
 .link_align {
