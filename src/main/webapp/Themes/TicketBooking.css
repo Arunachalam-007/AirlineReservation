@@ -49,14 +49,12 @@ body {
 	background-color: #669999;
 	padding: 30px;
 	border-radius: 10px;
-	/* //******************** */
 	margin-top: 15px;
 	display: flex;
 	flex-direction: row;
 	gap: 30px;
 	font-size: 17px;
 
-	/* //******************** */
 }
 .ticket_info .booking_table .depart-left{
 	display: flex;
@@ -94,10 +92,6 @@ body {
 	cursor: pointer;
 }
 
-.ticket_info .booking_table:hover {
-	
-}
-
 .info h2 {
 	text-align: center;
 	margin-bottom: 10px;
@@ -125,7 +119,6 @@ ol {
 	cursor: pointer;
 	padding: 10px;
 	background-color: hsl(322, 100%, 66%);
-	border-radius: 10px;
 	position: absolute;
 	top: 320px;
 	text-decoration: none;
@@ -138,39 +131,10 @@ ol {
 	color: black;
 }
 
-/* .contd_btn {
-	height: 45px;
-	width: 100px;
-	margin-left: 410px;
-	margin-top:30px;
-	border-radius: 10px;
-	border: none;
-	color: #fff;
-	font-size: 18px;
-	font-weight: 500;
-	cursor: pointer;
-	padding: 10px;
-	background-color: hsl(322, 100%, 66%);
-	border-radius: 10px;
-	text-decoration: none;
-}
-
-
-.contd_btn:hover {
-	border: 1px solid black;
-	background: transparent;
-	color: black;
-} */
-​ /*.ticket_info #pfrom{
-	margin-left: 100px;
-}
- */
-	/*************************/
-	/*************************/ .ticket_amt {
+ .ticket_amt {
 	width: 25%;
 	height: 480px;
 	border-radius: 10px;
-	/* background-color: #c0c0c0; */
 }
 
 table {
@@ -178,7 +142,6 @@ table {
 	border-collapse: collapse;
 	display: block;
 	overflow-y: auto;
-	/* border-spacing: 25px 10px; */
 	border-spacing: 0 1em;
 }
 
@@ -200,7 +163,6 @@ td {
 	height: 45px;
 	width: 100px;
 	margin: 25px 0 0 77px;
-	border-radius: 10px;
 	border: 1px solid black;
 	color: black;
 	font-size: 18px;

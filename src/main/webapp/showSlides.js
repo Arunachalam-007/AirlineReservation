@@ -32,6 +32,31 @@ form.addEventListener('submit', function(e) {
 	e.preventDefault();
 });
 
+function validator() {
+	var inputUserName = document.getElementById('username').value;
+	var inputPassword = document.getElementById('password').value;
+	var pattern = "^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$";
+	var passwordPattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+
+	if ((inputUserName == '') || (inputPassword == '')) {
+		alert("username and password cannot be empty");
+
+	}
+	else if (!inputUserName.matches(pattern)) {
+		alert("For Username First character is alphanum,should contain 8 characters, then 6 to 18 characters, last character is alphanum.");
+	}
+	else if (!inputPassword.matches(passwordPattern)) {
+		alert("The password must contain atleast 8 character and one upper case,lowercase atleast 1 digit 1 special symbol");
+	}
+
+	else {
+		console.log("Proceed");
+	}
+
+
+
+
+}
 /*var input = document.getElementById("pwdId");
 var text = document.getElementById("text");
 input.addEventListener("keyup", function(event) {

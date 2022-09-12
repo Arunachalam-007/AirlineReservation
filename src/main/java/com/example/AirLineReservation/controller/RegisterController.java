@@ -3,6 +3,7 @@ package com.example.AirLineReservation.controller;
 import java.sql.Date;
 import java.time.LocalDate;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.AirLineReservation.daoimpl.RegisterDaoImpl;
 import com.example.AirLineReservation.dto.PassengerDTO;
 import com.example.AirLineReservation.model.Admin;
+import com.example.AirLineReservation.model.Feedback;
+
 import com.example.AirLineReservation.model.Passenger;
 import com.example.AirLineReservation.service.ServiceALR;
 
@@ -34,15 +36,18 @@ public class RegisterController {
 	PassengerDTO passengerdto = new PassengerDTO();
 
 	Passenger passenger = new Passenger();
+	
+	Feedback feedback=new Feedback();
 
 	@PostMapping("/search")
 	public String registerdetails(@RequestParam("name") String name, @RequestParam("address") String address,
 			@RequestParam("mobile") String mobile, @RequestParam("email") String email,
-			@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("dateOfBirth") String dateOfBirth) {
+			@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("dateOfBirth") String dateOfBirth,Model mod) {
 
 		passengerdto.setPassengerName(name);
 		passengerdto.setPassengerAddr(address);
 		passengerdto.setPassengerMobile(mobile);
+		
 		passengerdto.setPassengerEmail(email);
 		passengerdto.setPassengerUsername(username);
 		passengerdto.setPassengerPassword(password);
@@ -77,8 +82,42 @@ public class RegisterController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session ) {
 		session.removeAttribute("passengerusername");
-//	    session.invalidate();
 	    return "Index.jsp";
 	}
+	
+	@PostMapping("/forgotpassword")
+	public String updatePassword(@RequestParam("username") String username,@RequestParam("password1") String password,@RequestParam("password2") String confirmPassword,Model mod) {
+		if(password.equals(confirmPassword)) {
+			if(serviceALR.updatePassword(username, confirmPassword)) {
+				mod.addAttribute("message", "Your password has been changed!");
+                return "Index.jsp";
+			}
+			 else {
+	                mod.addAttribute("message", "Invalid username!");
+	                return "ForgotPassword.jsp";
+	            }
+			
+		}
+		else {
+            mod.addAttribute("message", "The Change password and Confirm Password should be same!");
+            return "ForgotPassword.jsp";
+        }
+	}
+	
+	@PostMapping("/contactDetails")
+	public String feedBackToAdmin(@RequestParam("email") String email,@RequestParam("city")String city,@RequestParam("subject") String subject,Model mod) {
+		
+		
+		feedback.setEmail(email);
+		feedback.setCity(city);
+		feedback.setSubject(subject);
+		
+		registerDaoImpl.feedBackInsert(feedback);
+		mod.addAttribute("feedbackmessage","Feedback sended Successfully!");
+		return "Contact.jsp";
+		
+		
+	}
+	
 
 }

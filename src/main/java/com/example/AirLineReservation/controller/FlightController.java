@@ -20,6 +20,7 @@ import com.example.AirLineReservation.daoimpl.FlightDaoImpl;
 import com.example.AirLineReservation.dto.FlightBookingDTO;
 import com.example.AirLineReservation.dto.FlightDTO;
 import com.example.AirLineReservation.dto.FlightSearchDTO;
+import com.example.AirLineReservation.model.Feedback;
 import com.example.AirLineReservation.model.Flight;
 import com.example.AirLineReservation.model.FlightBooking;
 import com.example.AirLineReservation.model.Passenger;
@@ -41,14 +42,16 @@ public class FlightController {
 	FlightBookingDTO flightBookingdto = new FlightBookingDTO();
 
 	FlightBooking flightBooking = new FlightBooking();
+	
+	
 
 	// Admin Adding flights
 	@PostMapping("/adminflight")
 	public String flightInfo(@RequestParam("flightid") String flightId, @RequestParam("flightname") String flightName,
 			@RequestParam("departure") String departure, @RequestParam("arrival") String arrival,
-			@RequestParam("start_time") String start_time, @RequestParam("end_time") String end_time,
-			@RequestParam("from") String from_place, @RequestParam("to") String to_place,
-			@RequestParam("price") String price, @RequestParam("seat") int seat) throws ParseException {
+			@RequestParam("start_time") String startTime, @RequestParam("end_time") String endTime,
+			@RequestParam("from") String fromPlace, @RequestParam("to") String toPlace,
+			@RequestParam("price") String price, @RequestParam("seat") int seat)  {
 
 		flightdto.setFlightId(flightId);
 		flightdto.setFlightName(flightName);
@@ -57,11 +60,11 @@ public class FlightController {
 
 		flightdto.setFlightSeat(seat);
 
-		flightdto.setStart_time(start_time);
-		flightdto.setEnd_time(end_time);
+		flightdto.setStartTime(startTime);
+		flightdto.setEndTime(endTime);
 
-		flightdto.setFlightFromPlace(from_place);
-		flightdto.setFlightToPlace(to_place);
+		flightdto.setFlightFromPlace(fromPlace);
+		flightdto.setFlightToPlace(toPlace);
 
 		flightdto.setPrice(price);
 
@@ -72,10 +75,10 @@ public class FlightController {
 	}
 
 	@PostMapping("/flightsearch")
-	public String flightSearchController(@RequestParam("from_place") String from_place,
-			@RequestParam("to_place") String to_place, @RequestParam("bookingDate") String bookingDate, Model mod) {
+	public String flightSearchController(@RequestParam("from_place") String fromPlace,
+			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
 
-		List<Flight> values = flightDaoImpl.flightDisplay(from_place, bookingDate);
+		List<Flight> values = flightDaoImpl.flightDisplay(fromPlace, bookingDate);
 		mod.addAttribute("infos", values);
 		return "FlightDisplay.jsp";
 
@@ -88,8 +91,6 @@ public class FlightController {
 		List<Flight> result = flightDaoImpl.ticketBooking(flightId);
 		mod.addAttribute("bookingvalues", result);
 
-		System.out.println(flightId);
-		System.out.println(bookingClass);
 		int seatAvailResult = flightDaoImpl.seatAvailCheck(flightId, bookingClass);
 		mod.addAttribute("seatAvailResult", seatAvailResult);
 
@@ -97,9 +98,9 @@ public class FlightController {
 	}
 
 	@PostMapping("/searchflightwithoutlogin")
-	public String searchFlightwoutLogin(@RequestParam("from_place") String from_place,
-			@RequestParam("to_place") String to_place, @RequestParam("bookingDate") String bookingDate, Model mod) {
-		List<Flight> result = flightDaoImpl.flightDisplayInfo(from_place, bookingDate);
+	public String searchFlightwoutLogin(@RequestParam("from_place") String fromPlace,
+			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
+		List<Flight> result = flightDaoImpl.flightDisplayInfo(fromPlace, bookingDate);
 		mod.addAttribute("infos", result);
 		return "FlightDisplay.jsp";
 	}
@@ -179,16 +180,15 @@ public class FlightController {
 
 		LocalDate conversion = LocalDate.parse(bookingDate);
 		Date date1 = Date.valueOf(conversion);
-		flightBooking.setBooking_date(date1);
+		flightBooking.setBookingDate(date1);
 
-		flightBooking.setBooking_from_place(bookingFromPlace);
+		flightBooking.setBookingFromPlace(bookingFromPlace);
 
 		flightDaoImpl.bookingFlight(flightBooking, bookingClass);
 
 		List<FlightBooking> result = flightDaoImpl.confirmPasengerInfo(name, date);
 		mod.addAttribute("confirmPassengers", result);
 		flightDaoImpl.seatCountDecrease(flightId, bookingClass);
-//		return "Index.jsp";
 		return "BookConfirm.jsp";
 	}
 
@@ -213,7 +213,6 @@ public class FlightController {
 		List<FlightBooking> result = flightDaoImpl.passengerBookedTicket(username);
 		mod.addAttribute("passengerbookedticketvalue", result);
 		return "TicketDetails.jsp";
-//		return "/passengerbookedticket";
 	}
 
 	@GetMapping("/bookedTicketDisplay")
@@ -238,9 +237,6 @@ public class FlightController {
 		return "PassengerInfo.jsp";
 	}
 
-	/*
-	 * @GetMapping("/bookconfirm") public String bookingConfirm() { return null; }
-	 */
 
 	@GetMapping("/viewFlight")
 	public String viewFlight(Model mod) {

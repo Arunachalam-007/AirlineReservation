@@ -10,6 +10,7 @@
 <body>
 
 <jsp:include page="Nav.jsp" />
+ <form action="contactDetails" method="post">
 <div class="container">
   <div style="text-align:center">
     <h2>Contact Us</h2>
@@ -19,21 +20,29 @@
       <img src="./Images/alr.jpg" style="width:100%">
     </div>
     <div class="column">
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter Your name">
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="India">India</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+     
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com">
+        <label for="city">City</label>
+        <select id="city" name="city">
+          <option value="Chennai">Chennai</option>
+          <option value="Madurai">Madurai</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Mumbai">Delhi</option>
+          <option value="Mumbai">Bengalore</option>
         </select>
         <label for="subject">Subject</label>
+        
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        
+        <span>${feedbackmessage }</span>
         <input type="submit" value="Submit">
-      </form>
+        
+        
+     
     </div>
   </div>
 </div>
+ </form>
 </body>
 </html>

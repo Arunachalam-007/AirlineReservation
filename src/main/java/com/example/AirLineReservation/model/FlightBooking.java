@@ -9,19 +9,21 @@ public class FlightBooking {
 	private String pnr;
 	private String seatNumber;
 	private String userName;
-	private Date booking_date;
-	private String booking_from_place;
-	public String getBooking_from_place() {
-		return booking_from_place;
+	private Date bookingDate;
+	private String bookingFromPlace;
+	
+	
+	public Date getBookingDate() {
+		return bookingDate;
 	}
-	public void setBooking_from_place(String booking_from_place) {
-		this.booking_from_place = booking_from_place;
+	public void setBookingDate(Date bookingDate) {
+		this.bookingDate = bookingDate;
 	}
-	public Date getBooking_date() {
-		return booking_date;
+	public String getBookingFromPlace() {
+		return bookingFromPlace;
 	}
-	public void setBooking_date(Date booking_date) {
-		this.booking_date = booking_date;
+	public void setBookingFromPlace(String bookingFromPlace) {
+		this.bookingFromPlace = bookingFromPlace;
 	}
 	private int seatAvailability=40;
 	
@@ -81,10 +83,9 @@ public class FlightBooking {
 	public String toString() {
 		return "FlightBooking [bookingPrice=" + bookingPrice + ", bookingClass=" + bookingClass + ", bookingId="
 				+ bookingId + ", pnr=" + pnr + ", seatNumber=" + seatNumber + ", userName=" + userName
-				+ ", booking_date=" + booking_date + ", booking_from_place=" + booking_from_place
-				+ ", seatAvailability=" + seatAvailability + ", fid=" + fid + ", fname=" + fname + ", name=" + name
-				+ ", email=" + email + ", dob=" + dob + ", nationality=" + nationality + ", mobile=" + mobile
-				+ ", address=" + address + "]";
+				+ ", bookingDate=" + bookingDate + ", bookingFromPlace=" + bookingFromPlace + ", seatAvailability="
+				+ seatAvailability + ", fid=" + fid + ", fname=" + fname + ", name=" + name + ", email=" + email
+				+ ", dob=" + dob + ", nationality=" + nationality + ", mobile=" + mobile + ", address=" + address + "]";
 	}
 	public String getBookingClass() {
 		return bookingClass;

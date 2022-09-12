@@ -17,18 +17,6 @@ body {
 	 background-color: hsl(193, 100%, 96%); 
 }
 
-/* table {
-	display: block;
-	margin: 20px auto;
-	border-spacing: 25px 10px;
-	background-color: #85adad;
-	width: 57%;
-	height: 500px;
-	border-radius: 20px;
-	overflow-y: auto;
-}
- */
-/* ************** */
  table {
 	border-collapse: collapse;
 	width: 90%;
@@ -39,7 +27,6 @@ body {
 	border-spacing: 30px 10px;
 	border-spacing: 0 1em;
 	border-radius: 20px; 
-	/* border-top-right-radius: 20px; */
 }
 
 th {
@@ -58,27 +45,14 @@ tbody tr:hover {
 
 td {
 	padding: 13px;
-	/* text-align: left; */
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
 	text-align: center;
 	
 } 
-/* ************** */
 table::-webkit-scrollbar {
 	display: none;
 }
-
-/* th {
-	font-size: 20px;
-	font-family: "Poppins", sans-serif;
-	background: #85adad;
-}
-
-td {
-	font-size: 18px;
-	text-align: center;
-} */
 
 thead tr:nth-child(1) th {
 	position: sticky;

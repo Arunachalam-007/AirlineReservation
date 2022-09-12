@@ -18,11 +18,11 @@ public class FlightMapper implements RowMapper<Flight> {
 		String flightName = rs.getString("flightName");
 		String departure = rs.getString("departure");
 		String arrival = rs.getString("arrival");
-		String from_place = rs.getString("from_place");
-		String to_place = rs.getString("to_place");
+		String fromPlace = rs.getString("from_place");
+		String toPlace = rs.getString("to_place");
 		String price = rs.getString("price");
-		String start_time=rs.getString("start_time");
-		String end_time=rs.getString("end_time");
+		String startTime=rs.getString("start_time");
+		String endTime=rs.getString("end_time");
 		int seat=rs.getInt("seat");
 
 		
@@ -30,11 +30,11 @@ public class FlightMapper implements RowMapper<Flight> {
 		f.setFlightName(flightName);
 		f.setDeparture(departure);
 		f.setArrival(arrival);
-		f.setFrom_place(from_place);
-		f.setTo_place(to_place);
+		f.setFromPlace(fromPlace);
+		f.setToPlace(toPlace);
 		f.setPrice(price);
-		f.setStart_time(start_time);
-		f.setEnd_time(end_time);
+		f.setStartTime(startTime);
+		f.setEndTime(endTime);
 		f.setSeat(seat);
 		
 		

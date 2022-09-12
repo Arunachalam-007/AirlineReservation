@@ -20,14 +20,12 @@ body {
 input {
 	padding: 10px;
 	border-radius: 20px;
-	/* border: 1px solid steelblue; */
 	border:none;
 	font-size: 15px;
 	background:transparent;
 	margin: 10px 0px 10px 30px;
 	letter-spacing: 2px;
 	outline: none;
-	letter-spacing: 2px;
 }
 
 #qrcode {
@@ -50,7 +48,6 @@ button {
 	cursor: pointer;
 	padding: 10px;
 	background-color: hsl(322, 100%, 66%);
-	border-radius: 10px;
 	text-decoration: none;
 	margin-left: 100px;
 	

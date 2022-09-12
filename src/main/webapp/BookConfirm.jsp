@@ -42,10 +42,10 @@
 					<p id="fname">Flight Name :${confirmPassengersVal.fname }</p>
 					<p id="bookid">Booking Id :${confirmPassengersVal.bookingId}</p>
 					<p id="from_place">From Place
-						:${confirmPassengersVal.booking_from_place }</p>
+						:${confirmPassengersVal.bookingFromPlace }</p>
 
 					<p id="travel_date">Travel Date
-						:${confirmPassengersVal.booking_date }</p>
+						:${confirmPassengersVal.bookingDate }</p>
 					<p id="mobile">Mobile Number :${confirmPassengersVal.mobile }</p>
 					<p id="book_cls">Booking Class:
 						${confirmPassengersVal.bookingClass }</p>
@@ -97,25 +97,8 @@
 	<button onclick="generatePDF()">Print</button>
 
 	<script type="text/javascript" src="BookConfirm.js">
-		/* const qrcode = document.getElementById("qrcode");
-		 const textInput = document.getElementById("text");
-
-		 const qr = new QRCode(qrcode);
-
-		 textInput.oninput = (e) => {
-		 qr.makeCode(e.target.value.trim());
-		 };
-
-		 qr.makeCode(textInput.value.trim());
-
-
-		 function generatePDF() {
-		 const element = document.getElementById('save');
-		 html2pdf()
-		 .from(element)
-		 .save();
-
-		 } */
-	</script>
+	if ( window.history.replaceState ) {
+		  window.history.replaceState( null, null, window.location.href );
+		}	</script>
 </body>
 </html>

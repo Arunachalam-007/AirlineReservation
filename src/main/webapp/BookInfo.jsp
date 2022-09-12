@@ -33,29 +33,29 @@
 
 <label for="name">Name</label> 
 <input type="text"name="name" placeholder="Enter Name" id="name" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
-						title="Name should contain letters and white spaces" required>
+						title="Name should contain Capital letters and white spaces" required>
 <label for="email">Email</label> 
-<input type="email"name="email" placeholder="example@gmail.com" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+<input type="email"name="email" placeholder="example@gmail.com" id="email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
 						title="Please enter the valid email" required>
 <label for="dob">DOB</label> 
-<input type="date"name="dateOfBirth" placeholder="Enter DOB" pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
+<input type="date"name="dateOfBirth" placeholder="Enter DOB" id="dob" pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
 						title="Please enter the correct format dd-MM-yy" required>
 <label for="nationality">Nationality</label> 
-<input type="text" name="nationality" placeholder="Enter Nationality" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
+<input type="text" name="nationality" placeholder="Enter Nationality" id="nationality" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
 						title="Nationality should contain letters and white spaces" required>
 <label for="mobile">Mobile</label> 
-<input type="text"name="mobile" placeholder="Enter Mobile Number" pattern="(0/91)?[7-9][0-9]{9}"
+<input type="text"name="mobile" placeholder="Enter Mobile Number" id="mobile" pattern="(0/91)?[7-9][0-9]{9}" 
 						title="Please enter the valid mobile Number" required>
 <label for="address">Address</label> 
-<textarea rows="7" cols="160" name="address" placeholder="Enter Address" pattern="[A-Za-z0-9'\.\-\s\,]"
+<textarea rows="7" cols="160" name="address" placeholder="Enter Address" id="address" pattern="[A-Za-z0-9'\.\-\s\,]" 
 						title="Please Enter the valid address" required></textarea>
-<input type="submit" value="Reserve Flight" class="res_btn"> 
+<input type="submit" value="Reserve Flight" class="res_btn" onclick="bookConfirmValidator();"> 
 </c:forEach>
 </div>
 </div>
 </form>
 
-
+<script type="text/javascript" src="BookInfoValidator.js"></script>
 
 </body>
 </html>

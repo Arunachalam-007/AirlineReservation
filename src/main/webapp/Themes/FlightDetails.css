@@ -16,24 +16,11 @@
 }
 
 body {
-	/* background-image: url("../Images/malaysia.jpg"); */
 	background-repeat: no-repeat;
 	background-image: url("../Images/bg-hero-desktop.svg");
 	background-color: hsl(193, 100%, 96%);
 }
 
-/* .container {
-	margin: 15px;
-	max-width: 500px;
-	background-color: hsl(193, 100%, 96%);
-	padding: 25px 30px;
-	height: 100%;
-	margin: 90px 0px 10px 100px;
-	border-radius: 20px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-} */
-
-/* ******************* */
 .container {
 	display: flex;
 	flex-direction: row;
@@ -62,24 +49,15 @@ body {
 	margin: 100px 60px;
 	padding-right: 40px;
 	font-family: 'Rubik Dirt', cursive;
-	/* font-family: 'Pacifico', cursive; */
 }
 
-
-
-/* ******************* */
-/* .fdetails {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-} */
 .fdetails h1 {
 	text-align: center;
 	margin-bottom: 10px;
 	font-family: 'Roboto', sans-serif;
 }
 
-.fdetails input {
+.fdetails input, select {
 	height: 45px;
 	width: 100%;
 	outline: none;
@@ -94,7 +72,7 @@ body {
 	font-size: 17px;
 }
 
-.fdetails input:focus, .fdetails input:valid {
+.fdetails input, select:focus, .fdetails input, select:valid {
 	border-color: #6E5DCF;
 }
 
@@ -108,6 +86,7 @@ body {
 	padding: 10px;
 	background-color: hsl(322, 100%, 66%);
 }
+
 .search_btn:active {
 	background-color: hsl(322, 100%, 66%);
 	box-shadow: 0 5px #666;

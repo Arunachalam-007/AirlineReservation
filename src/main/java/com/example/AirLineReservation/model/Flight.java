@@ -6,32 +6,34 @@ public class Flight {
 	private String flightId;
 	private String flightName;
 	private String departure;
-	private String from_place;
-	private String to_place;
+	private String fromPlace;
+	private String toPlace;
 	private int seat;
-	public String getFrom_place() {
-		return from_place;
-	}
+	
 	public int getSeat() {
 		return seat;
 	}
 	public void setSeat(int seat) {
 		this.seat = seat;
 	}
-	public void setFrom_place(String from_place) {
-		this.from_place = from_place;
-	}
-	public String getTo_place() {
-		return to_place;
-	}
-	public void setTo_place(String to_place) {
-		this.to_place = to_place;
-	}
+
 	@Override
 	public String toString() {
 		return "Flight [flightId=" + flightId + ", flightName=" + flightName + ", departure=" + departure
-				+ ", from_place=" + from_place + ", to_place=" + to_place + ", seat=" + seat + ", start_time="
-				+ start_time + ", end_time=" + end_time + ", arrival=" + arrival + ", price=" + price + "]";
+				+ ", fromPlace=" + fromPlace + ", toPlace=" + toPlace + ", seat=" + seat + ", startTime=" + startTime
+				+ ", endTime=" + endTime + ", arrival=" + arrival + ", price=" + price + "]";
+	}
+	public String getFromPlace() {
+		return fromPlace;
+	}
+	public void setFromPlace(String fromPlace) {
+		this.fromPlace = fromPlace;
+	}
+	public String getToPlace() {
+		return toPlace;
+	}
+	public void setToPlace(String toPlace) {
+		this.toPlace = toPlace;
 	}
 	public String getFlightId() {
 		return flightId;
@@ -62,24 +64,25 @@ public class Flight {
 	public String getPrice() {
 		return price;
 	}
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 	public void setPrice(String price) {
 		this.price = price;
 	}
 
-	private String start_time;
-	private String end_time;
-	public String getStart_time() {
-		return start_time;
-	}
-	public void setStart_time(String start_time) {
-		this.start_time = start_time;
-	}
-	public String getEnd_time() {
-		return end_time;
-	}
-	public void setEnd_time(String end_time) {
-		this.end_time = end_time;
-	}
+	private String startTime;
+	private String endTime;
+	
 
 	private String arrival;
 	private String price;

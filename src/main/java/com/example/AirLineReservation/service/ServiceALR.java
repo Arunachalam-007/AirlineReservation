@@ -14,10 +14,10 @@ import com.example.AirLineReservation.model.Passenger;
 public class ServiceALR {
 
 	@Autowired
-	RegisterDaoImpl rdi;
-	
+	RegisterDaoImpl registerDaoImpl;
+
 	@Autowired
-	FlightDaoImpl fdi;
+	FlightDaoImpl flightDaoImpl;
 
 	public void passengerService(PassengerDTO pdto) {
 		Passenger p = new Passenger();
@@ -30,27 +30,38 @@ public class ServiceALR {
 		p.setPassword(pdto.getPassengerPassword());
 		p.setDateOfBirth(pdto.getPassengerDateOfBirth());
 
-		rdi.registerInfo(p, p.getUname());
+		registerDaoImpl.registerInfo(p, p.getUname());
 	}
-	
+
 	public void flightService(FlightDTO fdto) {
-		Flight f=new Flight();
-		
+		Flight f = new Flight();
+
 		f.setFlightId(fdto.getFlightId());
 		f.setFlightName(fdto.getFlightName());
 		f.setDeparture(fdto.getFlightDeparture());
-		f.setStart_time(fdto.getStart_time());
-		f.setEnd_time(fdto.getEnd_time());
+		f.setStartTime(fdto.getStartTime());
+		f.setEndTime(fdto.getEndTime());
 		f.setArrival(fdto.getFlightArrival());
-		f.setFrom_place(fdto.getFlightFromPlace());
-		f.setTo_place(fdto.getFlightToPlace());
+		f.setFromPlace(fdto.getFlightFromPlace());
+		f.setToPlace(fdto.getFlightToPlace());
 		f.setPrice(fdto.getPrice());
 		f.setSeat(fdto.getFlightSeat());
-		
-		
-		fdi.addFlight(f);
+
+		flightDaoImpl.addFlight(f);
 	}
 
-	
+	public boolean updatePassword(String username, String password) {
+		if (registerDaoImpl.usernameAvailCheck(username)) {
+			int noOfRowsAffected = registerDaoImpl.updatePassword(username, password);
+			if (noOfRowsAffected > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+
+	}
 
 }

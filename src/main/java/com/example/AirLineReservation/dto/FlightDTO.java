@@ -5,8 +5,8 @@ public class FlightDTO {
 	private String flightId;
 	private String FlightName;
 	private String flightDeparture;
-	private String start_time;
-	private String end_time;
+	private String startTime;
+	private String endTime;
 	private int flightSeat;
 	public int getFlightSeat() {
 		return flightSeat;
@@ -14,18 +14,7 @@ public class FlightDTO {
 	public void setFlightSeat(int flightSeat) {
 		this.flightSeat = flightSeat;
 	}
-	public String getStart_time() {
-		return start_time;
-	}
-	public void setStart_time(String start_time) {
-		this.start_time = start_time;
-	}
-	public String getEnd_time() {
-		return end_time;
-	}
-	public void setEnd_time(String end_time) {
-		this.end_time = end_time;
-	}
+	
 	private String flightArrival;
 	private String flightFromPlace;
 	private String flightToPlace;
@@ -44,9 +33,27 @@ public class FlightDTO {
 	@Override
 	public String toString() {
 		return "FlightDTO [flightId=" + flightId + ", FlightName=" + FlightName + ", flightDeparture=" + flightDeparture
-				+ ", start_time=" + start_time + ", end_time=" + end_time + ", flightSeat=" + flightSeat
+				+ ", startTime=" + startTime + ", endTime=" + endTime + ", flightSeat=" + flightSeat
 				+ ", flightArrival=" + flightArrival + ", flightFromPlace=" + flightFromPlace + ", flightToPlace="
-				+ flightToPlace + ", Price=" + Price + "]";
+				+ flightToPlace + ", price=" + price + "]";
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 	public String getFlightId() {
 		return flightId;
@@ -72,13 +79,8 @@ public class FlightDTO {
 	public void setFlightArrival(String arrival) {
 		this.flightArrival = arrival;
 	}
-	public String getPrice() {
-		return Price;
-	}
-	public void setPrice(String price) {
-		Price = price;
-	}
-	private String Price;
+	
+	private String price;
 	
 
 

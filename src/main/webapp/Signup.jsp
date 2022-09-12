@@ -20,7 +20,7 @@
 					<label for="pname">Name</label> <input type="text" name="name"
 						placeholder="Enter Name" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
 						title="Name should contain letters and white spaces" required>
-					<label for="address">Address</label> <input type="text" name="addres"
+					<label for="address">Address</label> <input type="text" name="address"
 						placeholder="Enter Address" pattern="[A-Za-z0-9'\.\-\s\,]"
 						title="Please Enter the valid address" required> <label
 						for="pmobile">Mobile</label> <input type="text" name="mobile"
@@ -29,7 +29,8 @@
 						for="pemail">Email</label> <input type="email" name="email"
 						placeholder="Enter Email"
 						pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
-						title="Please enter the valid email" required> <label
+						title="Please enter the valid email" required> 
+						<span>${emailexist}</span><label
 						for="puname">Username</label> <input type="text" name="username"
 						placeholder="Enter Username"
 						pattern="^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$"

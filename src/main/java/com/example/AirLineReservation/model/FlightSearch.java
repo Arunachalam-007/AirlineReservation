@@ -2,35 +2,34 @@ package com.example.AirLineReservation.model;
 
 public class FlightSearch {
 
-	private String from_place;
-	private String to_place;
-	private String booking_date;
-
-	public String getFrom_place() {
-		return from_place;
+	private String fromPlace;
+	private String toPlace;
+	private String bookingDate;
+	public String getFromPlace() {
+		return fromPlace;
 	}
-	public void setFrom_place(String from_place) {
-		this.from_place = from_place;
+	public void setFromPlace(String fromPlace) {
+		this.fromPlace = fromPlace;
 	}
-	public String getTo_place() {
-		return to_place;
+	public String getToPlace() {
+		return toPlace;
 	}
-	public void setTo_place(String to_place) {
-		this.to_place = to_place;
+	public void setToPlace(String toPlace) {
+		this.toPlace = toPlace;
 	}
-	public String getBooking_date() {
-		return booking_date;
+	public String getBookingDate() {
+		return bookingDate;
 	}
-	public void setBooking_date(String booking_date) {
-		this.booking_date = booking_date;
+	public void setBookingDate(String bookingDate) {
+		this.bookingDate = bookingDate;
 	}
 	@Override
 	public String toString() {
-		return "FlightSearch [from_place=" + from_place + ", to_place=" + to_place + ", booking_date="
-				+ booking_date + "]";
+		return "FlightSearch [fromPlace=" + fromPlace + ", toPlace=" + toPlace + ", bookingDate=" + bookingDate + "]";
+	}
+
 	}
 	
 	
 	
-	
-}
+

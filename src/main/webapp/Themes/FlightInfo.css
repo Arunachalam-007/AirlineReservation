@@ -16,7 +16,6 @@ body {
 	background-image: url("../Images/bg-hero-desktop.svg");
 	background-color: hsl(193, 100%, 96%);
 	max-height: 100vh;
-	/* background-image:url("../Images/alr7.jpg")*/
 }
 
 table {
@@ -68,14 +67,12 @@ td a {
 
 td a:hover {
 	background-color: coral;
-	/* background-color: hsl(322, 100%, 66%); */
 	border-radius: 20px;
 	cursor: pointer;
 }
 
 td button:hover {
 	background-color: coral;
-	/* background-color: hsl(322, 100%, 66%); */
 	border-radius: 20px;
 	cursor: pointer;
 }

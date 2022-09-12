@@ -42,8 +42,8 @@
 					<td>${flight.flightName}</td>
 					<td>${flight.departure}</td>
 					<td>${flight.arrival}</td>
-					<td>${flight.from_place}</td>
-					<td>${flight.to_place}</td>
+					<td>${flight.fromPlace}</td>
+					<td>${flight.toPlace}</td>
 					<td>&#x20B9; ${flight.price}</td>
 					<%-- <td><a href="ticketbook/${flight.fid}">Book</a></td> --%>
 					<td><a href="/ticketbook?flightId=${flight.flightId}&bookingClass=${cls_value}">Book</a></td>

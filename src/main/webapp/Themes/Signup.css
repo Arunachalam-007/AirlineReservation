@@ -15,7 +15,6 @@ body {
 }
 
 .container {
-	margin: 15px;
 	max-width: 700px;
 	background-color: hsl(193, 100%, 96%);
 	padding: 25px 30px;
@@ -25,9 +24,6 @@ body {
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* ********************* */
-
-/* ********************* */
 .pdetails h1 {
 	text-align: center;
 	margin-bottom: 10px;
@@ -68,10 +64,6 @@ label {
 	color: #3E619B;
 }
 
-/* form .signup_btn {
-	height: 45px;
-	margin: 35px 0
-} */
 form .signup_btn {
 	height: 45px;
 	margin: 35px 0;
@@ -83,7 +75,6 @@ form .signup_btn {
 	cursor: pointer;
 	padding: 10px;
 	background-color: hsl(322, 100%, 66%);
-	border-radius: 10px;
 }
 
 form .signup_btn:active {

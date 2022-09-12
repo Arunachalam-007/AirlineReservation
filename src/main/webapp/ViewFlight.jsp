@@ -34,11 +34,11 @@
 					<td>${flightInfoValues.flightName}</td>
 					<td>${flightInfoValues.departure}</td>
 					<td>${flightInfoValues.arrival}</td>
-					<td>${flightInfoValues.from_place}</td>
-					<td>${flightInfoValues.to_place}</td>
+					<td>${flightInfoValues.fromPlace}</td>
+					<td>${flightInfoValues.toPlace}</td>
 					<td>&#x20B9; ${flightInfoValues.price}</td>
-					<td>${flightInfoValues.start_time}</td>
-					<td>${flightInfoValues.end_time}</td>
+					<td>${flightInfoValues.startTime}</td>
+					<td>${flightInfoValues.endTime}</td>
 					<td>${flightInfoValues.seat}</td>
 					<td><a href="/deleteflight?flightId=${flightInfoValues.flightId}">Delete</a></td>
 

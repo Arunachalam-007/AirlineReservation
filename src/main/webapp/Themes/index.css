@@ -34,23 +34,22 @@ body {
 	margin-top: 20px;
 }
 
-/* .login_btn:hover {
-	background-color: #3e8e41;
-} */
 
 .login_btn:active {
 	background-color: hsl(322, 100%, 66%);
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
 }
-
+.change_password{
+	width: 100%;
+	margin-top: 10px;
+	color: green;
+}
 form #togglePassword {
     margin: -65px 20px 0px 650px;
     cursor: pointer;
 }
-/* ******************************************* */
 
-/* ******************************************* */
 .home_page {
 	align-items: center;
 	display: flex;
@@ -70,7 +69,6 @@ form #togglePassword {
 
 .login span {
 	text-align: center;
-	color: red;
 }
 
 .home_page_first h1 {
@@ -117,7 +115,6 @@ form #togglePassword {
 }
 
 .login #acnt {
-	/* text-align: center; */
 	cursor: pointer;
 	text-decoration: none;
 	color: black;
@@ -154,9 +151,6 @@ form #togglePassword {
 	margin-left: 15px;
 }
 
-/* .flights:hover {
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-} */
 #flight_img {
 	width: 400px;
 	height: 400px;

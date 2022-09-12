@@ -24,15 +24,15 @@
 					<div class="booking_table">
 						<p id="fname">${bvalues.flightName}</p>
 						<div class="depart-left">
-							<p id="from">${bvalues.from_place}</p>
+							<p id="from">${bvalues.fromPlace}</p>
 							<p id="depart">${bvalues.departure}</p>
 
 						</div>
-						<p id="start_time">${bvalues.start_time}</p>
+						<p id="start_time">${bvalues.startTime}</p>
 						<p id="to_link">&nbsp;&nbsp;---------------&nbsp;&nbsp;</p>
-						<p id="end_time">${bvalues.end_time}</p>
+						<p id="end_time">${bvalues.endTime}</p>
 						<div class="arrival_right">
-							<p id="to_place">${bvalues.to_place}</p>
+							<p id="to_place">${bvalues.toPlace}</p>
 							<p id="arrival">${bvalues.arrival}</p>
 
 						</div>

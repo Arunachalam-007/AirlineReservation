@@ -43,8 +43,8 @@
 
 					<tr>
 						<%-- <td>${passengertiket.fid}</td> --%>
-						<td>${passengertiket.booking_date}</td>
-						<td>${passengertiket.booking_from_place}</td>
+						<td>${passengertiket.bookingDate}</td>
+						<td>${passengertiket.bookingFromPlace}</td>
 						<td>${passengertiket.bookingId}</td>
 						<td>${passengertiket.fname}</td>
 						<td>${passengertiket.pnr}</td>

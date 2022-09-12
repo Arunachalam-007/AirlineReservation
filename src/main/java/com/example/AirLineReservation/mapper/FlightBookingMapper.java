@@ -27,8 +27,8 @@ public class FlightBookingMapper implements RowMapper<FlightBooking>{
 		String pnr=rs.getString("pnr_number");
 		int seatAvailability=rs.getInt("seat");
 		String uname=rs.getString("uname");
-		String booking_from_place=rs.getString("booking_from_place");
-		Date booking_date=rs.getDate("booking_date");
+		String bookingFromPlace=rs.getString("booking_from_place");
+		Date bookingDate=rs.getDate("booking_date");
 		String bookingPrice=rs.getString("price");
 		String bookingClass=rs.getString("class");
 		
@@ -46,8 +46,8 @@ public class FlightBookingMapper implements RowMapper<FlightBooking>{
 		fb.setPnr(pnr);
 		fb.setSeatAvailability(seatAvailability);
 		fb.setUserName(uname);
-		fb.setBooking_date(booking_date);
-		fb.setBooking_from_place(booking_from_place);
+		fb.setBookingDate(bookingDate);
+		fb.setBookingFromPlace(bookingFromPlace);
 		fb.setBookingPrice(bookingPrice);
 		fb.setBookingClass(bookingClass);
 		
