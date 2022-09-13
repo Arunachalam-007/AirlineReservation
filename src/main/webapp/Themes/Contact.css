@@ -14,7 +14,7 @@ body {
 	background-image: url("../Images/bg-hero-desktop.svg");
 }
 
-input[type=text], select, textarea {
+input[type=text],input[type=email], select, textarea {
 	width: 100%;
 	padding: 12px;
 	border: 1px solid #ccc;
@@ -51,6 +51,11 @@ h2 {
 	width: 50%;
 	margin-top: 6px;
 	padding: 20px;
+}
+
+#feedbackmsg{
+	color: green;
+	font-size: 20px;
 }
 
 .column img:hover {

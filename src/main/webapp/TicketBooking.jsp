@@ -74,7 +74,7 @@
 				<h1>Fare Summary</h1>
 			
 				<table>
-				<caption>Price Details</caption>
+				<caption style="display:none;">Price Details</caption>
 				<tr><th></th></tr>
 					<tbody>
 						<c:forEach var="bvalues" items="${bookingvalues}">
@@ -119,7 +119,7 @@
 
 			var seatValue = document.getElementById('seatavailabilityresult').value;
 			if (seatValue == 36) {
-				alert("it's working");
+				alert("Seat is not available");
 				
 			}
 			else{

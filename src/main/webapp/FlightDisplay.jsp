@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page import="com.example.AirLineReservation.model.Flight"%>
+<%@page import="com.example.airlinereservation.model.Flight"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +23,7 @@
 		
 
 		<table>
-			<caption style="display:hidden;">Flight Details</caption>
+			<caption style="display:none;">Flight Details</caption>
 			<tr>
 				<th>Flight ID</th>
 				<th>Flight Name</th>

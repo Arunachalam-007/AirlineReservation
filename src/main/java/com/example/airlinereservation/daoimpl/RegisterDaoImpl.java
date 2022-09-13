@@ -2,13 +2,13 @@ package com.example.airlinereservation.daoimpl;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.example.airlinereservation.dao.RegisterDao;
 import com.example.airlinereservation.mapper.FeedbackMapper;
+import com.example.airlinereservation.mapper.PassengerMapper;
 import com.example.airlinereservation.model.Feedback;
 
 import com.example.airlinereservation.model.Passenger;
@@ -18,9 +18,9 @@ public class RegisterDaoImpl implements RegisterDao {
 
 	@Autowired
 	JdbcTemplate jdbctemp;
-	
+
 	List<Feedback> data;
-	
+
 	int noOfRowsAffected;
 
 	public void registerInfo(Passenger passenger, String uname) {
@@ -30,9 +30,7 @@ public class RegisterDaoImpl implements RegisterDao {
 				passenger.getUname(), passenger.getPassword(), passenger.getDateOfBirth() };
 		jdbctemp.update(insertQuery, values);
 
-
 	}
-
 
 	public boolean checkLogin(String username, String password) {
 		String selectQuery = "select username from alrpassenger where username=? and password=?";
@@ -41,11 +39,11 @@ public class RegisterDaoImpl implements RegisterDao {
 
 		try {
 			result = jdbctemp.queryForObject(selectQuery, String.class, values);
-		
+
 			if (result.equals(username)) {
 				return true;
 			} else {
-				return false;
+				throw new Exception();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,12 +58,13 @@ public class RegisterDaoImpl implements RegisterDao {
 		String result;
 		try {
 			result = jdbctemp.queryForObject(selectQuery, String.class, values);
-			
+
 			if (result.equals(username)) {
 				return true;
 			} else {
-				return false;
+				throw new Exception();
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -86,14 +85,54 @@ public class RegisterDaoImpl implements RegisterDao {
 	}
 
 	public void feedBackInsert(Feedback feedback) {
-		String insertQuery="insert into feedback(email,city,subject) values(?,?,?)";
-		Object[] values = { feedback.getEmail(),feedback.getCity(),feedback.getSubject()};
-		jdbctemp.update(insertQuery, values);		
+		String insertQuery = "insert into feedback(email,city,subject) values(?,?,?)";
+		Object[] values = { feedback.getEmail(), feedback.getCity(), feedback.getSubject() };
+		jdbctemp.update(insertQuery, values);
 	}
-	
-	public List<Feedback> feedBackView(){
-		String selectQuery="select email,city,subject from feedback";
+
+	public List<Feedback> feedBackView() {
+		String selectQuery = "select email,city,subject from feedback";
 		data = jdbctemp.query(selectQuery, new FeedbackMapper());
 		return data;
+	}
+
+	public boolean usernameexistcheck(String username) {
+		String selectQuery = "select username from alrpassenger where username=?";
+		Object[] userData = { username };
+		try {
+			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+
+			if (result.isEmpty()) {
+				return false;
+			}
+			else {
+				return true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+
+	}
+	
+	public boolean emailexistcheck(String email) {
+		String selectQuery = "select email from alrpassenger where email=?";
+		Object[] userData = { email };
+		try {
+			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+
+			if (result.isEmpty()) {
+				return false;
+			}
+			else {
+				return true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+
 	}
 }

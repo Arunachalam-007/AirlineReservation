@@ -12,7 +12,7 @@
 	<form>
 		
 		<table>
-			<caption style="display:hidden;">Passenger Booking Details</caption>
+			<caption style="display: none;">Passenger Booking Details</caption>
 
 			<jsp:include page="AdminNav.jsp" />
 

@@ -20,7 +20,7 @@
 	
 
 	<table>
-		<caption style="display:hidden;">Passenger Details</caption>
+		<caption style="display: none;">Passenger Details</caption>
 
 		<thead>
 			<tr>

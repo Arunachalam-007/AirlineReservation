@@ -43,6 +43,12 @@ body {
 .pdetails input:focus, .pdetails input:valid {
 	border-color: #9b59b6;
 }
+form .input-div #togglePassword {
+    position:absolute;
+   	top:655px;
+   	left:740px;
+    cursor: pointer;
+}
 
 label {
 	font-size: 18px;
@@ -56,13 +62,43 @@ label {
 	color: black;
 	cursor: pointer;
 	margin-left: 230px;
+	margin-top:15px;
 	position: absolute;
-	top: 880px;
+	top: 870px;
+}
+
+.msg {
+  color: hsl(0, 100%, 74%);
+  font-style: italic;
+  padding: 0.5em 0em 0em 0em;
+  text-align: end;
+  display: none;
+}
+
+.error input {
+  border: 2px solid hsl(0, 100%, 74%);
+}
+.error input:focus {
+  color: hsl(0, 100%, 74%);
+}
+.error .msg {
+  display:none;
 }
 
 .act:hover {
 	color: #3E619B;
 }
+#unameexist{
+	color: red;
+	font-size: 17px;
+	margin-left: 5px;	
+}
+#existemail{
+	color: red;
+	font-size: 17px;
+	margin-left: 5px;	
+}
+
 
 form .signup_btn {
 	height: 45px;

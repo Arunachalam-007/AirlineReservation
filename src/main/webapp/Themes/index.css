@@ -46,8 +46,31 @@ body {
 	color: green;
 }
 form #togglePassword {
-    margin: -65px 20px 0px 650px;
+    margin: -68px 20px 0px 650px;
     cursor: pointer;
+}
+#error_msg{
+	color: red;
+	margin-bottom: 5px;
+	
+}
+
+.msg {
+  color: hsl(0, 100%, 74%);
+  font-style: italic;
+  padding: 0.5em 0em 0em 0em;
+  text-align: end;
+  display: none;
+}
+
+.error input {
+  border: 2px solid hsl(0, 100%, 74%);
+}
+.error input:focus {
+  color: hsl(0, 100%, 74%);
+}
+.error .msg {
+  display: block;
 }
 
 .home_page {

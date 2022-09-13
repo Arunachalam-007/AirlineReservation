@@ -31,25 +31,38 @@
 <label for="name">Flight Name</label> 
 <input id="flightId" name="flightName" type="text" value="${fid_val.flightName}" readonly/>
 
+
 <label for="name">Name</label> 
+<div class="input-div">
 <input type="text"name="name" placeholder="Enter Name" id="name" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
 						title="Name should contain Capital letters and white spaces" required>
+</div>
 <label for="email">Email</label> 
+<div class="input-div">
 <input type="email"name="email" placeholder="example@gmail.com" id="email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
 						title="Please enter the valid email" required>
+</div>
 <label for="dob">DOB</label> 
+<div class="input-div">
 <input type="date"name="dateOfBirth" placeholder="Enter DOB" id="dob" pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
 						title="Please enter the correct format dd-MM-yy" required>
+</div>
 <label for="nationality">Nationality</label> 
+<div class="input-div">
 <input type="text" name="nationality" placeholder="Enter Nationality" id="nationality" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
 						title="Nationality should contain letters and white spaces" required>
+</div>
 <label for="mobile">Mobile</label> 
+<div class="input-div">
 <input type="text"name="mobile" placeholder="Enter Mobile Number" id="mobile" pattern="(0/91)?[7-9][0-9]{9}" 
 						title="Please enter the valid mobile Number" required>
+</div>
 <label for="address">Address</label> 
-<textarea rows="7" cols="160" name="address" placeholder="Enter Address" id="address" pattern="[A-Za-z0-9'\.\-\s\,]" 
+<div class="input-div">
+<textarea rows="7" cols="85" name="address" placeholder="Enter Address" id="address" pattern="[A-Za-z0-9'\.\-\s\,]" 
 						title="Please Enter the valid address" required></textarea>
-<input type="submit" value="Reserve Flight" class="res_btn" onclick="bookConfirmValidator();"> 
+</div>
+<input type="submit" value="Reserve Flight" class="res_btn" onclick="validation();"> 
 </c:forEach>
 </div>
 </div>

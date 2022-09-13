@@ -5,9 +5,8 @@
 }
 
 body {
-	
 	background-color: hsl(193, 100%, 96%);
-	 background-image: url("../Images/bg-hero-desktop.svg"); 
+	background-image: url("../Images/bg-hero-desktop.svg");
 }
 
 .bdetails {
@@ -25,7 +24,8 @@ body {
 	border-radius: 20px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
- h1 {
+
+h1 {
 	text-align: center;
 	margin-bottom: 10px;
 }
@@ -40,12 +40,29 @@ body {
 	border: 1px solid #ccc;
 	border-bottom-width: 2px;
 }
-#name{
+
+#name {
 	text-transform: uppercase;
 }
 
-.bdetails input:focus, .bdetails input:valid,textarea {
+.bdetails input:focus, .bdetails input:valid, textarea {
 	border-color: #9b59b6;
+}
+
+.error input {
+	border: 2px solid hsl(0, 100%, 74%);
+}
+
+.error textarea {
+	border: 2px solid hsl(0, 100%, 74%);
+}
+
+.error input:focus {
+	color: hsl(0, 100%, 74%);
+}
+
+.error textarea:focus {
+	color: hsl(0, 100%, 74%);
 }
 
 label {
@@ -53,7 +70,6 @@ label {
 	color: black;
 	font-weight: 50;
 }
-
 
 form .res_btn {
 	height: 45px;

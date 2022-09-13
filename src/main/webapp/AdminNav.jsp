@@ -13,7 +13,7 @@
 			<ul id="nav_elements">
 
 				<li><a href="/logout">Logout</a></li>
-				<li><a href="Contact.jsp">Feedback</a></li>
+				<li><a href="feedbackview">Feedback</a></li>
 				<li><a href="bookedTicketDisplay">Booked Ticket</a></li> 
 				<li><a href="passengerDisplayToAdmin">Passengers</a></li>
 				<li><a href="viewFlight">View Flight</a></li>

@@ -17,7 +17,7 @@
 
 
 		<table>
-			<caption style="display:hidden;">Ticket Details</caption>
+			<caption style="display: none;">Ticket Details</caption>
 
 			<thead>
 				<tr>

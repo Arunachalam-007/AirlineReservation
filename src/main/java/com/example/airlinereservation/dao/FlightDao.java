@@ -7,26 +7,26 @@ import com.example.airlinereservation.model.FlightBooking;
 import com.example.airlinereservation.model.FlightSearch;
 
 public interface FlightDao {
-	public void addFlight(Flight f);
+	void addFlight(Flight f);
 
-	public void searchFlight(FlightSearch fs);
+	void searchFlight(FlightSearch fs);
 
-	public List<Flight> flightsDisplay(String fromPlace, String departure);
+	List<Flight> flightsDisplay(String fromPlace, String departure);
 
-	public List<Flight> flightDisplayInfo(String fromPlace, String departure);
+	List<Flight> flightDisplayInfo(String fromPlace, String departure);
 
-	public List<Flight> ticketBooking(String id);
+	List<Flight> ticketBooking(String id);
 
-	public void bookingFlight(FlightBooking fb, String cls);
+	void bookingFlight(FlightBooking fb, String cls);
 
-	public int seatAvailCheck(String id, String cls);
+	int seatAvailCheck(String id, String cls);
 
-	public void seatCountDecrease(String id, String cls);
+	void seatCountDecrease(String id, String cls);
 
-	public List<FlightBooking> flightInfoAdmin();
+	List<FlightBooking> flightInfoAdmin();
 
-	public List<FlightBooking> passengerBookedTicket(String uname);
+	List<FlightBooking> passengerBookedTicket(String uname);
 
-	public void cancelTicket(String bookingid,String flightId);
+	void cancelTicket(String bookingid,String flightId);
 
 }

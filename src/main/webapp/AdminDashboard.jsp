@@ -20,7 +20,7 @@
 
 		<h1>Booked Ticket</h1>
 		<table>
-			<caption style="display:hidden;">Booking Flight Details</caption>
+			<caption style="display: none;">Booking Flight Details</caption>
 			<thead>
 				<tr>
 					<th>BookingId</th>

@@ -35,7 +35,7 @@
         
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
         
-        <span>${feedbackmessage }</span>
+        <span id="feedbackmsg">${feedbackmessage }</span>
         <input type="submit" value="Submit">
         
         

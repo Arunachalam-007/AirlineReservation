@@ -13,7 +13,7 @@
 		<jsp:include page="AdminNav.jsp" />
 
 		<table>
-		<caption style="display:hidden;">Flight Details</caption>
+		<caption style="display: none;">Flight Details</caption>
 			<tr>
 				<th>Flight ID</th>
 				<th>Flight Name</th>
