@@ -69,7 +69,7 @@
 						title="Please Enter the valid address" required></textarea>
 <span id="addresserror">${addresserror }</span>
 </div>
-<input type="submit" value="Reserve Flight" class="res_btn" onclick="validation();"> 
+<input type="submit" value="Reserve Flight" class="res_btn" onclick="validation(); return false;"> 
 </c:forEach>
 </div>
 </div>
