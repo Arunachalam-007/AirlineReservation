@@ -1,0 +1,15 @@
+create table alrpassenger(name varchar(20) not null,address varchar(70) not null,mobile varchar(15) not null unique,email varchar(30) not null unique,username varchar(20) not null primary key,password varchar(20) not null,dob date not null);
+
+create table alrflightadmin(flightId varchar(10) not null primary key,flightName varchar(20) not null unique,departure varchar(20) not null,arrival varchar(20) not null,from_place varchar(30) not null,to_place varchar(30) not null,price varchar(10) not null,start_time varchar(20),end_time varchar(20),seat int);
+
+
+create table flightbooking(flightId varchar(10) not null,flightName varchar(20) not null unique,name varchar(20) not null,email varchar(30) not null,dob date not null,nationality varchar(20) not null,mobile varchar(15) not null,address varchar(100) not null,seat_no varchar(10) not null,booking_id varchar(10) not null,pnr_number varchar(10) not null,price varchar(10),class varchar(10),seat int,booking_date date,constraint fid_fkey foreign key(flightId) references alrflightadmin(flightId));
+
+create table feedback(email varchar(30) not null,city varchar(20) not null,subject varchar(300) not null);
+
+
+create sequence flight_seat_val start with 200 increment by 1 minvalue 0 maxvalue 1000 cycle;
+
+create sequence flight_booking_val start with 1100 increment by 1 minvalue 0 maxvalue 10000 cycle;
+
+create sequence flight_pnr_val start with 20000 increment by 1 minvalue 0 maxvalue 30000 cycle;

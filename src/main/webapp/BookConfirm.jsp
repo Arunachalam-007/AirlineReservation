@@ -34,6 +34,8 @@
 
 
 		<c:forEach var="confirmPassengersVal" items="${confirmPassengers}">
+		
+		
 
 			<div class="payment">
 
@@ -90,15 +92,10 @@
 		</div>
 
 
-
-
-
 	</div>
 	<button onclick="generatePDF()">Print</button>
 
 	<script type="text/javascript" src="BookConfirm.js">
-	if ( window.history.replaceState ) {
-		  window.history.replaceState( null, null, window.location.href );
-		}	</script>
+		</script>
 </body>
 </html>

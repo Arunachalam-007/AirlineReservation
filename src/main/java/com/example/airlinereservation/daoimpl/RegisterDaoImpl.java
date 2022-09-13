@@ -102,17 +102,17 @@ public class RegisterDaoImpl implements RegisterDao {
 		try {
 			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-			if (result.isEmpty()) {
-				return false;
+			if (!result.isEmpty()) {
+				return true;
 			}
 			else {
-				return true;
+				return false;
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return true;
+		return false;
 
 	}
 	
@@ -122,17 +122,17 @@ public class RegisterDaoImpl implements RegisterDao {
 		try {
 			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-			if (result.isEmpty()) {
-				return false;
+			if (!result.isEmpty()) {
+				return true;
 			}
 			else {
-				return true;
+				return false;
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return true;
+		return false;
 
 	}
 }

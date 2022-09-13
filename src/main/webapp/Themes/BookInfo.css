@@ -45,6 +45,19 @@ h1 {
 	text-transform: uppercase;
 }
 
+#errordob {
+	color: red;
+	font-size: 17px;
+	margin-left: 5px;
+}
+
+#nameerror, #addresserror, #mobileerror, #emailerror, #nationalityerror
+	 {
+	color: red;
+	font-size: 17px;
+	margin-left: 5px;
+}
+
 .bdetails input:focus, .bdetails input:valid, textarea {
 	border-color: #9b59b6;
 }

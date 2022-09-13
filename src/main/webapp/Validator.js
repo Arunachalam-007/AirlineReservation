@@ -20,47 +20,40 @@ function validation() {
 	var passwordValue = document.getElementById('id_password').value;
 	var dobValue = document.getElementById('dob').value;
 	
-	var nameExpression = "[A-Z]{1}[A-Za-z]{3, 18}";
-	var addressExpression="[A-Za-z0-9'\.\-\s\,]";
-	var mobileExpression="(0/91)?[7-9][0-9]{9}";
-	var emailExpression="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/";
-	var usernameExpression="^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$";
-	var passwordExpression="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
-	
 
-	if ((nameValue === "") ||(!nameValue.match(nameExpression))) {
+	if (nameValue === "")  {
 		inputDiv[0].classList.add("error");
 	} else {
 		inputDiv[0].classList.remove("error");
 	}
-	if ((addressValue === "") ||(!addressValue.match(addressExpression))) {
+	if (addressValue === "") {
 		inputDiv[1].classList.add("error");
 	} else {
 		inputDiv[1].classList.remove("error");
 	}
-	if ((mobileValue === "") ||(!mobileValue.match(mobileExpression))) {
+	if (mobileValue === "")  {
 		inputDiv[2].classList.add("error");
 	} else {
 		inputDiv[2].classList.remove('error');
 	}
-	if ((emailValue === "") ||(!emailValue.match(emailExpression))) {
+	if (emailValue === "") {
 		
 		inputDiv[3].classList.add("error");
 		
 	} else {
 		inputDiv[3].classList.remove("error");
 	}
-	if ((usernameValue === "") ||(!usernameValue.match(usernameExpression))) {
+	if (usernameValue === "") {
 		inputDiv[4].classList.add("error");
 	} else {
 		inputDiv[4].classList.remove("error");
 	}
-	if ((passwordValue === "") ||(!passwordValue.match(passwordExpression))) {
+	if (passwordValue === "")  {
 		inputDiv[5].classList.add("error");
 	} else {
 		inputDiv[5].classList.remove("error");
 	}
-	if ((dobValue === "")) {
+	if (dobValue === "") {
 		inputDiv[6].classList.add("error");
 	} else {
 		inputDiv[6].classList.remove("error");

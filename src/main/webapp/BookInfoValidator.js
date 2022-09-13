@@ -10,21 +10,14 @@ function validation() {
 	var dobValue=document.getElementById('dob').value;
 	
 	
-	var nameExpression = "[A-Z]{1}[A-Za-z]{3, 18}";
-	var addressExpression="[A-Za-z0-9'\.\-\s\,]";
-	var mobileExpression="(0/91)?[7-9][0-9]{9}";
-	var emailExpression="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/";
-	var nationalityExpression="[A-Z]{1}[A-Za-z]{3, 18}";
-	
-	
 
-	if ((nameValue === "") ||(!nameValue.match(nameExpression))) {
+	if (nameValue === "") {
 
 		inputDiv[0].classList.add("error");
 	} else {
 		inputDiv[0].classList.remove("error");
 	}
-	if ((emailValue === "") ||(!emailValue.match(emailExpression))) {
+	if (emailValue === "") {
 
 		inputDiv[1].classList.add("error");
 		
@@ -38,24 +31,29 @@ function validation() {
 	} else {
 		inputDiv[2].classList.remove("error");
 	}
-	if ((nationalityValue === "") ||(!nationalityValue.match(nationalityExpression))) {
+	if (nationalityValue === "") {
 		
 		inputDiv[3].classList.add("error");
 		
 	} else {
 		inputDiv[3].classList.remove("error");
 	}
-	if ((mobileValue === "") ||(!mobileValue.match(mobileExpression))) {
+	if (mobileValue === "") {
 
 		inputDiv[4].classList.add("error");
 	} else {
 		inputDiv[4].classList.remove('error');
 	}
-	if ((addressValue === "") ||(!addressValue.match(addressExpression))) {
+	if (addressValue === "") {
 
 		inputDiv[5].classList.add("error");
 	} else {
 		inputDiv[5].classList.remove("error");
+	}
+	
+	
+	if(nameValue.length<=2){
+		alert("Name must be greater than 2 characters");
 	}
 		
 	

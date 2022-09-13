@@ -31,6 +31,7 @@
 						<input type="text" name="name" placeholder="Enter Name" id="name"
 							pattern="[A-Z]{1}[A-Za-z]{3, 18}"
 							title="Name should contain letters and white spaces" required>
+							<span id="nameerror">${nameerror }</span>
 						<p class="msg">Enter valid name and name cannot be empty</p>
 					</div>
 
@@ -39,6 +40,7 @@
 						<input type="text" name="address" placeholder="Enter Address"
 							id="address" pattern="[A-Za-z0-9'\.\-\s\,]"
 							title="Please Enter the valid address" required>
+							<span id="addresserror">${addresserror }</span>
 						<p class="msg">Enter valid address and address cannot be empty</p>
 					</div>
 
@@ -47,6 +49,7 @@
 						<input type="text" name="mobile" id="mobile"
 							placeholder="Enter Mobile" pattern="(0/91)?[7-9][0-9]{9}"
 							title="Please enter the valid mobile Number" required>
+							<span id="mobileerror">${mobileerror }</span>
 						<p class="msg">Enter valid mobile number and mobile cannot be
 							empty</p>
 					</div>
@@ -56,6 +59,7 @@
 							placeholder="Enter Email"
 							pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
 							title="Please enter the valid email" required> <span id="existemail">${emailexist}</span>
+							<span id="emailerror">${emailerror }</span>
 						<p class="msg">Enter valid email and email cannot be empty</p>
 					</div>
 					<label for="puname">Username</label>
@@ -66,6 +70,7 @@
 							pattern="^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$"
 							title="First character is alphanum, should contain 8 characters,then 6 to 18 characters, last character is alphanum."
 							required>
+							<span id="usernameerror">${usernameerror }</span>
 						<p class="msg">Enter valid username and username cannot be
 							empty</p>
 							<span id="unameexist">${exist }</span>
@@ -78,6 +83,7 @@
 							pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
 							title="The password must contain atleast 8 character and one upper case,lowercase atleast 1 digit 1 special symbol"
 							required> <i class="bi bi-eye-slash" id="togglePassword"></i>
+							<span id="passworderror">${passworderror }</span>
 						<p class="msg">Enter valid password and password cannot be
 							empty</p>
 					</div>
@@ -89,6 +95,7 @@
 							pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
 							title="Please enter the correct format dd-MM-yy" required>
 						<p class="msg">Enter valid DOB and DOB cannot be empty</p>
+						<span id="errordob">${doberror }</span>
 
 					</div>
 					<a href="Index.jsp" class="act">Already have an Account?</a> <input

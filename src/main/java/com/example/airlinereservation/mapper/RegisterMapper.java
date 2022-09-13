@@ -19,8 +19,11 @@ public class RegisterMapper implements RowMapper<Passenger>{
 		
 
 		String uname=rs.getString("username");
+		String email=rs.getString("email");
 
 		p.setUname(uname);
+		p.setEmail(email);
+		
 		
 		
 	
