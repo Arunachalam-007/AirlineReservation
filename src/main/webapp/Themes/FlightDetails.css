@@ -72,7 +72,7 @@ body {
 	font-size: 17px;
 }
 
-.fdetails input, select:focus, .fdetails input, select:valid {
+.fdetails input, select:focus, select:valid {
 	border-color: #6E5DCF;
 }
 

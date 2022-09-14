@@ -1,15 +1,12 @@
 package com.example.airlinereservation.daoimpl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
 import com.example.airlinereservation.dao.RegisterDao;
 import com.example.airlinereservation.mapper.FeedbackMapper;
 import com.example.airlinereservation.model.Feedback;
-
 import com.example.airlinereservation.model.Passenger;
 
 @Repository

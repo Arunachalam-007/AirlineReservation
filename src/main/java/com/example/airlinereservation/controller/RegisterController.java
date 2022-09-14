@@ -41,11 +41,12 @@ public class RegisterController {
 	Feedback feedback = new Feedback();
 
 	String signupPage = "Signup.jsp";
+	String forgotPasswordPage="ForgotPassword.jsp";
 
 	SignupValidation signupValidation = new SignupValidation();
 
 	@PostMapping("/search")
-	public String registerdetails(@RequestParam("name") String name, @RequestParam("address") String address,
+	public String registerDetails(@RequestParam("name") String name, @RequestParam("address") String address,
 			@RequestParam("mobile") String mobile, @RequestParam("email") String email,
 			@RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("dateOfBirth") String dateOfBirth, Model mod,HttpSession session) {
@@ -81,7 +82,7 @@ public class RegisterController {
 
 		if (registerDaoImpl.emailexistcheck(email)) {
 			mod.addAttribute("emailexist", "Email Already Exist");
-			return "Signup.jsp";
+			return signupPage;
 		} else {
 
 			if (signupValidation.emailValidation(email)) {
@@ -95,7 +96,7 @@ public class RegisterController {
 
 		if (registerDaoImpl.usernameexistcheck(username)) {
 			mod.addAttribute("exist", "Username Already Exist");
-			return "Signup.jsp";
+			return signupPage;
 		} else {
 
 			if (signupValidation.usernameValidation(username)) {
@@ -122,7 +123,7 @@ public class RegisterController {
 
 		if (dob1.isAfter(today)) {
 			mod.addAttribute("doberror", "Date Of Birth cannot been after today");
-			return "Signup.jsp";
+			return signupPage;
 		} else {
 			passengerdto.setPassengerDateOfBirth(date);
 		}
@@ -164,15 +165,15 @@ public class RegisterController {
 		if (password.equals(confirmPassword)) {
 			if (serviceALR.updatePassword(username, confirmPassword)) {
 				mod.addAttribute("msg", "Your password has been changed!");
-				return "ForgotPassword.jsp";
+				return forgotPasswordPage;
 			} else {
 				mod.addAttribute("message", "Invalid username!");
-				return "ForgotPassword.jsp";
+				return forgotPasswordPage;
 			}
 
 		} else {
 			mod.addAttribute("messages", "The Change password and Confirm Password should be same!");
-			return "ForgotPassword.jsp";
+			return forgotPasswordPage;
 		}
 	}
 

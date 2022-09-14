@@ -88,9 +88,6 @@ form #togglePassword {
 	width: 45%;
 }
 
-.login {
-	width: 55%;
-}
 
 .login span {
 	text-align: center;
@@ -130,6 +127,7 @@ form #togglePassword {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	width: 55%;
 }
 
 .login input {
