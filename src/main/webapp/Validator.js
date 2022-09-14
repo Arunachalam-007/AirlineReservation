@@ -12,13 +12,13 @@ togglePassword.addEventListener('click', function(e) {
 function validation() {
 
 	const inputDiv = document.querySelectorAll('.input-div');
-	var nameValue = document.getElementById('name').value;
-	var addressValue = document.getElementById('address').value;
-	var mobileValue = document.getElementById('mobile').value;
-	var emailValue = document.getElementById('email').value;
-	var usernameValue = document.getElementById('username').value;
-	var passwordValue = document.getElementById('id_password').value;
-	var dobValue = document.getElementById('dob').value;
+	const nameValue = document.getElementById('name').value;
+	const addressValue = document.getElementById('address').value;
+	const mobileValue = document.getElementById('mobile').value;
+	const emailValue = document.getElementById('email').value;
+	const usernameValue = document.getElementById('username').value;
+	const passwordValue = document.getElementById('id_password').value;
+	const dobValue = document.getElementById('dob').value;
 	
 
 	if (nameValue === "")  {

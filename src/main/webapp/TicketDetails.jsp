@@ -21,7 +21,7 @@
 
 			<thead>
 				<tr>
-					<!-- <th>Flight ID</th> -->
+					
 					<th>Start Date</th>
 					<th>From City</th>
 					<th>Booking Id</th>

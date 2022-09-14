@@ -59,7 +59,7 @@
 </div>
 <label for="mobile">Mobile</label> 
 <div class="input-div">
-<input type="text"name="mobile" placeholder="Enter Mobile Number" id="mobile" pattern="(0/91)?[7-9][0-9]{9}" 
+<input type="text"name="mobile" placeholder="Enter Mobile Number" id="mobile" maxlength="10" pattern="(0/91)?[7-9][0-9]{9}" 
 						title="Please enter the valid mobile Number" required>
 
 </div>

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.airlinereservation.dao.RegisterDao;
 import com.example.airlinereservation.mapper.FeedbackMapper;
-import com.example.airlinereservation.mapper.PassengerMapper;
 import com.example.airlinereservation.model.Feedback;
 
 import com.example.airlinereservation.model.Passenger;

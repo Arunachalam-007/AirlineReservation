@@ -28,10 +28,10 @@ togglePassword.addEventListener('click', function(e) {
 
 
 function validator() {
-	var inputUserName = document.getElementById('username').value;
-	var inputPassword = document.getElementById('id_password').value;
-	var pattern = "^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$";
-	var passwordPattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+	const inputUserName = document.getElementById('username').value;
+	const inputPassword = document.getElementById('id_password').value;
+	const pattern = "^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$";
+	const passwordPattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
 
 	if ((inputUserName == '') || (inputPassword == '')) {
 		alert("username and password cannot be empty");
