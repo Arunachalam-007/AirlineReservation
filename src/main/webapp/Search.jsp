@@ -22,8 +22,10 @@
 
 				<h1>Check Availability</h1>
 				<label for="cls">Choose a Class</label> <select name="cls" id="cls">
-					<option value="Business">Business</option>
+
 					<option value="Economy">Economy</option>
+					<option value="Premium Economy">Premium Economy</option>
+					<option value="Business">Business</option>
 				</select> <label for="from_place">From Place</label> <select
 					name="from_place" id="from_place">
 					<option value="Madurai">Madurai</option>

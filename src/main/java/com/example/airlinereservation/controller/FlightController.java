@@ -162,6 +162,10 @@ public class FlightController {
 				double result = Double.parseDouble(bookingPrice);
 				double value = (result + result / 100 * 10);
 				bookingPrice = String.valueOf(value);
+			} else if (bookingClass.equals("Premium Economy")) {
+				double result = Double.parseDouble(bookingPrice);
+				double value = (result + result / 100 * 5);
+				bookingPrice = String.valueOf(value);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -6,7 +6,7 @@
 
 body {
 	background-color: hsl(193, 100%, 96%);
-	background-image: url("../Images/bg-hero-desktop.svg");
+	background-image: url("../Images/alr.jpg");
 }
 
 .bdetails {
@@ -28,6 +28,7 @@ body {
 h1 {
 	text-align: center;
 	margin-bottom: 10px;
+	color: white;
 }
 
 .bdetails input {

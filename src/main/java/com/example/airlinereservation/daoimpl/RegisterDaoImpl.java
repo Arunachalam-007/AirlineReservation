@@ -19,7 +19,7 @@ public class RegisterDaoImpl implements RegisterDao {
 	@Autowired
 	JdbcTemplate jdbctemp;
 
-	List<Feedback> data;
+	List<Feedback> feedbackData;
 
 	int noOfRowsAffected;
 
@@ -92,8 +92,8 @@ public class RegisterDaoImpl implements RegisterDao {
 
 	public List<Feedback> feedBackView() {
 		String selectQuery = "select email,city,subject from feedback";
-		data = jdbctemp.query(selectQuery, new FeedbackMapper());
-		return data;
+		feedbackData = jdbctemp.query(selectQuery, new FeedbackMapper());
+		return feedbackData;
 	}
 
 	public boolean usernameexistcheck(String username) {

@@ -58,10 +58,9 @@ h2 {
 }
 
 p {
-	font-size: 25px;
 	margin-left: 20px;
 	color: hsl(208, 11%, 55%);
-	font-size: 32px;
+	font-size: 27px;
 	padding-right: 40px;
 	font-family: "Red Hat Display",sans-serif;
 }
