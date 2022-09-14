@@ -13,11 +13,11 @@
 }
 
 body {
-	 background-image: url("../Images/bg-hero-desktop.svg"); 
-	 background-color: hsl(193, 100%, 96%); 
+	background-image: url("../Images/bg-hero-desktop.svg");
+	background-color: hsl(193, 100%, 96%);
 }
 
- table {
+table {
 	border-collapse: collapse;
 	width: 90%;
 	display: block;
@@ -26,7 +26,7 @@ body {
 	overflow-y: auto;
 	border-spacing: 30px 10px;
 	border-spacing: 0 1em;
-	border-radius: 20px; 
+	border-radius: 20px;
 }
 
 th {
@@ -38,7 +38,6 @@ th {
 	background: #85adad;
 }
 
-
 tbody tr:hover {
 	background-color: #9CD3D8;
 }
@@ -48,8 +47,8 @@ td {
 	border-bottom: 1px solid #ddd;
 	font-size: 18px;
 	text-align: center;
-	
-} 
+}
+
 table::-webkit-scrollbar {
 	display: none;
 }

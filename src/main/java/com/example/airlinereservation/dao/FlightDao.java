@@ -37,6 +37,6 @@ public interface FlightDao {
 
 	void deleteFlight(String flightId);
 
-	void deleteTicketAfterExpired(Date bookingDate);
+	
 
 }

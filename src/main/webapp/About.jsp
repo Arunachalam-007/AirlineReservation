@@ -21,7 +21,7 @@
     </div>
     
     <div class="column_left">
-    <p>Hello,<br>This is Arunachalam.This is not a my first Project.I already done many but this is first I have applied lot of techniques.</p>
+    <p>Hello,<br>This is Arunachalam.This is not my first Project.I already done many but this is first I have applied lot of techniques.</p>
     </div>
   </div>
 </div>

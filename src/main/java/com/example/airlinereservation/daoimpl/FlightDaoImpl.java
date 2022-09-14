@@ -160,10 +160,5 @@ public class FlightDaoImpl implements FlightDao {
 
 	}
 
-	public void deleteTicketAfterExpired(Date bookingDate) {
-		String deleteQuery = "delete from flightbooking where booking_date=?";
-		Object[] values = { bookingDate };
-		jdbctemp.update(deleteQuery, values);
-	}
 
 }

@@ -30,9 +30,6 @@
 
 	<div id="save">
 
-
-
-
 		<c:forEach var="confirmPassengersVal" items="${confirmPassengers}">
 		
 		

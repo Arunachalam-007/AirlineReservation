@@ -217,12 +217,6 @@ public class FlightController {
 
 		flightBooking.setBookingFromPlace(bookingFromPlace);
 
-		LocalDate todayLocalDate = LocalDate.now();
-
-		if (conversion.isBefore(todayLocalDate)) {
-			flightDaoImpl.deleteTicketAfterExpired(date1);
-		}
-
 		flightDaoImpl.bookingFlight(flightBooking, bookingClass);
 
 		List<FlightBooking> result = flightDaoImpl.confirmPasengerInfo(name, date);

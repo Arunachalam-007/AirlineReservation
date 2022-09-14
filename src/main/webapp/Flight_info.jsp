@@ -15,7 +15,6 @@
 <body>
 	
 	
-	
 	 <div id="myCarousel" class="carousel slide col-xs-12" data-ride="carousel">
 	 	<ol class="carousel-indicators">
 			<li data-target="#flight_info" data-slide-to="0" class="active"></li>
