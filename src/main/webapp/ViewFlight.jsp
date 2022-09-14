@@ -12,8 +12,10 @@
 	<form>
 		<jsp:include page="AdminNav.jsp" />
 
+		<h1 id="seaterror">${seatDeleteError }</h1>
+
 		<table>
-		<caption style="display: none;">Flight Details</caption>
+			<caption style="display: none;">Flight Details</caption>
 			<tr>
 				<th>Flight ID</th>
 				<th>Flight Name</th>
@@ -41,11 +43,14 @@
 					<td>${flightInfoValues.startTime}</td>
 					<td>${flightInfoValues.endTime}</td>
 					<td>${flightInfoValues.seat}</td>
-					<td><a href="/deleteflight?flightId=${flightInfoValues.flightId}">Delete</a></td>
+					<td><a
+						href="/deleteflight?flightId=${flightInfoValues.flightId}&seat=${flightInfoValues.seat}">Delete</a></td>
 
 				</tr>
 			</c:forEach>
 		</table>
+
+		
 	</form>
 </body>
 </html>

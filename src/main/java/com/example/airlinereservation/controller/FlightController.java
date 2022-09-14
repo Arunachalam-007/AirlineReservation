@@ -43,13 +43,15 @@ public class FlightController {
 	FlightBookingDTO flightBookingdto = new FlightBookingDTO();
 
 	FlightBooking flightBooking = new FlightBooking();
+	
+
 
 	@PostMapping("/adminflight")
 	public String flightInfo(@RequestParam("flightid") String flightId, @RequestParam("flightname") String flightName,
 			@RequestParam("departure") String departure, @RequestParam("arrival") String arrival,
 			@RequestParam("start_time") String startTime, @RequestParam("end_time") String endTime,
 			@RequestParam("from") String fromPlace, @RequestParam("to") String toPlace,
-			@RequestParam("price") String price, @RequestParam("seat") int seat) {
+			@RequestParam("price") String price, @RequestParam("seat") int seat,Model mod) {
 
 		flightdto.setFlightId(flightId);
 		flightdto.setFlightName(flightName);
@@ -76,17 +78,16 @@ public class FlightController {
 	public String flightSearchController(@RequestParam("from_place") String fromPlace,
 			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
 
-		
 		LocalDate bookDate = LocalDate.parse(bookingDate);
 		Date date = Date.valueOf(bookDate);
 		LocalDate bookingDateConversion = LocalDate.parse(new SimpleDateFormat("yyyy-MM-dd").format(date));
 
 		LocalDate todayDate = LocalDate.now();
-		if(bookingDateConversion.isBefore(todayDate)) {
-			mod.addAttribute("bookingDateError","Booking Date cannot been before today");
+		if (bookingDateConversion.isBefore(todayDate)) {
+			mod.addAttribute("bookingDateError", "Booking Date cannot been before today");
 			return "Search.jsp";
 		}
-		
+
 		List<Flight> values = flightDaoImpl.flightsDisplay(fromPlace, bookingDate);
 		mod.addAttribute("infos", values);
 		return "FlightDisplay.jsp";
@@ -172,7 +173,6 @@ public class FlightController {
 		flightBooking.setFid(flightId);
 		flightBooking.setFname(flightName);
 
-		
 		flightBooking.setName(name);
 
 		flightBooking.setEmail(email);
@@ -203,16 +203,15 @@ public class FlightController {
 
 		flightBooking.setBookingFromPlace(bookingFromPlace);
 
-		LocalDate bookingLocalDate = LocalDate.parse( new SimpleDateFormat("yyyy-MM-dd").format(date1) );
+		LocalDate bookingLocalDate = LocalDate.parse(new SimpleDateFormat("yyyy-MM-dd").format(date1));
 		LocalDate todayLocalDate = LocalDate.now();
-		
-		if(bookingLocalDate.isBefore(todayLocalDate)) {
+
+		if (bookingLocalDate.isBefore(todayLocalDate)) {
 			flightDaoImpl.deleteTicketAfterExpired(date1);
 		}
-		
+
 		flightDaoImpl.bookingFlight(flightBooking, bookingClass);
 
-		
 		List<FlightBooking> result = flightDaoImpl.confirmPasengerInfo(name, date);
 		mod.addAttribute("confirmPassengers", result);
 		flightDaoImpl.seatCountDecrease(flightId, bookingClass);
@@ -272,8 +271,15 @@ public class FlightController {
 	}
 
 	@GetMapping("/deleteflight")
-	public String deleteFlightByAdmin(@RequestParam("flightId") String flightId, Model mod) {
-		flightDaoImpl.deleteFlight(flightId);
+	public String deleteFlightByAdmin(@RequestParam("flightId") String flightId, @RequestParam("seat") int seat,
+			Model mod) {
+		if (seat == 40) {
+			flightDaoImpl.deleteFlight(flightId);
+		}
+		else {
+			mod.addAttribute("seatDeleteError","This Flight has booked so can't to delete");
+			
+		}
 		List<Flight> flightResult = flightDaoImpl.viewFlight();
 		mod.addAttribute("flightInfo", flightResult);
 		return "ViewFlight.jsp";

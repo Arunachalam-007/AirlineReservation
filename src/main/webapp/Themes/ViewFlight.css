@@ -76,3 +76,6 @@ td a:hover {
 tr:nth-child(even) {
 	background: transparent;
 }
+#seaterror{
+	color: red;
+}

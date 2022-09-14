@@ -16,29 +16,52 @@
 			<div class="container">
 				<div class="fdetails">
 					<h1>Add Flight Details</h1>
-					<label for="fid">Flight Id</label> <input type="text" name="flightid"
-						placeholder="Enter Flight Id"> <label for="fname">Flight Name</label>
-					<input type="text" name="flightname" placeholder="Enter Flight Name">
-					<label for="departure">Departure</label> <input type="date"
-						name="departure" placeholder="Enter Departure"> <label for="arrival">Arrival</label>
-					<input type="date" name="arrival" placeholder="Enter Arrival">
+					<label for="fid">Flight Id</label>
+					<div class="input-div"> <input type="text" name="flightid" id="flightId"
+						placeholder="Enter Flight Id">
+						<span>${idError }</span>
+						</div>
+						 <label for="fname">Flight Name</label>
+						 <div class="input-div">
+					<input type="text" name="flightname" placeholder="Enter Flight Name" id="flightName"></div>
+					<label for="departure">Departure</label> 
+					<div class="input-div">
+					<input type="date"
+						name="departure" placeholder="Enter Departure" id="departure"> 
+						</div>
+						 <label for="arrival">Arrival</label>
+						 <div class="input-div">
+					<input type="date" name="arrival" placeholder="Enter Arrival" id="arrival">
+					</div>
 					<label for="start_time">Start Time</label> 
+					<div class="input-div">
 					<input type="time" name="start_time"
-						placeholder="Enter Start Time">
+						placeholder="Enter Start Time" id="startTime">
+						</div>
 					<label for="end_time">End Time</label> 
+					<div class="input-div">
 					<input type="time" name="end_time"
-						placeholder="Enter End Time">
+						placeholder="Enter End Time" id="endTime">
+						</div>
 					<label
-						for="from">From</label> <input type="text" name="from"
-						placeholder="Enter From Place">
+						for="from">From</label>
+						<div class="input-div"> <input type="text" name="from"
+						placeholder="Enter From Place" id="fromPlace">
+						</div>
 						<label
-						for="to">To</label> <input type="text" name="to"
-						placeholder="Enter To Place">
-					<label for="price">Price</label> <input type="text" name="price"
-						placeholder="Enter Price">
-					<label for="seat">Seat</label> <input type="number" name="seat"
-						placeholder="Enter Seat">
-						<input type="submit" value="Submit" class="submit_btn">
+						for="to">To</label>
+						<div class="input-div"> <input type="text" name="to"
+						placeholder="Enter To Place" id="toPlace">
+						</div>
+					<label for="price">Price</label>
+					<div class="input-div"> <input type="text" name="price"
+						placeholder="Enter Price" id="price">
+						</div>
+					<label for="seat">Seat</label>
+					<div class="input-div"> <input type="number" name="seat"
+						placeholder="Enter Seat" id="seat">
+						</div>
+						<input type="submit" value="Submit" class="submit_btn" onclick="return validation();">
 						
 						
 				</div>
@@ -46,5 +69,6 @@
 			</div>
 	</form>
 
+<script src="AdminFlightValidation.js"></script>
 </body>
 </html>

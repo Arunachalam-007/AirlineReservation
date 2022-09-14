@@ -34,15 +34,15 @@
 
 <label for="name">Name</label> 
 <div class="input-div">
-<input type="text"name="name" placeholder="Enter Name" id="name" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
-						title="Name should contain Capital letters and white spaces" required>
-<span id="nameerror">${nameerror }</span>
+<input type="text"name="name" placeholder="Enter Name" id="name"
+						 required>
+
 </div>
 <label for="email">Email</label> 
 <div class="input-div">
-<input type="email"name="email" placeholder="example@gmail.com" id="email" pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+<input type="email"name="email" placeholder="example@gmail.com" id="email" pattern="^(.+)@(.+)$""
 						title="Please enter the valid email" required>
-<span id="emailerror">${emailerror }</span>
+
 </div>
 <label for="dob">DOB</label> 
 <div class="input-div">
@@ -53,23 +53,23 @@
 
 <label for="nationality">Nationality</label> 
 <div class="input-div">
-<input type="text" name="nationality" placeholder="Enter Nationality" id="nationality" pattern="[A-Z]{1}[A-Za-z]{3, 18}"
+<input type="text" name="nationality" placeholder="Enter Nationality" id="nationality" pattern="^[a-zA-Z\\s]+"
 						title="Nationality should contain letters and white spaces" required>
-<span id="nationalityerror">${nationalityerror }</span>
+
 </div>
 <label for="mobile">Mobile</label> 
 <div class="input-div">
 <input type="text"name="mobile" placeholder="Enter Mobile Number" id="mobile" pattern="(0/91)?[7-9][0-9]{9}" 
 						title="Please enter the valid mobile Number" required>
-<span id="mobileerror">${mobileerror }</span>
+
 </div>
 <label for="address">Address</label> 
 <div class="input-div">
 <textarea rows="7" cols="85" name="address" placeholder="Enter Address" id="address" pattern="[A-Za-z0-9'\.\-\s\,]" 
 						title="Please Enter the valid address" required></textarea>
-<span id="addresserror">${addresserror }</span>
+
 </div>
-<input type="submit" value="Reserve Flight" class="res_btn" onclick="validation(); return false;"> 
+<input type="submit" value="Reserve Flight" class="res_btn" onclick="return validation();"> 
 </c:forEach>
 </div>
 </div>
