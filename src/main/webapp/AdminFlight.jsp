@@ -28,10 +28,13 @@
 					<div class="input-div">
 					<input type="date"
 						name="departure" placeholder="Enter Departure" id="departure"> 
+						<span id="departureError">${departureError }</span>
+						
 						</div>
 						 <label for="arrival">Arrival</label>
 						 <div class="input-div">
 					<input type="date" name="arrival" placeholder="Enter Arrival" id="arrival">
+					<span id="arrivalError">${arrivalError }</span>
 					</div>
 					<label for="start_time">Start Time</label> 
 					<div class="input-div">

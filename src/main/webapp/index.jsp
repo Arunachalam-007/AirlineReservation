@@ -23,6 +23,7 @@
 
 			<div class="slide-container">
 				<div class="slides">
+				
 					<img alt="Indigo" src="./Images/indigo.jpg" height="400px"
 						width="100%">
 				</div>

@@ -1,0 +1,67 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap')
+	;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	background-color: hsl(193, 100%, 96%);
+	background-image: url("../Images/bg-hero-desktop.svg");
+}
+
+.container {
+	border-radius: 5px;
+	padding: 10px;
+}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+}
+
+.column {
+	float: right;
+	width: 50%;
+	margin-top: 6px;
+	padding: 20px;
+}
+
+.column img:hover {
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+	cursor: pointer;
+}
+
+.column img {
+	border-radius: 30px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.column_left {
+	float: left;
+	width: 50%;
+	margin-top: 110px;
+	padding: 20px;
+}
+
+p {
+	font-size: 25px;
+	margin-left: 20px;
+	color: hsl(208, 11%, 55%);
+	font-size: 32px;
+	padding-right: 40px;
+	font-family: "Red Hat Display",sans-serif;
+}

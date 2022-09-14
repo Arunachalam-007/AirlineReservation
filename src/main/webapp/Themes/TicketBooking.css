@@ -52,44 +52,57 @@ body {
 	margin-top: 15px;
 	display: flex;
 	flex-direction: row;
-	gap: 30px;
+	gap: 20px;
 	font-size: 17px;
-
 }
-.ticket_info .booking_table .depart-left{
+
+.ticket_info .booking_table .depart-left {
 	display: flex;
 	flex-direction: column;
-	gap:10px;
+	gap: 10px;
 	margin-left: 35px;
 }
-#from,#to_place{
+
+#from, #to_place {
 	font-size: 17px;
 }
-#depart,#arrival{
+
+#depart, #arrival {
 	font-size: 17px;
 }
-#fname{
+
+#fname {
 	font-size: 22px;
 	font-family: 'Roboto', sans-serif;
-	margin-top:10px; 
+	margin-top: 10px;
 }
-#start_time,#end_time{
+
+#start_time, #end_time {
 	font-size: 25px;
 	margin-top: 10px;
 }
-#to_link{
+
+#to_link {
 	margin-top: 13px;
 }
-.ticket_info .booking_table .arrival_right{
+
+.ticket_info .booking_table .arrival_right {
 	display: flex;
 	flex-direction: column;
-	gap:10px;
+	gap: 10px;
 }
-#seat_avl{
-	margin:10px 0 0 40px;
+
+#seat_avl {
+	margin: 5px 0 0 40px;
+	font-size: 21px;
+	background: #c0c0c0;
+	padding: 10px;
+	border-radius: 20px;
 }
-#seat_avl:hover{
+
+#seat_avl:hover {
 	cursor: pointer;
+	background: #669999;
 }
 
 .info h2 {
@@ -131,7 +144,7 @@ ol {
 	color: black;
 }
 
- .ticket_amt {
+.ticket_amt {
 	width: 25%;
 	height: 480px;
 	border-radius: 10px;

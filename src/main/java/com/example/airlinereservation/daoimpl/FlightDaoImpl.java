@@ -49,13 +49,6 @@ public class FlightDaoImpl implements FlightDao {
 		return data;
 	}
 
-	public List<Flight> flightInfo(String fromPlace, String departure) {
-		String selectQuery = "select flightId,flightName,departure,arrival,from_place,to_place,price,start_time,end_time,seat from alrflightadmin where from_place=? and departure=?";
-		Object[] values = { fromPlace, departure };
-		data = jdbctemp.query(selectQuery, new FlightMapper(), values);
-		return data;
-	}
-
 	public List<Flight> ticketBooking(String flightId) {
 
 		String selectQuery = "select flightId,flightName,departure,arrival,from_place,to_place,price,start_time,end_time,seat from alrflightadmin where flightId=?";

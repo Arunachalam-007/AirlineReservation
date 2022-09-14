@@ -5,9 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +24,6 @@ import com.example.airlinereservation.model.FlightBooking;
 import com.example.airlinereservation.model.Passenger;
 import com.example.airlinereservation.service.ServiceALR;
 
-
 @Controller
 public class FlightController {
 
@@ -43,22 +40,38 @@ public class FlightController {
 	FlightBookingDTO flightBookingdto = new FlightBookingDTO();
 
 	FlightBooking flightBooking = new FlightBooking();
-	
-	String indexPage="Index.jsp";
-	
 
+	String indexPage = "Index.jsp";
 
 	@PostMapping("/adminflight")
 	public String flightInfo(@RequestParam("flightid") String flightId, @RequestParam("flightname") String flightName,
 			@RequestParam("departure") String departure, @RequestParam("arrival") String arrival,
 			@RequestParam("start_time") String startTime, @RequestParam("end_time") String endTime,
 			@RequestParam("from") String fromPlace, @RequestParam("to") String toPlace,
-			@RequestParam("price") String price, @RequestParam("seat") int seat,Model mod) {
+			@RequestParam("price") String price, @RequestParam("seat") int seat, Model mod) {
 
 		flightdto.setFlightId(flightId);
 		flightdto.setFlightName(flightName);
-		flightdto.setFlightDeparture(departure);
-		flightdto.setFlightArrival(arrival);
+
+		LocalDate departure1 = LocalDate.parse(departure);
+
+		LocalDate todayDate = LocalDate.now();
+
+		if (departure1.isBefore(todayDate)) {
+			mod.addAttribute("departureError", "Departure Date cannot been before today");
+			return "AdminFlight.jsp";
+		} else {
+			flightdto.setFlightDeparture(departure);
+		}
+
+		LocalDate arrival1 = LocalDate.parse(arrival);
+
+		if (arrival1.isBefore(todayDate)) {
+			mod.addAttribute("arrivalError", "Arrival Date cannot been before today");
+			return "AdminFlight.jsp";
+		} else {
+			flightdto.setFlightArrival(arrival);
+		}
 
 		flightdto.setFlightSeat(seat);
 
@@ -81,11 +94,9 @@ public class FlightController {
 			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
 
 		LocalDate bookDate = LocalDate.parse(bookingDate);
-		Date date = Date.valueOf(bookDate);
-		LocalDate bookingDateConversion = LocalDate.parse(new SimpleDateFormat("yyyy-MM-dd").format(date));
 
 		LocalDate todayDate = LocalDate.now();
-		if (bookingDateConversion.isBefore(todayDate)) {
+		if (bookDate.isBefore(todayDate)) {
 			mod.addAttribute("bookingDateError", "Booking Date cannot been before today");
 			return "Search.jsp";
 		}
@@ -112,7 +123,7 @@ public class FlightController {
 	@PostMapping("/searchflightwithoutlogin")
 	public String searchFlightwoutLogin(@RequestParam("from_place") String fromPlace,
 			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
-		List<Flight> result = flightDaoImpl.flightInfo(fromPlace, bookingDate);
+		List<Flight> result = flightDaoImpl.flightsDisplay(fromPlace, bookingDate);
 		mod.addAttribute("infos", result);
 		return "FlightDisplay.jsp";
 	}
@@ -121,7 +132,7 @@ public class FlightController {
 	public String ticketBookingPay(@RequestParam("flightid") String flightId,
 			@RequestParam("seatavailabilityresult") int seatResult, Model mod, HttpSession session) {
 
-		if (session.getAttribute("passengerusername") != null) {
+		if ((session.getAttribute("passengerusername") != null) || session.getAttribute("signupUsername") != null) {
 			List<Flight> result = flightDaoImpl.ticketBooking(flightId);
 			mod.addAttribute("flightid_value", result);
 			if (seatResult != 36) {
@@ -182,10 +193,8 @@ public class FlightController {
 		LocalDate dob1 = LocalDate.parse(dateOfBirth);
 		Date date = Date.valueOf(dob1);
 
-		LocalDate dateOfBirth1 = LocalDate.parse(new SimpleDateFormat("yyyy-MM-dd").format(date));
-
 		LocalDate todayDate = LocalDate.now();
-		if (dateOfBirth1.isAfter(todayDate)) {
+		if (dob1.isAfter(todayDate)) {
 			mod.addAttribute("doberror", "Date Of Birth cannot been after today");
 			return "BookInfo.jsp";
 		} else {
@@ -204,10 +213,9 @@ public class FlightController {
 
 		flightBooking.setBookingFromPlace(bookingFromPlace);
 
-		LocalDate bookingLocalDate = LocalDate.parse(new SimpleDateFormat("yyyy-MM-dd").format(date1));
 		LocalDate todayLocalDate = LocalDate.now();
 
-		if (bookingLocalDate.isBefore(todayLocalDate)) {
+		if (conversion.isBefore(todayLocalDate)) {
 			flightDaoImpl.deleteTicketAfterExpired(date1);
 		}
 
@@ -276,10 +284,9 @@ public class FlightController {
 			Model mod) {
 		if (seat == 40) {
 			flightDaoImpl.deleteFlight(flightId);
-		}
-		else {
-			mod.addAttribute("seatDeleteError","This Flight has booked so can't to delete");
-			
+		} else {
+			mod.addAttribute("seatDeleteError", "This Flight has booked so can't to delete");
+
 		}
 		List<Flight> flightResult = flightDaoImpl.viewFlight();
 		mod.addAttribute("flightInfo", flightResult);

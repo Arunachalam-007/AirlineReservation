@@ -35,7 +35,7 @@
 							<p id="arrival">${bvalues.arrival}</p>
 
 						</div>
-						<p id="seat_avl">${seatAvailResult}Ticket'sLeft</p>
+						<p id="seat_avl">${seatAvailResult}&nbsp;Ticket's&nbsp;Left</p>
 					</div>
 					
 				</c:forEach>

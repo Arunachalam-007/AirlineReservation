@@ -13,8 +13,7 @@ public class SignupValidation {
 	}
 
 	public boolean addressValidation(String address) {
-		String pattern = "^[#.0-9a-zA-Z\\s,-]+$";
-		if (address.matches(pattern)&&(address.trim().length()>=7)) {
+		if (address.trim().length()>=7) {
 			return true;
 		} else {
 			return false;

@@ -1,10 +1,12 @@
 package com.example.airlinereservation.dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import com.example.airlinereservation.model.Flight;
 import com.example.airlinereservation.model.FlightBooking;
 import com.example.airlinereservation.model.FlightSearch;
+import com.example.airlinereservation.model.Passenger;
 
 public interface FlightDao {
 	void addFlight(Flight f);
@@ -12,8 +14,6 @@ public interface FlightDao {
 	void searchFlight(FlightSearch fs);
 
 	List<Flight> flightsDisplay(String fromPlace, String departure);
-
-	List<Flight> flightInfo(String fromPlace, String departure);
 
 	List<Flight> ticketBooking(String id);
 
@@ -27,6 +27,16 @@ public interface FlightDao {
 
 	List<FlightBooking> passengerBookedTicket(String uname);
 
-	void cancelTicket(String bookingid,String flightId);
+	void cancelTicket(String bookingid, String flightId);
+
+	List<Passenger> passengerInfo();
+
+	void deletePassenger(String username);
+
+	List<Flight> viewFlight();
+
+	void deleteFlight(String flightId);
+
+	void deleteTicketAfterExpired(Date bookingDate);
 
 }

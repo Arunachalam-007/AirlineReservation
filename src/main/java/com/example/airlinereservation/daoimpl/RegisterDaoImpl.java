@@ -135,4 +135,24 @@ public class RegisterDaoImpl implements RegisterDao {
 		return false;
 
 	}
+	
+	public boolean mobileExistCheck(String mobile) {
+		String selectQuery = "select mobile from alrpassenger where mobile=?";
+		Object[] userData = { mobile };
+		try {
+			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+
+			if (!result.isEmpty()) {
+				return true;
+			}
+			else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+
+	}
 }

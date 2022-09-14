@@ -49,7 +49,9 @@
 						<input type="text" name="mobile" id="mobile"
 							placeholder="Enter Mobile" pattern="(0/91)?[7-9][0-9]{9}"
 							title="Please enter the valid mobile Number" required>
+							<span id="mobileexist">${mobileexist}</span>
 							<span id="mobileerror">${mobileerror }</span>
+							
 						<p class="msg">Enter valid mobile number and mobile cannot be
 							empty</p>
 					</div>

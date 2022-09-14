@@ -50,27 +50,35 @@ public class RegisterController {
 	public String registerdetails(@RequestParam("name") String name, @RequestParam("address") String address,
 			@RequestParam("mobile") String mobile, @RequestParam("email") String email,
 			@RequestParam("username") String username, @RequestParam("password") String password,
-			@RequestParam("dateOfBirth") String dateOfBirth, Model mod) {
+			@RequestParam("dateOfBirth") String dateOfBirth, Model mod,HttpSession session) {
 
 		if (signupValidation.nameValidation(name)) {
 			passengerdto.setPassengerName(name);
 		} else {
-			mod.addAttribute("nameerror", "Enter valid name and name cannot be empty should be greater than 2 character");
+			mod.addAttribute("nameerror",
+					"Enter valid name and name cannot be empty should be greater than 2 character");
 			return signupPage;
 		}
 
 		if (signupValidation.addressValidation(address)) {
 			passengerdto.setPassengerAddr(address);
 		} else {
-			mod.addAttribute("addresserror", "Enter valid address and address cannot be empty should be greater than 6 character");
+			mod.addAttribute("addresserror",
+					"Enter valid address and address cannot be empty should be greater than 6 character");
 			return signupPage;
 		}
 
-		if (signupValidation.mobileValidation(mobile)) {
-			passengerdto.setPassengerMobile(mobile);
-		} else {
-			mod.addAttribute("mobileerror", "Enter valid mobile number and mobile cannot be empty should be 10 character ");
+		if (registerDaoImpl.mobileExistCheck(mobile)) {
+			mod.addAttribute("mobileexist", "Mobile Number Already Exist");
 			return signupPage;
+		} else {
+			if (signupValidation.mobileValidation(mobile)) {
+				passengerdto.setPassengerMobile(mobile);
+			} else {
+				mod.addAttribute("mobileerror",
+						"Enter valid mobile number and mobile cannot be empty should be 10 character ");
+				return signupPage;
+			}
 		}
 
 		if (registerDaoImpl.emailexistcheck(email)) {
@@ -81,7 +89,8 @@ public class RegisterController {
 			if (signupValidation.emailValidation(email)) {
 				passengerdto.setPassengerEmail(email);
 			} else {
-				mod.addAttribute("emailerror", "Enter valid email and email cannot be empty should be greater than 4 character");
+				mod.addAttribute("emailerror",
+						"Enter valid email and email cannot be empty should be greater than 4 character");
 				return signupPage;
 			}
 		}
@@ -93,8 +102,10 @@ public class RegisterController {
 
 			if (signupValidation.usernameValidation(username)) {
 				passengerdto.setPassengerUsername(username);
+				
 			} else {
-				mod.addAttribute("usernameerror", "Enter valid username and username cannot be empty should be greater than 2 character");
+				mod.addAttribute("usernameerror",
+						"Enter valid username and username cannot be empty should be greater than 2 character");
 				return signupPage;
 			}
 		}
@@ -102,7 +113,8 @@ public class RegisterController {
 		if (signupValidation.passwordValidation(password)) {
 			passengerdto.setPassengerPassword(password);
 		} else {
-			mod.addAttribute("passworderror", "Enter valid password and password cannot be empty should be greater than 6 character");
+			mod.addAttribute("passworderror",
+					"Enter valid password and password cannot be empty should be greater than 6 character");
 			return signupPage;
 		}
 
@@ -110,9 +122,7 @@ public class RegisterController {
 		LocalDate dob1 = LocalDate.parse(dateOfBirth);
 		Date date = Date.valueOf(dob1);
 
-//		LocalDate dateOfBirth1 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		LocalDate dateOfBirth1 = LocalDate.parse(new SimpleDateFormat("yyyy-MM-dd").format(date));
-		if (dateOfBirth1.isAfter(today)) {
+		if (dob1.isAfter(today)) {
 			mod.addAttribute("doberror", "Date Of Birth cannot been after today");
 			return "Signup.jsp";
 		} else {
@@ -120,6 +130,8 @@ public class RegisterController {
 		}
 
 		serviceALR.passengerService(passengerdto);
+		
+		session.setAttribute("signupUsername", username);
 		return "Search.jsp";
 	}
 

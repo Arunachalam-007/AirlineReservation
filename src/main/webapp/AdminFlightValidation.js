@@ -23,7 +23,8 @@ function validation() {
 	} else {
 		inputDiv[0].classList.remove("error");
 
-	} if (flightNameValue == "") {
+	}
+	if (flightNameValue == "") {
 
 		inputDiv[1].classList.add("error");
 		alert("flight Name cannot be empty");
@@ -66,7 +67,7 @@ function validation() {
 		return false;
 	} else {
 		inputDiv[5].classList.remove("error");
-	} 
+	}
 	if (fromPlaceValue === "") {
 
 		inputDiv[6].classList.add("error");
@@ -85,10 +86,10 @@ function validation() {
 	} else {
 		inputDiv[7].classList.remove("error");
 	}
-	if (priceValue == "") {
+	if ((priceValue == "") || (priceValue < 0)) {
 
 		inputDiv[8].classList.add("error");
-		alert("Price cannot be empty");
+		alert("Price cannot be empty and must be greater than 0");
 		return false;
 
 	} else {
@@ -104,6 +105,10 @@ function validation() {
 		inputDiv[9].classList.remove("error");
 	}
 
+	if (fromPlaceValue == toPlaceValue) {
+		alert("From Place and To Place cannot be same ");
+		return false;
+	}
 
 
 

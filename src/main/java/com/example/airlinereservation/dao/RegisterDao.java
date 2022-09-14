@@ -19,4 +19,10 @@ public interface RegisterDao {
 
 	List<Feedback> feedBackView();
 
+	boolean usernameexistcheck(String username);
+
+	boolean emailexistcheck(String email);
+
+	boolean mobileExistCheck(String mobile);
+
 }

@@ -20,7 +20,6 @@ body {
 	background-color: hsl(193, 100%, 96%);
 	font-size: 18px;
 	font-family: "Open Sans", sans-serif;
-	
 }
 
 .login_btn {
@@ -34,43 +33,46 @@ body {
 	margin-top: 20px;
 }
 
-
 .login_btn:active {
 	background-color: hsl(322, 100%, 66%);
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
 }
-.change_password{
+
+.change_password {
 	width: 100%;
 	margin-top: 10px;
 	color: green;
 }
+
 form #togglePassword {
-    margin: -68px 20px 0px 650px;
-    cursor: pointer;
+	margin: -68px 20px 0px 650px;
+	cursor: pointer;
 }
-#error_msg{
+
+#error_msg {
 	color: red;
 	margin-bottom: 5px;
-	
 }
 
 .msg {
-  color: hsl(0, 100%, 74%);
-  font-style: italic;
-  padding: 0.5em 0em 0em 0em;
-  text-align: end;
-  display: none;
+	color: hsl(0, 100%, 74%);
+	font-style: italic;
+	padding: 0.5em 0em 0em 0em;
+	text-align: end;
+	display: none;
 }
 
 .error input {
-  border: 2px solid hsl(0, 100%, 74%);
+	border: 2px solid hsl(0, 100%, 74%);
 }
+
 .error input:focus {
-  color: hsl(0, 100%, 74%);
+	color: hsl(0, 100%, 74%);
 }
+
 .error .msg {
-  display: block;
+	display: block;
 }
 
 .home_page {
@@ -179,6 +181,8 @@ form #togglePassword {
 	height: 400px;
 	border-radius: 20px;
 }
+
+
 
 .flight_det {
 	display: flex;
