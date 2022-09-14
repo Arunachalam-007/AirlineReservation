@@ -2,12 +2,12 @@ function validation() {
 
 	const inputDiv = document.querySelectorAll('.input-div');
 
-	var nameValue = document.getElementById('name').value;
-	var emailValue = document.getElementById('email').value;
-	var nationalityValue = document.getElementById('nationality').value;
-	var mobileValue = document.getElementById('mobile').value;
-	var addressValue = document.getElementById('address').value;
-	var dobValue = document.getElementById('dob').value;
+	const nameValue = document.getElementById('name').value;
+	const emailValue = document.getElementById('email').value;
+	const nationalityValue = document.getElementById('nationality').value;
+	const mobileValue = document.getElementById('mobile').value;
+	const addressValue = document.getElementById('address').value;
+	const dobValue = document.getElementById('dob').value;
 	
 	
 

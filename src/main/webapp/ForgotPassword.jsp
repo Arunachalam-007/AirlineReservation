@@ -23,10 +23,10 @@
 <input type="text" placeholder="Enter username" name="username">
 <label for="password1">Password</label>
 <input type="password" placeholder="Enter Password" name="password1" id="id_password">
-<i class="bi bi-eye-slash" id="togglePassword1"></i>
+<em class="bi bi-eye-slash" id="togglePassword1"></em>
 <label for="password2">Confirm Password</label>
 <input type="password" placeholder="Enter Confirm Password" name="password2" id="id_password2">
-<i class="bi bi-eye-slash" id="togglePassword2"></i>
+<em class="bi bi-eye-slash" id="togglePassword2"></em>
 <span>${message }</span>
 <span>${msg }</span>
 <span>${messages }</span>

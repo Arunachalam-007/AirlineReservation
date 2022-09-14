@@ -82,7 +82,7 @@
 							placeholder="Enter Password" id="id_password"
 							pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
 							title="The password must contain atleast 8 character and one upper case,lowercase atleast 1 digit 1 special symbol"
-							required> <i class="bi bi-eye-slash" id="togglePassword"></i>
+							required> <em class="bi bi-eye-slash" id="togglePassword"></em>
 							<span id="passworderror">${passworderror }</span>
 						<p class="msg">Enter valid password and password cannot be
 							empty</p>

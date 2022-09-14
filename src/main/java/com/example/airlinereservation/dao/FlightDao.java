@@ -13,7 +13,7 @@ public interface FlightDao {
 
 	List<Flight> flightsDisplay(String fromPlace, String departure);
 
-	List<Flight> flightDisplayInfo(String fromPlace, String departure);
+	List<Flight> flightInfo(String fromPlace, String departure);
 
 	List<Flight> ticketBooking(String id);
 

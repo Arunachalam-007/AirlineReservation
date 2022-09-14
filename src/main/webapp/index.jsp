@@ -76,7 +76,7 @@
 						required> 
 						
 						
-					<i class="bi bi-eye-slash" id="togglePassword"></i>
+					<em class="bi bi-eye-slash" id="togglePassword"></em>
 					
 
 					<input type="submit" value="Login" class="login_btn"

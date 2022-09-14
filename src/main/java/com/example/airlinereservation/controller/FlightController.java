@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,7 +25,7 @@ import com.example.airlinereservation.model.Flight;
 import com.example.airlinereservation.model.FlightBooking;
 import com.example.airlinereservation.model.Passenger;
 import com.example.airlinereservation.service.ServiceALR;
-import com.example.airlinereservation.validation.SignupValidation;
+
 
 @Controller
 public class FlightController {
@@ -43,6 +43,8 @@ public class FlightController {
 	FlightBookingDTO flightBookingdto = new FlightBookingDTO();
 
 	FlightBooking flightBooking = new FlightBooking();
+	
+	String indexPage="Index.jsp";
 	
 
 
@@ -70,7 +72,7 @@ public class FlightController {
 
 		serviceALR.flightService(flightdto);
 
-		return "Index.jsp";
+		return indexPage;
 
 	}
 
@@ -110,7 +112,7 @@ public class FlightController {
 	@PostMapping("/searchflightwithoutlogin")
 	public String searchFlightwoutLogin(@RequestParam("from_place") String fromPlace,
 			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
-		List<Flight> result = flightDaoImpl.flightDisplayInfo(fromPlace, bookingDate);
+		List<Flight> result = flightDaoImpl.flightInfo(fromPlace, bookingDate);
 		mod.addAttribute("infos", result);
 		return "FlightDisplay.jsp";
 	}
@@ -125,10 +127,10 @@ public class FlightController {
 			if (seatResult != 36) {
 				return "BookInfo.jsp";
 			} else {
-				return "Index.jsp";
+				return indexPage;
 			}
 		} else {
-			return "Index.jsp";
+			return indexPage;
 		}
 	}
 
@@ -151,7 +153,7 @@ public class FlightController {
 				bookingPrice = String.valueOf(value);
 			}
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
 
 		LocalDate birthday = LocalDate.parse(dateOfBirth);
@@ -180,7 +182,6 @@ public class FlightController {
 		LocalDate dob1 = LocalDate.parse(dateOfBirth);
 		Date date = Date.valueOf(dob1);
 
-//		LocalDate dateOfBirth1 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		LocalDate dateOfBirth1 = LocalDate.parse(new SimpleDateFormat("yyyy-MM-dd").format(date));
 
 		LocalDate todayDate = LocalDate.now();
@@ -242,7 +243,7 @@ public class FlightController {
 	}
 
 	@GetMapping("/bookedTicketDisplay")
-	public String bookedTicketDisplay(Model mod) {
+	public String ticketDisplay(Model mod) {
 		List<FlightBooking> result = flightDaoImpl.flightInfoAdmin();
 		mod.addAttribute("bookedticketval", result);
 		return "AdminDashboard.jsp";
