@@ -1,6 +1,6 @@
 package com.example.airlinereservation.dao;
 
-import java.sql.Date;
+
 import java.util.List;
 
 import com.example.airlinereservation.model.Flight;

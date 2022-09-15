@@ -26,7 +26,7 @@ function validation() {
 	} else {
 		inputDiv[1].classList.remove("error");
 	}
-	if (dobValue === "") {
+	if (dobValue == "") {
 
 		inputDiv[2].classList.add("error");
 
