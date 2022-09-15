@@ -48,7 +48,6 @@
 <div class="input-div">
 <input type="date"name="dateOfBirth" placeholder="Enter DOB" id="dob" pattern="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$"
 						title="Please enter the correct format dd-MM-yy" required>
-<span id="errordob">${errordob }</span>
 </div>
 
 <label for="nationality">Nationality</label> 

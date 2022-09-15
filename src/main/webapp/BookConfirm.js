@@ -17,3 +17,12 @@ function generatePDF() {
         .save();
 
 }
+
+
+
+const onConfirmRefresh = function (event) {
+  event.preventDefault();
+  return event.returnValue = "Are you sure you want to leave the page?";
+}
+
+window.addEventListener("beforeunload", onConfirmRefresh, { capture: true });

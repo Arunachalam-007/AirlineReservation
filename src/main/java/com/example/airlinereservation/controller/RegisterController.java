@@ -1,12 +1,12 @@
 package com.example.airlinereservation.controller;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
+
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.security.auth.login.AccountNotFoundException;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +14,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.airlinereservation.daoimpl.RegisterDaoImpl;
 import com.example.airlinereservation.dto.PassengerDTO;
+import com.example.airlinereservation.exception.LoginException;
 import com.example.airlinereservation.model.Admin;
 import com.example.airlinereservation.model.Feedback;
 
@@ -137,9 +137,9 @@ public class RegisterController {
 		return "Search.jsp";
 	}
 
-	@PostMapping("/login")
+	@PostMapping("login")
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
-			HttpSession session, Model model) throws AccountNotFoundException {
+			HttpSession session, Model model) throws LoginException   {
 
 		if (username.equals(admin.getAdminUsername()) && password.equals(admin.getAdminPassword())) {
 
@@ -149,9 +149,12 @@ public class RegisterController {
 		} else if (registerDaoImpl.checkLogin(username, password)) {
 			session.setAttribute("passengerusername", username);
 			return "Search.jsp";
-		} else {
+		} 
+		
+		else {
 			model.addAttribute("error", "Invalid Account");	
 			return "Index.jsp";
+		
 
 		}
 	}

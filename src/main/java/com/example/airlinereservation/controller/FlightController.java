@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.airlinereservation.daoimpl.FlightDaoImpl;
@@ -197,13 +198,7 @@ public class FlightController {
 		LocalDate dob1 = LocalDate.parse(dateOfBirth);
 		Date date = Date.valueOf(dob1);
 
-		LocalDate todayDate = LocalDate.now();
-		if (dob1.isAfter(todayDate)) {
-			mod.addAttribute("doberror", "Date Of Birth cannot been after today");
-			return "BookInfo.jsp";
-		} else {
-			flightBooking.setDob(date);
-		}
+		flightBooking.setDob(date);
 
 		flightBooking.setNationality(nationality);
 

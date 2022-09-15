@@ -7,9 +7,10 @@ function validation() {
 	const nationalityValue = document.getElementById('nationality').value;
 	const mobileValue = document.getElementById('mobile').value;
 	const addressValue = document.getElementById('address').value;
-	const dobValue = document.getElementById('dob').value;
-	
-	
+	const dobValue = new Date(document.getElementById('dob').value);
+	const currentDate = new Date();
+
+
 
 	if (nameValue === "") {
 
@@ -53,17 +54,24 @@ function validation() {
 	}
 
 
-	if (nameValue.length<=2) {
+	if (nameValue.length <= 2) {
 		alert("Name must be greater than 2 characters,should be capital and cannot be empty");
 		return false;
 	}
-	
-	
-	if(nationalityValue.length<=2){
+
+
+	if (nationalityValue.length <= 2) {
 		alert("Nationality must be greater than 2 characters and cannot be empty");
 		return false;
 	}
+
 	
+	if (dobValue > currentDate) {
+		alert("Date of Birth Cannot been after today");
+		return false;
+	}
+
+
 
 
 }
