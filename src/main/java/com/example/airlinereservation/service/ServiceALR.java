@@ -1,5 +1,7 @@
 package com.example.airlinereservation.service;
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,7 +52,7 @@ public class ServiceALR {
 		flightDaoImpl.addFlight(f);
 	}
 
-	public boolean updatePassword(String username, String password) {
+	public boolean updatePassword(String username, String password) throws SQLException {
 		if (registerDaoImpl.usernameAvailCheck(username)) {
 			int noOfRowsAffected = registerDaoImpl.updatePassword(username, password);
 			if (noOfRowsAffected > 0) {

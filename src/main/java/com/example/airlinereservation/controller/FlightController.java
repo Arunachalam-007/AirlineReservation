@@ -167,7 +167,7 @@ public class FlightController {
 				double value = (result + result / 100 * 5);
 				bookingPrice = String.valueOf(value);
 			}
-		} catch (Exception e) {
+		} catch (ArithmeticException e) {
 			e.printStackTrace();
 		}
 
@@ -181,7 +181,7 @@ public class FlightController {
 				double value = result / 2;
 				bookingPrice = String.valueOf(value);
 			}
-		} catch (Exception e) {
+		} catch (ArithmeticException e) {
 			e.printStackTrace();
 		}
 

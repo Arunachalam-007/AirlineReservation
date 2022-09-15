@@ -1,5 +1,6 @@
 package com.example.airlinereservation.daoimpl;
 
+import java.sql.SQLException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -68,15 +69,11 @@ public class RegisterDaoImpl implements RegisterDao {
 
 	}
 
-	public int updatePassword(String username, String password) {
+	public int updatePassword(String username, String password) throws SQLException {
 		String updatePassword = "update alrpassenger set password = ? where username = ?";
 		Object[] userData = { password, username };
-		try {
-			noOfRowsAffected = jdbctemp.update(updatePassword, userData);
-			return noOfRowsAffected;
-		} catch (Exception e) {
-			return 0;
-		}
+		noOfRowsAffected = jdbctemp.update(updatePassword, userData);
+		return noOfRowsAffected;
 
 	}
 
@@ -92,63 +89,48 @@ public class RegisterDaoImpl implements RegisterDao {
 		return feedbackData;
 	}
 
-	public boolean usernameexistcheck(String username) {
+	public boolean usernameexistcheck(String username) throws SQLException {
 		String selectQuery = "select username from alrpassenger where username=?";
 		Object[] userData = { username };
-		try {
-			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+		String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-			if (!result.isEmpty()) {
-				return true;
-			}
-			else {
-				return false;
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (!result.isEmpty()) {
+			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
+		
 
 	}
 	
-	public boolean emailexistcheck(String email) {
+	public boolean emailexistcheck(String email) throws SQLException {
 		String selectQuery = "select email from alrpassenger where email=?";
 		Object[] userData = { email };
-		try {
-			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+		String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-			if (!result.isEmpty()) {
-				return true;
-			}
-			else {
-				return false;
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (!result.isEmpty()) {
+			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
+		
 
 	}
 	
-	public boolean mobileExistCheck(String mobile) {
+	public boolean mobileExistCheck(String mobile) throws SQLException {
 		String selectQuery = "select mobile from alrpassenger where mobile=?";
 		Object[] userData = { mobile };
-		try {
-			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+		String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-			if (!result.isEmpty()) {
-				return true;
-			}
-			else {
-				return false;
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (!result.isEmpty()) {
+			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
+		
 
 	}
 }

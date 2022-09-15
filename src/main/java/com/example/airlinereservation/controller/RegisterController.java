@@ -1,9 +1,12 @@
 package com.example.airlinereservation.controller;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.security.auth.login.AccountNotFoundException;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +52,7 @@ public class RegisterController {
 	public String registerDetails(@RequestParam("name") String name, @RequestParam("address") String address,
 			@RequestParam("mobile") String mobile, @RequestParam("email") String email,
 			@RequestParam("username") String username, @RequestParam("password") String password,
-			@RequestParam("dateOfBirth") String dateOfBirth, Model mod,HttpSession session) {
+			@RequestParam("dateOfBirth") String dateOfBirth, Model mod,HttpSession session) throws SQLException {
 
 		if (signupValidation.nameValidation(name)) {
 			passengerdto.setPassengerName(name);
@@ -136,7 +139,7 @@ public class RegisterController {
 
 	@PostMapping("/login")
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
-			HttpSession session, Model model) {
+			HttpSession session, Model model) throws AccountNotFoundException {
 
 		if (username.equals(admin.getAdminUsername()) && password.equals(admin.getAdminPassword())) {
 
@@ -147,7 +150,7 @@ public class RegisterController {
 			session.setAttribute("passengerusername", username);
 			return "Search.jsp";
 		} else {
-			model.addAttribute("error", "Invalid Account");
+			model.addAttribute("error", "Invalid Account");	
 			return "Index.jsp";
 
 		}
@@ -161,7 +164,7 @@ public class RegisterController {
 
 	@PostMapping("/forgotpassword")
 	public String updatePassword(@RequestParam("username") String username, @RequestParam("password1") String password,
-			@RequestParam("password2") String confirmPassword, Model mod) {
+			@RequestParam("password2") String confirmPassword, Model mod) throws SQLException {
 		if (password.equals(confirmPassword)) {
 			if (serviceALR.updatePassword(username, confirmPassword)) {
 				mod.addAttribute("msg", "Your password has been changed!");
