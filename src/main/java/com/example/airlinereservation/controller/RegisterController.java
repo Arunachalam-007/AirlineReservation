@@ -141,7 +141,7 @@ public class RegisterController {
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
 			HttpSession session, Model model) throws LoginException {
 
-		if (username.equals(admin.getAdminUsername()) && password.equals(admin.getAdminPassword())) {
+		if (username.equals(admin.getAdminUsername()) && password.equals(admin.getAdminPwd())) {
 
 			session.setAttribute("username", username);
 
