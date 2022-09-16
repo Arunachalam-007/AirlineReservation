@@ -40,7 +40,7 @@ public class RegisterDaoImpl implements RegisterDao {
 			if (result.equals(username)) {
 				return true;
 			} else {
-				throw new Exception();
+				return false;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

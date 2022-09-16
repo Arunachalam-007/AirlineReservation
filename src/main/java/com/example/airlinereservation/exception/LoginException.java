@@ -8,6 +8,8 @@ public class LoginException extends Exception{
 	 /**
 	 * 
 	 */
+	
+	
 	private static final long serialVersionUID = -4695616978491147011L;
 	Logger logger = LoggerFactory.getLogger(LoginException.class);
 	 
