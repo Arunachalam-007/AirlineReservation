@@ -18,7 +18,6 @@ import com.example.airlinereservation.daoimpl.FlightDaoImpl;
 import com.example.airlinereservation.dto.FlightBookingDTO;
 import com.example.airlinereservation.dto.FlightDTO;
 import com.example.airlinereservation.dto.FlightSearchDTO;
-
 import com.example.airlinereservation.model.Flight;
 import com.example.airlinereservation.model.FlightBooking;
 import com.example.airlinereservation.model.Passenger;
@@ -26,6 +25,8 @@ import com.example.airlinereservation.service.ServiceALR;
 
 @Controller
 public class FlightController {
+	
+	
 
 	@Autowired
 	ServiceALR serviceALR;
@@ -168,7 +169,7 @@ public class FlightController {
 				bookingPrice = String.valueOf(value);
 			}
 		} catch (ArithmeticException e) {
-			e.printStackTrace();
+			System.err.println(e);
 		}
 
 		LocalDate birthday = LocalDate.parse(dateOfBirth);

@@ -43,7 +43,7 @@ public class RegisterDaoImpl implements RegisterDao {
 				return false;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println(e);
 		}
 		return false;
 
@@ -63,7 +63,7 @@ public class RegisterDaoImpl implements RegisterDao {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println(e);
 		}
 		return false;
 
@@ -102,7 +102,7 @@ public class RegisterDaoImpl implements RegisterDao {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println(e);
 		}
 		return false;
 	}
@@ -120,7 +120,7 @@ public class RegisterDaoImpl implements RegisterDao {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println(e);
 		}
 		return false;
 
@@ -139,7 +139,7 @@ public class RegisterDaoImpl implements RegisterDao {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println(e);
 		}
 		return false;
 
