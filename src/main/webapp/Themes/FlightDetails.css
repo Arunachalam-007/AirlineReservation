@@ -76,6 +76,12 @@ body {
 	border-color: #6E5DCF;
 }
 
+#bookingDateError {
+	color: red;
+	font-size: 17px;
+	margin-left: 5px;
+}
+
 .search_btn {
 	border-radius: 10px;
 	border: none;

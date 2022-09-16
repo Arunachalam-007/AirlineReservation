@@ -39,9 +39,13 @@
 					<option value="England">England</option>
 				</select>
 				<label for="bdate">Booking Date</label> <input type="date"
-					name="bookingDate" placeholder="Enter Booking Date"> <input
+					name="bookingDate" placeholder="Enter Booking Date">
+					<span id="bookingDateError">${bookingDateError }</span>
+					 <input
 					type="submit" value="Search" class="search_btn"
 					onclick="inputCheck(); return false;">
+					
+				
 			</div>
 
 			<div class="quote">
