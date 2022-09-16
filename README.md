@@ -3,8 +3,8 @@ The purpose of the present Airline Reservation system is to allow Passengers to 
 availability of accommodation in flights, ticket booking, class type like  Economy,Premium Economy,Business.
 
 
-Description
-    ## There are three roles(Admin,Passenger,Public).Admin can add new flights,delete flight as well as admin can delete passenger details.
+## Description
+     There are three roles(Admin,Passenger,Public).Admin can add new flights,delete flight as well as admin can delete passenger details.
     --> Passengers can view flight,can book the flight and also can cancel the booking ticket if they are not interested to travel.
     --> Public can only view the flight and can check the ticket price and seat availability.
     
