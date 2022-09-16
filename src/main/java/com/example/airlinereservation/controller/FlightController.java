@@ -220,7 +220,7 @@ public class FlightController {
 	}
 
 	@PostMapping("/bookedticketinfoadmin")
-	public String bookedInfoToAdmin(Model mod) {
+	public String bookedInfo(Model mod) {
 		List<FlightBooking> result = flightDaoImpl.flightInfoAdmin();
 		mod.addAttribute("bookedticketval", result);
 		return "AdminDashboard.jsp";

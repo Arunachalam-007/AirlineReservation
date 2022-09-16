@@ -59,7 +59,7 @@ public class RegisterDaoImpl implements RegisterDao {
 			if (result.equals(username)) {
 				return true;
 			} else {
-				throw new Exception();
+				return false;
 			}
 
 		} catch (Exception e) {
@@ -89,48 +89,60 @@ public class RegisterDaoImpl implements RegisterDao {
 		return feedbackData;
 	}
 
-	public boolean usernameexistcheck(String username) throws SQLException {
+	public boolean usernameexistcheck(String username) {
 		String selectQuery = "select username from alrpassenger where username=?";
 		Object[] userData = { username };
-		String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+		try {
+			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-		if (!result.isEmpty()) {
-			return true;
-		}
-		else {
-			return false;
-		}
-		
+			if (!result.isEmpty()) {
+				return true;
+			} else {
+				return false;
+			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
-	
-	public boolean emailexistcheck(String email) throws SQLException {
+
+	public boolean emailexistcheck(String email) {
 		String selectQuery = "select email from alrpassenger where email=?";
 		Object[] userData = { email };
-		String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+		try {
+			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-		if (!result.isEmpty()) {
-			return true;
+			if (!result.isEmpty()) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		else {
-			return false;
-		}
-		
+		return false;
 
 	}
-	
-	public boolean mobileExistCheck(String mobile) throws SQLException {
+
+	public boolean mobileExistCheck(String mobile) {
 		String selectQuery = "select mobile from alrpassenger where mobile=?";
 		Object[] userData = { mobile };
-		String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
+		try {
+			String result = jdbctemp.queryForObject(selectQuery, String.class, userData);
 
-		if (!result.isEmpty()) {
-			return true;
+			if (!result.isEmpty()) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		else {
-			return false;
-		}
-		
+		return false;
 
 	}
+
 }

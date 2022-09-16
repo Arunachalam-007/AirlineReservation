@@ -1,11 +1,9 @@
 package com.example.airlinereservation.controller;
 
-
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
-
 
 import javax.servlet.http.HttpSession;
 
@@ -44,7 +42,7 @@ public class RegisterController {
 	Feedback feedback = new Feedback();
 
 	String signupPage = "Signup.jsp";
-	String forgotPasswordPage="ForgotPassword.jsp";
+	String forgotPasswordPage = "ForgotPassword.jsp";
 
 	SignupValidation signupValidation = new SignupValidation();
 
@@ -139,7 +137,7 @@ public class RegisterController {
 
 	@PostMapping("login")
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
-			HttpSession session, Model model) throws LoginException   {
+			HttpSession session, Model model) throws LoginException {
 
 		if (username.equals(admin.getAdminUsername()) && password.equals(admin.getAdminPassword())) {
 
@@ -149,12 +147,11 @@ public class RegisterController {
 		} else if (registerDaoImpl.checkLogin(username, password)) {
 			session.setAttribute("passengerusername", username);
 			return "Search.jsp";
-		} 
-		
+		}
+
 		else {
-			model.addAttribute("error", "Invalid Account");	
+			model.addAttribute("error", "Invalid Account");
 			return "Index.jsp";
-		
 
 		}
 	}
@@ -162,6 +159,7 @@ public class RegisterController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("passengerusername");
+		session.removeAttribute("signupUsername");
 		return "Index.jsp";
 	}
 

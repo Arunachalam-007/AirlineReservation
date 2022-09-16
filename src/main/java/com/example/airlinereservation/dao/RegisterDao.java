@@ -12,18 +12,16 @@ public interface RegisterDao {
 
 	boolean checkLogin(String username, String password);
 
-	boolean usernameAvailCheck(String username);
-
 	int updatePassword(String username, String password) throws SQLException;
 
 	void feedBackInsert(Feedback feedback);
 
 	List<Feedback> feedBackView();
 
-	boolean usernameexistcheck(String username) throws SQLException;
+	boolean usernameexistcheck(String username) ;
 
-	boolean emailexistcheck(String email) throws SQLException;
+	boolean emailexistcheck(String email) ;
 
-	boolean mobileExistCheck(String mobile)throws SQLException;
+	boolean mobileExistCheck(String mobile);
 
 }
