@@ -126,6 +126,15 @@ public class FlightController {
 	@PostMapping("/searchflightwithoutlogin")
 	public String searchFlightwoutLogin(@RequestParam("from_place") String fromPlace,
 			@RequestParam("to_place") String toPlace, @RequestParam("bookingDate") String bookingDate, Model mod) {
+		
+		LocalDate bookDate = LocalDate.parse(bookingDate);
+
+		LocalDate todayDate = LocalDate.now();
+		if (bookDate.isBefore(todayDate)) {
+			mod.addAttribute("bookingDateError", "Booking Date cannot been before today");
+			return "FlightDetails.jsp";
+		}
+
 		List<Flight> result = flightDaoImpl.flightsDisplay(fromPlace, bookingDate);
 		mod.addAttribute("infos", result);
 		return "FlightDisplay.jsp";
