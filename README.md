@@ -4,7 +4,7 @@ availability of accommodation in flights, ticket booking, class type like  Econo
 
 
 ## Description
-    ### There are three roles(Admin,Passenger,Public).Admin can add new flights,delete flight as well as admin can delete passenger details.
+    ## There are three roles(Admin,Passenger,Public).Admin can add new flights,delete flight as well as admin can delete passenger details.
     --> Passengers can view flight,can book the flight and also can cancel the booking ticket if they are not interested to travel.
     --> Public can only view the flight and can check the ticket price and seat availability.
     
