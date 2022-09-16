@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 import java.sql.Date;
 import java.time.LocalDate;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +28,7 @@ import com.example.airlinereservation.service.ServiceALR;
 @Controller
 public class FlightController {
 	
-	
+	Logger logger = LoggerFactory.getLogger(FlightController.class);
 
 	@Autowired
 	ServiceALR serviceALR;
@@ -169,7 +171,7 @@ public class FlightController {
 				bookingPrice = String.valueOf(value);
 			}
 		} catch (ArithmeticException e) {
-			System.err.println(e);
+			logger.error("Arithmetic Exception");
 		}
 
 		LocalDate birthday = LocalDate.parse(dateOfBirth);
@@ -183,7 +185,7 @@ public class FlightController {
 				bookingPrice = String.valueOf(value);
 			}
 		} catch (ArithmeticException e) {
-			e.printStackTrace();
+			logger.error("Arithmetic Exception");
 		}
 
 		flightBooking.setUserName(username);

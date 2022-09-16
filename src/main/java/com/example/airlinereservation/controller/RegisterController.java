@@ -26,6 +26,8 @@ import com.example.airlinereservation.validation.SignupValidation;
 
 @Controller
 public class RegisterController {
+	
+	
 
 	@Autowired
 	RegisterDaoImpl registerDaoImpl;
