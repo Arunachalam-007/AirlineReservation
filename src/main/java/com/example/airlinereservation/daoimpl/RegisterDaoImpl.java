@@ -56,7 +56,7 @@ public class RegisterDaoImpl implements RegisterDao {
 	}
 
 	public boolean usernameAvailCheck(String username) {
-		String selectQuery = "select name from alrpassenger where username=?";
+		String selectQuery = "select username from alrpassenger where username=?";
 		Object[] values = { username };
 		String result;
 		try {

@@ -30,6 +30,7 @@
           <option value="Mumbai">Mumbai</option>
           <option value="Mumbai">Delhi</option>
           <option value="Mumbai">Bengalore</option>
+          <option value="Other">Other</option>
         </select>
         <label for="subject">Subject</label>
         

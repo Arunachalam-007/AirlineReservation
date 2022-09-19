@@ -134,7 +134,8 @@ public class RegisterController {
 		serviceALR.passengerService(passengerdto);
 		
 		session.setAttribute("signupUsername", username);
-		return "Search.jsp";
+		mod.addAttribute("actcreate","Account Created");
+		return signupPage;
 	}
 
 	@PostMapping("login")

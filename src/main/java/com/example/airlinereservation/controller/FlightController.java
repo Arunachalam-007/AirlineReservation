@@ -147,7 +147,7 @@ public class FlightController {
 		if ((session.getAttribute("passengerusername") != null) || session.getAttribute("signupUsername") != null) {
 			List<Flight> result = flightDaoImpl.ticketBooking(flightId);
 			mod.addAttribute("flightid_value", result);
-			if (seatResult != 36) {
+			if (seatResult != 0) {
 				return "BookInfo.jsp";
 			} else {
 				return indexPage;

@@ -15,7 +15,6 @@
 
 			<div class="fdetails">
 			
-			<c:set var="uname_value" scope="session" value="null" />
 
 				<h1>Check Availability</h1>
 				<label for="from_place">From Place</label> <select name="from_place" id="from_place">

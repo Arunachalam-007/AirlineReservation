@@ -100,7 +100,9 @@
 						<span id="errordob">${doberror }</span>
 
 					</div>
-					<a href="Index.jsp" class="act">Already have an Account?</a> <input
+					<a href="Index.jsp" class="act">Already have an Account?</a> 
+					<span id="actcreate">${actcreate }</span>
+					<input
 						type="submit" value="Signup" class="signup_btn" id="signup_btn"
 						onclick="validation();">
 				</div>

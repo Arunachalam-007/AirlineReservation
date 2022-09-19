@@ -31,8 +31,8 @@
 	<div id="save">
 
 		<c:forEach var="confirmPassengersVal" items="${confirmPassengers}">
-		
-		
+
+
 
 			<div class="payment">
 
@@ -40,6 +40,8 @@
 					<p id="name">Name :${confirmPassengersVal.name }</p>
 					<p id="fname">Flight Name :${confirmPassengersVal.fname }</p>
 					<p id="bookid">Booking Id :${confirmPassengersVal.bookingId}</p>
+					<p id="pnr">PNR Number : ${ confirmPassengersVal.pnr}</p>
+					<p id="seat_no">Seat Number : ${ confirmPassengersVal.seatNumber}</p>
 					<p id="from_place">From Place
 						:${confirmPassengersVal.bookingFromPlace }</p>
 
@@ -93,6 +95,7 @@
 	<button onclick="generatePDF()">Print</button>
 
 	<script type="text/javascript" src="BookConfirm.js">
-		</script>
+		
+	</script>
 </body>
 </html>

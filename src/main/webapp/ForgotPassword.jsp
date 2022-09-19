@@ -27,9 +27,9 @@
 <label for="password2">Confirm Password</label>
 <input type="password" placeholder="Enter Confirm Password" name="password2" id="id_password2">
 <em class="bi bi-eye-slash" id="togglePassword2"></em>
-<span>${message }</span>
-<span>${msg }</span>
-<span>${messages }</span>
+<span id="message">${message }</span>
+<span id="msg">${msg }</span>
+<span id="messages">${messages }</span>
 
 
 
