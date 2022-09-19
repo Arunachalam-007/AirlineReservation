@@ -28,7 +28,7 @@ availability of accommodation in flights, ticket booking, class type like  Econo
    * Admin can view the feedback.
     
    This application was built by using JSP,CSS,JAVA Spring BOOT,MVC,SQL.
-   * All level of testing was done.
+   * Form level testing and validation was done.
 
 
 
